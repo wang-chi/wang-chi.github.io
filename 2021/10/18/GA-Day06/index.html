@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>GA_Day06 | Wang-Chi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+
+    
+
+    
+
+    
+
+    
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1633679241878.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1633679241878.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            
+        }
+        window.aomori_logo_typed_animated = true
+        window.aomori_search_algolia = false
+
+    </script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/images/icon.png" alt="Wang-Chi, Ho">
+            </div>
+            
+            <div class="header-type-inner">
+                
+                    <div id="typed-strings" style="display:none">
+                        <p>Wang-Chi</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+                <a href="/">Home</a>
+                
+                <a href="/photography">Photography</a>
+                
+                <a href="/archives">Archives</a>
+                
+                <a href="/friends">Friends</a>
+                
+            </div>
+            <div class="header-menu-social">
+                
+    <a class="social" target="_blank" href="https://github.com/wang-chi">
+        <box-icon type='logo' name='github'></box-icon>
+    </a>
+
+    <a class="social" target="_blank" href="https://www.linkedin.com/in/wang-chi-ho/">
+        <box-icon type='logo' name='linkedin-square'></box-icon>
+    </a>
+
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                    <a href="/">Home</a>
+                    
+                    <a href="/photography">Photography</a>
+                    
+                    <a href="/archives">Archives</a>
+                    
+                    <a href="/friends">Friends</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-ckuwrh0s90003vfy8hn6u3535" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      GA_Day06
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2021-10-18T14:29:22.000Z" itemprop="datePublished">2021-10-18</time>
+</div>
+
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+            </div>
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li></ul>
+            </div>
+            
+
+            
+            <div class="article-busuanzi">
+                有 <span id="busuanzi_value_page_pv">N</span> 人看过
+            </div>
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <p>前情提要，昨天介紹的基因演算法中複製與選擇的種類<br>這邊一樣補上圖片<br><img src="https://i.imgur.com/t9ocx1J.png" alt="Imgur"></p>
+<p>那昨天沒有講到的是”<strong>分裂選擇</strong>“<br>那時麼是分裂選擇呢？<br>昨天有提到適應值對吧～～<br>大家還記得嗎？<br>當我們把適應值按照順序排列後<br>分裂選擇就是選擇適應程度最好跟適應程度最差的兩端的結果<br>這樣的選擇方式對於適應程度普通的染色體(chromosome)來說非常不利<br>因為既不是最好也是不是最差就不會被選到了<br>分裂選擇是淘汰掉平凡的個體（染色體）</p>
+<p>其實在查分裂選擇的時候<br>又有新的發現<br>分裂選擇是屬於新達爾文主義中演化過程的其中一種<br>分成了方向性選擇、分裂性選擇和平衡性選擇</p>
+<h3 id="方向性選擇-directional-selection"><a href="#方向性選擇-directional-selection" class="headerlink" title="方向性選擇(directional selection)"></a>方向性選擇(directional selection)</h3><p>這邊顧名思義就是朝著某一個表現方向去做選擇，<br>例如希望他越符合適應程度，就會希望他的適應值越大越好等等<br>朝著一個固定的方向去選擇使得結果偏向某一邊<br>用到之前所提到的，希望物種可以更適合環境來生存<br>就會透過物種的適應程度去辨別<br>故方向性選擇就會以越適合物種生存的面向去選擇</p>
+<h3 id="分裂性選擇-disruptive-selection"><a href="#分裂性選擇-disruptive-selection" class="headerlink" title="分裂性選擇(disruptive selection)"></a>分裂性選擇(disruptive selection)</h3><p>就如果前面介紹的<br>為了將族群分成兩部份<br>選擇了最好與最差的兩端</p>
+<h3 id="平衡性選擇-stabilizing-selection"><a href="#平衡性選擇-stabilizing-selection" class="headerlink" title="平衡性選擇(stabilizing selection)"></a>平衡性選擇(stabilizing selection)</h3><p>平衡性選擇就和分裂性選擇恰好相反<br>淘汰掉急湍的個體而使得整個群體朝向普通正常化的方式去發展</p>
+<p>這邊把三種選擇後會產生的結果一併整理出來<br>讓大家比較好理解<br><img src="https://i.imgur.com/cOueir5.png" alt="新達爾文選擇"></p>
+<p>那以上三種新達爾文主義的選擇就到這邊介紹了<br>相關的使用資料也會在文章最後</p>
+<hr>
+<p>相關資料來源：</p>
+<ul>
+<li>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。</li>
+<li>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。</li>
+<li>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</li>
+<li>選擇的部分參考這邊比較多：<a target="_blank" rel="noopener" href="https://slideplayer.com/slide/5366168/">https://slideplayer.com/slide/5366168/</a></li>
+<li>郭定。(2009)。 基因演算法中不同選擇策略的替代性與互補性。Journal of Science and Engineering Technology，5(2)， 25-34。</li>
+</ul>
+
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+<div class="article-copyright hairline">
+  <p>
+    本網站 <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">屬於技術之術分享網站</a> 未經許可，請勿任意轉載。
+  </p>
+</div>
+
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2021/10/18/GA-Day07/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          GA_Day07
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/18/GA-Day05/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">GA_Day05</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=GA_Day06 - Wang-Chi&url=http://wang-chi.github.io/2021/10/18/GA-Day06/">
+            <box-icon type='logo' name='twitter'></box-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=GA_Day06 - Wang-Chi&u=http://wang-chi.github.io/2021/10/18/GA-Day06/">
+            <box-icon name='facebook-square' type='logo' ></box-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=GA_Day06 - Wang-Chi&url=http://wang-chi.github.io/2021/10/18/GA-Day06/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar ">
+                
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/18/GA-Day30/">GA_Day30</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/18/GA-Day29/">GA_Day29</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/18/GA-Day28/">GA_Day28</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/18/GA-Day27/">GA_Day27</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/18/GA-Day26/">GA_Day26</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Wang-Chi &copy; 2021<br>
+            Powered By Hexo · Theme By <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Aomori</a>
+        </div>
+    </div>
+
+</footer>
+
+
+
+
+
+
+<script src="/dist/build.js?1633679241878.js"></script>
+
+
+<script src="/dist/custom.js?1633679241878.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -130,7 +130,7 @@
   
     
       <article
-id="post-GA-Day02"
+id="post-GA-Day30"
 class="article article-type-post"
 >
 
@@ -141,21 +141,32 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day02/">GA_Day02</a>
+        <a href="/2021/10/18/GA-Day30/">GA_Day30</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <p>在介紹基因演算法的全部流程前，需要先瞭解會運用到哪些元素來組成，需要哪些元素才能進行。</p>
-<p>基因演算法的整體架構和運作的流程可以產生高度的解答搜尋能力，也具備較高的問題獨立性。在基因演算法的執行過程中以達到適應函數標準的適應值(Fitness Value)為判斷標準，而適應值的好壞同時決定了該個體是否保留或是淘汰，進而確保下一代的個體優於上一代。</p>
-<p>這邊先介紹一下基因演算法組成的元素，以免大家到了後面還是傻傻分不清楚<br>(或許是我的文筆要要再多加油)<br><img src="https://i.imgur.com/upWQe4t.png" alt="基因演算法組成的元素"></p>
-<p><strong>最基本的元素 － 基因 (Gene)</strong><br>在GA的過程中，要變化每一個個體中的基因(Gene)片段，基因就是最基本的編碼單位啦~~<br>有點像是「APPLE」這個個體是由「A」、 「P」、 「P」、 「L」、 「E」這五個基因所組成的感覺<br>而可以根據要解決的類型來決定基因的型態，不同的基因型態就可以表示成不同的基因演算法<br>像是使用實數編碼的基因就是實數型基因演算法、符號編碼的基因就是符號型基因演算法～～<br>（實數型和符號型基因演算法也會在後續的文章中陸續為大家介紹，繼續埋梗的我）</p>
-<p><strong>基因的集合  － 染色體 (Chromosome)</strong><br>好，到這邊大家千萬別轉台，現在不是生物課<br>染色體就是所謂的個體(這樣誰聽得懂啦)，再明白一點就是前面基因的集合，<br>以上面的例子來說「APPLE」這個染色體是由「A」、 「P」、 「P」、 「L」、 「E」這五個基因所組成</p>
-<p><strong>染色的集合  － 族群(Population)</strong><br>到這邊朋友們都還在吧(?!)<br>族群就是前面染色體的集合啦~<br>當每一次的世代交替中，全部的染色體就是候選人，而這些候選解救是所謂的族群啦~<br>用上面的例子繼續延續，「APPLE」 、「GRAPE」 、「GUAVA」 、「LEMON」這些染色體(Chromosome)合起來就是所謂的族群(Population)，希望這樣簡單的例子可以讓大家更明白一點。</p>
-<p>這邊用一張圖來表示上述說的基因、染色體和族群的關係：<br>橘色方框表示族群 Population<br>綠色方框表示染色體 Chromosome<br>藍色方框表示基因 Gene<br><img src="https://i.imgur.com/wo0yypC.png" alt="基因演算法元素組成介紹"></p>
-<p>以上就是基因演算法中會遇到的幾個重要元素，<br>明天會給大家帶來基因演算法的流程介紹～</p>
-<p>一樣如果有任何疑惑都可以在下面留言告訴我，<br>無論是核心理論、表達上有誤的歡迎指教<br>希望明天還可以再次遇見大家</p>
+        <p>感謝大家不離不棄的堅持到最後一天，希望每天的一點點閱讀可以對基因演算法(遺傳演算法)有更多的了解。<br>雖然在寫文章的時候，有很多資料都是邊查邊寫的，參考了很多大神們的傑作，<br>不知道有沒有哪邊不夠完整，或是描述不清楚的。<br>回顧一下基因演算法的<strong>流程</strong><br><img src="https://i.imgur.com/wOjRpbr.png" alt="基因演算法流程"></p>
+<p>基因演算法的<strong>組成</strong>–群體、染色體、基因<br><img src="https://i.imgur.com/wo0yypC.png" alt="基因演算法元素組成介紹"></p>
+<p>這邊總結一下基因演算法的<strong>特點</strong>：</p>
+<ol>
+<li>在適應值設定不當下將可能得到區域最佳解，而非全域最佳解。</li>
+<li>透過多點搜尋所以得到的解會盡可能避免發生區域最佳解。</li>
+<li>染色體( chromosome )最終得到的結果不一定代表真實的結果，需要經過解碼才是得到。</li>
+<li>需要手動去設定適應值( Fitness Value )等數值。</li>
+<li>採取隨機搜尋方式，適合各式各樣求取最佳解的問題。</li>
+<li>可以和神經網絡結合。</li>
+</ol>
+<p>說了這麼多基因演算法的優點，也來說說他的<strong>缺點</strong>：</p>
+<ol>
+<li>運算成本高：在每個世代交替下都要進行運算，若世代數大或是群體大，所需的運算成本也會相對提高</li>
+<li>現行的商業套裝軟體支援較少</li>
+<li>不保證最佳化，GA可能會得到區域的最佳解而非整體的最佳解</li>
+<li>在編碼的應用上仍有許多可以改善的地方</li>
+</ol>
 <hr>
-<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
+<p>說實在這篇早在我快要放棄時就開始撰寫了<br>內心一直思考著哪天我才能真正按下發佈<br>忐忑著擔心著自己沒有機會按下去<br>研究生的生活實在有些忙碌<br>不是學校的課業 不是研究室的專案計畫<br>他的優先順序就這樣時時往後延後<br>常擔心在每天23點沒有機會按下送出<br>就此斷更<br>因此不太敢宣傳給親朋好友<br>深怕自己的耐力沒能堅持到最後<br>但是希望真得到了那麼一天可以按下去<br>開心到了發佈這篇文章的最後一天<br>後續我會盡可能把前面的文章在調整過<br>讓這個基因演算法給更多不了解他的人知道</p>
+<hr>
+<p>全系列參考資料來源:<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。<br>郭定。(2009)。 基因演算法中不同選擇策略的替代性與互補性。Journal of Science and Engineering Technology，5(2)， 25-34。<br>突變(遺傳演算法)。2013。突變(遺傳演算法)。維基百科，自由的百科全書。<br>莊凱智(2011)。應用改良式粒子群演算法於旅行銷售員問題。工程科技與教育學刊, 2011, 8.3: 533-546.<br>Soni, N., &amp; Kumar, T. (2014). Study of various mutation operators in genetic algorithms. International Journal of Computer Science and Information Technologies, 5(3), 4519-4521.<br><a target="_blank" rel="noopener" href="https://kknews.cc/zh-tw/tech/p5yjpe.html">R語言中的遺傳演算法</a><br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/">R Documentation</a><br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/GA/versions/3.2/topics/ga">R Documetation-ga</a><br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/genalg">R Documetation-genalg</a><br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/rgenoud/versions/5.8-3.0/topics/genoud">R Documetation-genoud</a><br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/mcga">R Documetation-mcga</a><br><a target="_blank" rel="noopener" href="https://zsc.netlify.com/post/2015-11-09-ga/">GA包–遗传算法</a><br><a target="_blank" rel="noopener" href="https://rpubs.com/karthy1988/TSP_GA">RPubs - Optimized Delivery Route using Genetic Algorithm: Cost cutting for e-commerce</a><br><a target="_blank" rel="noopener" href="http://rpubs.com/somasdhavala/GAeg">RPubs - Genetic Algorithm on TSP</a><br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Memetic_algorithm">Wikipedia-Memetic Algorithm</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10211706">用基因遺傳演算法(Genetic Algorithm)解旅行推銷員問題(TSP)</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95">維基百科-蟻群演算法</a><br><a target="_blank" rel="noopener" href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/631655/">蟻群演算法、遺傳演算法、模擬退火演算法介紹 | 程式前沿</a><br><a target="_blank" rel="noopener" href="http://ccckmit.wikidot.com/so:antcolony">蟻群優化演算法 (Ant Colony Optimization) - 陳鍾誠的網站</a><br><a target="_blank" rel="noopener" href="https://wiki.mbalib.com/zh-tw/%E7%B2%92%E5%AD%90%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95">粒子群優化演算法－MBA智庫</a><br><a target="_blank" rel="noopener" href="https://www.itread01.com/content/1546354445.html">基本粒子群優化演算法（PSO）的matlab實現 - IT閱讀</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB">維基百科－模擬退火</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10186172">[Day 21] Simulated annealing – 演算法</a></p>
 
         
     </div>
@@ -171,7 +182,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:22:53.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2021-10-18T14:30:01.000Z" itemprop="datePublished">2021-10-18</time>
 </div>
     
         <div class="article-category">
@@ -192,7 +203,7 @@ class="article article-type-post"
   
     
       <article
-id="post-GA-Day01"
+id="post-GA-Day29"
 class="article article-type-post"
 >
 
@@ -203,28 +214,32 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day01/">GA_Day01</a>
+        <a href="/2021/10/18/GA-Day29/">GA_Day29</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <p>何謂「基因演算法」?<br>「基因演算法」能帶來甚麼?<br>「遺傳演算法」和「基因演算法」相同嗎?<br>哪些軟體可以實作基因演算法呢?<br>聽起來好遙不可及阿～</p>
-<p>接下來這系列 GA wtih you 會一一跟大家做介紹，希望整個系列可以讓大家更了解基因演算法，也能夠應用在生活之中(?)<br>這個題目聽起來有點浮誇（有點累），沒有那麼活潑，但還是希望大家可以與基因演算法共度未來的30天<br>終於趕在開賽最後一天開始了&gt;&lt;</p>
+        <h3 id="粒子群演算法"><a href="#粒子群演算法" class="headerlink" title="粒子群演算法"></a>粒子群演算法</h3><p>粒子群演算法又稱<strong>粒子優化</strong>、<strong>粒子群最佳化</strong><br>Kennedy and Eberhart在觀察鳥兒飛行和魚兒游泳的群體習性中所發展出來的一種基於群體協作的隨機搜尋演算法。其主要其主要的概念是利用一顆顆單獨的粒子模擬鳥兒，鳥兒會各自去尋找食物，漸漸的鳥兒會開始聚集到食物較多較好覓食的區域，而鳥兒找尋食物進而群體朝著同一方式移動，並會告訴其他鳥兒訊息，使得所有的鳥兒都會集中在最佳的覓食區域。</p>
+<p>目前此項概念也應用在<strong>系統控制</strong>、<strong>路徑規劃</strong>和<strong>辨識技術</strong>上等等的應用。</p>
+<h3 id="Pseudocode-虛擬碼"><a href="#Pseudocode-虛擬碼" class="headerlink" title="Pseudocode 虛擬碼"></a>Pseudocode 虛擬碼</h3><pre><code>while
+    for  i=1,2,...,n      // 每個粒子，粒子數量 n
+        if f(i)&lt;y then    // 設定每個個體的最佳位置
+            y=f(i);
+        end
+        if y&lt;Y then
+            Y=y;
+        end
+    end
+    for  i=1,2,...,n      // 每個粒子，粒子數量 n
+        UpdateSpeed();    // 更新速度
+        UpdateLocation(); // 更新位置
+    end
+end while // 滿足終止條件
+</code></pre>
+<p>終止條件和基因演算法的終止條件相似<br>可以設定迭代的次數、適應程度等等<br>可依據需求來設定</p>
 <hr>
-<p>未來30天的學習內容（GA with you 30days Index）<br>總共會分成4個部分</p>
-<h3 id="第一部分-介紹基因演算法"><a href="#第一部分-介紹基因演算法" class="headerlink" title="第一部分 介紹基因演算法"></a>第一部分 介紹基因演算法</h3><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10216417">【Day02】GA with you - GA Element 基因演算法元素</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10216676">【Day03】GA with you - Process 基因演算法的流程</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10216689">【Day04】GA with you - Reproduction &amp; Selection 複製與選擇 (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10217277">【Day05】GA with you - Reproduction &amp; Selection 複製與選擇 (2)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10218408">【Day06】GA with you - Reproduction &amp; Selection 複製與選擇 (3)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10218678">【Day07】GA with you - Crossover 交配 (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10218678">【Day08】GA with you - Crossover 交配 (2)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219032">【Day09】GA with you - Mutation 突變 (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219211">【Day10】GA with you - Mutation 突變 (2)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219271">【Day11】GA with you - GA Process Review 流程回顧</a></p>
-<h3 id="第二部分-實作基因演算法－R語言"><a href="#第二部分-實作基因演算法－R語言" class="headerlink" title="第二部分 實作基因演算法－R語言"></a>第二部分 實作基因演算法－R語言</h3><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221308">【Day12】GA with you - Develop on R 環境安裝</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221954">【Day13】GA with you - R Related Package Introduction R套件介紹</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221961">【Day14】GA with you - R Package mcga R套件mcga (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221957">【Day15】GA with you - R Package mcga R套件mcga (2)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221996">【Day16】GA with you - R Package mcga R套件mcga (3)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221959">【Day17】GA with you - R Package genalg R套件 genalg (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221960">【Day18】GA with you - R Package genalg R套件genalg (2)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10223141">【Day19】GA with you - R Package genalg R套件 genalg (3)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221963">【Day20】GA with you - R Package GA R套件GA</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221965">【Day21】GA with you - R Package genoud R套件 genoud</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221968">【Day22】GA with you - R Package Review R語言套件</a></p>
-<h3 id="第三部分-旅行銷售員問題實作"><a href="#第三部分-旅行銷售員問題實作" class="headerlink" title="第三部分 旅行銷售員問題實作"></a>第三部分 旅行銷售員問題實作</h3><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10226203">【Day23】GA with you - R 基因演算法應用於旅行銷售員問題 (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10226531">【Day24】GA with you - R 基因演算法應用於旅行銷售員問題 (2)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10226624">【Day25】GA with you - R 基因演算法應用於旅行銷售員問題 (3)</a></p>
-<h3 id="第四部分-相關演算法和延伸的應用"><a href="#第四部分-相關演算法和延伸的應用" class="headerlink" title="第四部分 相關演算法和延伸的應用"></a>第四部分 相關演算法和延伸的應用</h3><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10226980">【Day26】GA with you - Ant Colony Optimization 蟻群演算法</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10227251">【Day27】GA with you - Memetic algorithm 模因演算法</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10227303">【Day28】GA with you - Simulation Annealing 模擬退火法</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10227847">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a></p>
+<p>說實在，我真的沒有想到可以堅持到這一天<br>今天是第29天了<br>第一次參賽堅持到此<br>期待在明天與大家迎來第30天的完賽之日&gt;&lt;</p>
 <hr>
-<p><strong>甚麼是「基因演算法」?</strong></p>
-<p>「基因演算法」(GA, Genetic Algorithm)，又叫作「遺傳演算法」，為所有演化式演算法(EA, Evolutionary Algorithms)著名的理論，也是應用最為廣泛的演化式演算法。（後續的文章都會以ＧＡ來表示基因演算法）<br>從達爾文【物競天擇】理論中所衍伸出來，大家常聽到的【適者生存，不適者淘汰】是相同的原理的，在大自然的群體中，逐漸淘汰掉適應能力較差、不適應於目前環境條件下的物種，在反覆的疊代下收斂至一個平衡的機制。基因演算法屬於最佳化演算法之一，以模擬自然生態的演算法。1960年代John Von Neumann提出一個「自我複製」(Self-reproducing)的理論，奠定了基因演算法的基礎。而完整的基因演算法的概念則是到1975年John Holland與其學生共同提出來的。</p>
-<p>基因演算法是一種最佳化空間搜尋法，主要用在解決一個最佳化問題的演算法，相當適合用來解決最佳化的問題，目前GA已被廣泛應用在求解最佳化的問題、資料搜尋、人工智慧及機器學習等領域上。</p>
-<p><strong>甚麼情況可以應用?</strong></p>
-<p>演算法中常間的旅行推銷員問題 (Travel Salesman Problem) 和 工作排程問題<br>後續的文章中也實際透過code來實作。</p>
-<p>希望第一天簡單的開始不要讓大家太有負擔，<br>如果有任何跟基因演算法的問題都可以在文章下面提出來，<br>說不定你的疑惑也是其他人的疑惑，<br>我會盡可能的為大家解答，<br>如果有想要的應用也可以在底下留言告訴我，<br>後續的文章會盡量採納整理給大家～～</p>
-<p>希望我們都可以堅持到最後一天 加油加油～～</p>
-<hr>
-<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
+<p>相關參考資料<br>莊凱智(2011)。應用改良式粒子群演算法於旅行銷售員問題。工程科技與教育學刊, 2011, 8.3: 533-546.<br><a target="_blank" rel="noopener" href="https://wiki.mbalib.com/zh-tw/%E7%B2%92%E5%AD%90%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95">粒子群優化演算法－MBA智庫</a><br><a target="_blank" rel="noopener" href="https://www.itread01.com/content/1546354445.html">基本粒子群優化演算法（PSO）的matlab實現 - IT閱讀</a></p>
 
         
     </div>
@@ -240,7 +255,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:02:29.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2021-10-18T14:30:00.000Z" itemprop="datePublished">2021-10-18</time>
 </div>
     
         <div class="article-category">
@@ -261,7 +276,7 @@ class="article article-type-post"
   
     
       <article
-id="post-hello-world"
+id="post-GA-Day28"
 class="article article-type-post"
 >
 
@@ -272,23 +287,32 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/11/hello-world/">Hello World</a>
+        <a href="/2021/10/18/GA-Day28/">GA_Day28</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+        <p>今天來跟大家介紹模擬退火演算法(Simulated Annealing，SA)</p>
+<h3 id="Introduction-簡介"><a href="#Introduction-簡介" class="headerlink" title="Introduction 簡介"></a>Introduction 簡介</h3><p>模擬退火一詞是來自物理學的專有名詞<strong>退火</strong>，主要只物體加溫後再冷卻的過程。退火是將材料加熱後再經特定的速度冷卻，目的在於增加晶粒的體積，同時減少晶格中的缺陷。降溫過程中亦有可能會再升溫。材料中的原子原來會停留在使內能有局部最小值的位置，加熱使能量變大，原子會離開原來位置，而隨機在其他位置中移動。退火冷卻時速度較慢，使得原子有較多可能可以找到內能比原先更低的位置。</p>
+<p>以演算法的角度來説，就是先以搜尋空間內的任一點作為起點，每一步選擇一個鄰近點－『鄰居』，然後再計算從目前的位置到達附近的鄰近點的機率。由此可知，模擬退火演算法得知該機率收斂到全局最佳解。</p>
+<h3 id="Pseudocode-虛擬碼"><a href="#Pseudocode-虛擬碼" class="headerlink" title="Pseudocode 虛擬碼"></a>Pseudocode 虛擬碼</h3><pre><code>s := s0; e := E (s)                             // 設定目前狀態為s0，其能量E (s0)
+k := 0                                          // 評估次數k
+while k &lt; kmax and e &gt; emin                     // 若還有時間（評估次數k小於kmax）且結果不夠優（能量e過高）則：
+  sn := neighbour (s)                           // 隨機選取一鄰近狀態sn
+  en := E (sn)                                  // sn的能量為E (sn)
+  if random() &lt; P(e, en, temp(k/kmax)) then     // 決定是否移至鄰近狀態sn
+    s := sn; e := en                            // 移至鄰近狀態sn
+  k := k + 1                                    // 評估完成，次數k加一
+return s                                        // 回傳狀態s
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>從上面可以看到可以設定的參數有</p>
+<ol>
+<li><code>s</code>:初始值</li>
+<li><code>k</code>:迭代次數</li>
+<li>退火速度</li>
+<li>溫度管理</li>
+</ol>
+<hr>
+<p>相關資料：<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB">維基百科－模擬退火</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10186172">[Day 21] Simulated annealing – 演算法</a></p>
 
         
     </div>
@@ -304,9 +328,663 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-11T13:26:21.380Z" itemprop="datePublished">2021-10-11</time>
+  <time datetime="2021-10-18T14:29:58.000Z" itemprop="datePublished">2021-10-18</time>
 </div>
     
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day27"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/10/18/GA-Day27/">GA_Day27</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>今天要跟大家介紹的是<strong>模因演算法</strong><br>(在做基因演算法研究時發現的，當初發現的時候也真的是一頭霧水，到底是甚麼鬼東西XDDD)</p>
+<p>模因演算法(Memetic Algorithm, MA)是遺傳演算法的延伸<br>中文又叫做文化基因演算法、瀰集演算法<br>會被稱之為文化基因演算法又叫做瀰集的原因是，這個演算法是在闡述人與人之間傳遞訊息的過程中，將某些資訊會產生變化，僅留下重點部分(精華)的過程，而在Dawkins的The Selfish Gene書中認為Meme(瀰)是人之間交換訊息的傳遞單位，而瀰無所不在。<br>MA是根據文化的演化概念所發展出來了多點搜尋法，利用全域搜尋結合區域搜尋來求解。</p>
+<p>主要是透過局部搜尋的技術來減少提早收斂的可能性<br>MA也常稱之為 Baldwinian evolutionary algorithms (EAs)、Lamarckian EAs、cultural algorithms或genetic local search. </p>
+<h3 id="Pseudocode-虛擬碼"><a href="#Pseudocode-虛擬碼" class="headerlink" title="Pseudocode 虛擬碼"></a>Pseudocode 虛擬碼</h3><pre><code>begin
+    t :=0;
+    P(t) :=initPop();
+    P(t) :=localSearch(P(t));
+    evaluateFitness(P(t));
+    while (stopping criteria not met) do
+        P&#39;(t) :=selectForVariation(P(t));
+        P&#39;(t) :=recombine(P&#39;(t));
+        P&#39;(t) :=mutate(P&#39;(t));
+        P&#39;(t) :=localSearch(P&#39;(t));
+        evaluateFitness(P&#39;(t));
+        P(t+1) :=selectNewPop(P(t), P&#39;(t));
+        t :=t+1;
+   end  
+end
+</code></pre>
+<hr>
+<p>相關參考資料：<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Memetic_algorithm">Wikipedia-Memetic Algorithm</a></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-10-18T14:29:56.000Z" itemprop="datePublished">2021-10-18</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day26"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/10/18/GA-Day26/">GA_Day26</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>今天是連假的第二天<br>又是一個美好的週五<br>接下來兩天會跟大家介紹跟基因演算法(遺傳演算法)相關的演算法</p>
+<hr>
+<p>今天跟各位介紹的是<strong>蟻群演算法</strong></p>
+<h2 id="蟻群演算法"><a href="#蟻群演算法" class="headerlink" title="蟻群演算法"></a>蟻群演算法</h2><p>蟻群演算法（<strong>A</strong>nt <strong>C</strong>olony <strong>O</strong>ptimization, <strong>ACO</strong>），又叫『<strong>螞蟻演算法</strong>』</p>
+<ul>
+<li>一種用來在圖中尋找優化路徑的機率型演算法。</li>
+<li>由Marco Dorigo於1992年在他的博士論文中提出，靈感來自於螞蟻在尋找食物過程中發現路徑的行為。</li>
+<li>屬於啟發式演算法的一種</li>
+</ul>
+<p>蟻群演算法是一種類比進化演算法，初步的研究表明該演算法具有許多優良的性質。針對PID控制器參數最佳化設計問題，將蟻群演算法設計的結果與遺傳演算法設計的結果進行了比較，數值仿真結果表明，蟻群演算法具有一種新的類比進化最佳化方法的有效性和應用價值。</p>
+<p>螞蟻在路徑上前進時會根據前邊走過的螞蟻所留下的分泌物選擇其要走的路徑。其選擇一條路徑的概率與該路徑上分泌物的強度成正比。因此，由大量螞蟻組成的群體的集體行為實際上構成一種學習資訊的正反饋現象：某一條路徑走過的螞蟻越多，後面的螞蟻選擇該路徑的可能性就越大。螞蟻的個體間通過這種資訊的交流尋求通向食物的最短路徑。</p>
+<p>蟻群演算法就是根據這一特點，通過模仿螞蟻的行為，從而實現尋優。當程式最開始找到目標的時候，路徑幾乎不可能是最優的，甚至可能是包含了無數錯誤的選擇而極度冗長的。但是，程式可以通過螞蟻尋找食物的時候的資訊素原理，不斷地去修正原來的路線，使整個路線越來越短，最終找到最佳路線。</p>
+<h3 id="虛擬碼-Pseudo-code"><a href="#虛擬碼-Pseudo-code" class="headerlink" title="虛擬碼(Pseudo code)"></a>虛擬碼(Pseudo code)</h3><pre><code>Algorithm ACO_MetaHeuristic
+   while(not_termination)
+      generateSolutions()
+      daemonActions()
+      pheromoneUpdate()
+   end while
+end Algorithm
+</code></pre>
+<h3 id="變化型態"><a href="#變化型態" class="headerlink" title="變化型態"></a>變化型態</h3><ol>
+<li><p>精英螞蟻系統</p>
+</li>
+<li><p>最大最小螞蟻系統（MMAS）</p>
+</li>
+<li><p>蟻群系統</p>
+</li>
+<li><p>基於排序的螞蟻系統（ASrank）</p>
+</li>
+<li><p>連續正交蟻群（COAC）</p>
+</li>
+</ol>
+<hr>
+<p>相關資料：<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95">維基百科-蟻群演算法</a><br><a target="_blank" rel="noopener" href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/631655/">蟻群演算法、遺傳演算法、模擬退火演算法介紹 | 程式前沿</a><br><a target="_blank" rel="noopener" href="http://ccckmit.wikidot.com/so:antcolony">蟻群優化演算法 (Ant Colony Optimization) - 陳鍾誠的網站</a></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-10-18T14:29:54.000Z" itemprop="datePublished">2021-10-18</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day25"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/10/18/GA-Day25/">GA_Day25</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>放假大家都有出去玩嗎?<br>今天到高雄看看可愛小動物看煙火…<br>娛樂的下場就是寫不完文章啦</p>
+<hr>
+<p>今天延續昨天的例子繼續</p>
+<p>有在一些小地方做了修正<br>(重複的地方還請大家多多見諒)</p>
+<h3 id="路徑成本"><a href="#路徑成本" class="headerlink" title="路徑成本"></a>路徑成本</h3><pre><code># fitness vector
+A&lt;-c(0,25,25,10,35)
+B&lt;-c(25,0,25,35,25)
+C&lt;-c(25,25,0,30,15)
+D&lt;-c(10,35,30,0,20)
+E&lt;-c(35,25,15,20,0)
+city&lt;-rbind(A,B,C,D,E)
+colnames(city)&lt;-c(&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;)
+city&lt;-as.matrix(city)
+</code></pre>
+<h3 id="適應函數"><a href="#適應函數" class="headerlink" title="適應函數"></a>適應函數</h3><pre><code>tourLength &lt;- function(tour, distMatrix) &#123;
+  tour &lt;- c(tour, tour[1])
+  route &lt;- embed(tour, 2)[,2:1]
+  sum(distMatrix[route])
+&#125;
+</code></pre>
+<h3 id="監控函數"><a href="#監控函數" class="headerlink" title="監控函數"></a>監控函數</h3><p>查看每一代演變的過程</p>
+<pre><code>#monitor
+monitor&lt;-function(obj)&#123;
+  len&lt;-tourLength(obj@population[1:5,])
+  pop&lt;-obj@population[1:5,]
+  print(cbind(pop, len))
+&#125;
+</code></pre>
+<h3 id="執行基因演算法"><a href="#執行基因演算法" class="headerlink" title="執行基因演算法"></a>執行基因演算法</h3><pre><code>GA.fit &lt;- ga(type = &quot;permutation&quot;, 
+             fitness = tspfitness, 
+             distMatrix = as.matrix(city), 
+             lower = 1, 
+             upper = 5,
+             popSize = 10, 
+             maxiter = 500, 
+             run = 100, 
+             pmutation = 0.2, 
+             monitor = NULL)
+</code></pre>
+<h3 id="繪製結果"><a href="#繪製結果" class="headerlink" title="繪製結果"></a>繪製結果</h3><p>這邊的程式碼會跟參考資料相同</p>
+<pre><code>getAdj &lt;- function(tour) &#123;
+  n &lt;- length(tour)
+  from &lt;- tour[1:(n - 1)]
+  to &lt;- tour[2:n]
+  m &lt;- n - 1
+  A &lt;- matrix(0, m, m)
+  A[cbind(from, to)] &lt;- 1
+  A &lt;- A + t(A)
+  return(A)
+&#125;
+</code></pre>
+<pre><code># 2-d coordinates
+mds &lt;- cmdscale(city)
+x &lt;- mds[, 1]
+y &lt;- -mds[, 2]
+n &lt;- length(x)
+</code></pre>
+<pre><code>B &lt;- 100
+fitnessMat &lt;- matrix(0, B, 2)
+A &lt;- matrix(0, n, n)
+for (b in seq(1, B)) &#123;
+  # run a GA algorithm
+  GA.rep &lt;- ga(type = &quot;permutation&quot;, 
+               fitness = tspfitness, 
+               distMatrix = as.matrix(city), 
+               lower = 1, 
+               upper = 5,
+               popSize = 10, 
+               maxiter = 50, 
+               run = 100, 
+               pmutation = 0.2, 
+               monitor = NULL)
+
+  tour &lt;- GA.rep@solution[1, ]
+  tour &lt;- c(tour, tour[1])
+  #fitnessMat[b, 1] &lt;- GA.rep@bestSol[GA.rep@iter]
+  #fitnessMat[b, 2] &lt;- GA.rep@mean[GA.rep@iter]
+  A &lt;- A + getAdj(tour)
+&#125;
+</code></pre>
+<pre><code>plot.tour &lt;- function(x, y, A) &#123;
+  n &lt;- nrow(A)
+  for (ii in seq(2, n)) &#123;
+    for (jj in seq(1, ii)) &#123;
+      w &lt;- A[ii, jj]
+      if (w &gt; 0) 
+        lines(x[c(ii, jj)], y[c(ii, jj)], lwd = w, col = &quot;lightgray&quot;)
+    &#125;
+  &#125;
+&#125;
+
+
+plot(x, y, type = &quot;n&quot;, asp = 1, xlab = &quot;&quot;, ylab = &quot;&quot;, main = &quot;Tour after GA converged&quot;)
+points(x, y, pch = 16, cex = 1.5, col = &quot;grey&quot;)
+abline(h = pretty(range(x), 10), v = pretty(range(y), 10), col = &quot;lightgrey&quot;)
+tour &lt;- GA.fit@solution[1, ]
+tour &lt;- c(tour, tour[1])
+n &lt;- length(tour)
+arrows(x[tour[-n]], y[tour[-n]], x[tour[-1]], y[tour[-1]], length = 0.15, angle = 45, 
+       col = &quot;steelblue&quot;, lwd = 2)
+text(x, y - 100, labels(city)[[1]], cex = 0.8)
+</code></pre>
+<p><img src="https://i.imgur.com/8v9ci4n.png" alt="plot"></p>
+<h3 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h3><hr>
+<p>今天的程式碼可能要晚點才能上傳了<br>電腦陷入了更新的循環中…<br>更新好會再補上link</p>
+<hr>
+<p>相關資料參考：<br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/GA/versions/3.2/topics/ga">R Documentation-GA</a><br><a target="_blank" rel="noopener" href="https://zsc.netlify.com/post/2015-11-09-ga/">GA包–遗传算法</a><br><a target="_blank" rel="noopener" href="https://rpubs.com/karthy1988/TSP_GA">RPubs - Optimized Delivery Route using Genetic Algorithm: Cost cutting for e-commerce</a><br><a target="_blank" rel="noopener" href="http://rpubs.com/somasdhavala/GAeg">RPubs - Genetic Algorithm on TSP</a></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-10-18T14:29:52.000Z" itemprop="datePublished">2021-10-18</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day24"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/10/18/GA-Day24/">GA_Day24</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>昨天的文章已經有在更新過了<br>實在是太趕了xddd<br>這個題目可能會一點一點跟大家介紹<br>期盼在雙十連假講完(受不了自己拖拖拉拉)<br>要給自己信心(?)</p>
+<hr>
+<p>可以先把昨天的內容補上<br>(其實只有引入套件和設定path cost而已)</p>
+<h3 id="路徑成本"><a href="#路徑成本" class="headerlink" title="路徑成本"></a>路徑成本</h3><pre><code># fitness vector
+A&lt;-c(-1,25,25,10,35)
+B&lt;-c(25,-1,25,35,25)
+C&lt;-c(25,25,-1,30,15)
+D&lt;-c(10,35,30,-1,20)
+E&lt;-c(35,25,15,20,-1)
+city&lt;-rbind(A,B,C,D,E)
+colnames(city)&lt;-c(&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;)
+</code></pre>
+<p>路徑圖形<br><img src="https://i.imgur.com/StMMRNc.png" alt="path-cost"></p>
+<h3 id="適應函數"><a href="#適應函數" class="headerlink" title="適應函數"></a>適應函數</h3><p>那昨天定義完各條路徑的成本後，<br>我們來思考要怎麼去計算旅行一條路的成本<br>需要求解最小值<br>但是路徑的花費是正數<br>所以我們就用<code>1/X</code>這樣的方式取倒數<br>加起來就是變成<strong>最小值</strong></p>
+<ol>
+<li>計算旅程的長度<br><code>tourLength</code>用來求解整個旅程的長度<pre><code>tourLength &lt;- function(tour, distMatrix) &#123;
+tour &lt;- c(tour, tour[1])
+route &lt;- embed(tour, 2)[, 2:1]
+sum(route)
+&#125;
+</code></pre>
+</li>
+<li>計算成本<br>將剛剛<code>tourLength</code>的總和用倒數呈現<pre><code>tspfitness  &lt;- function(tour, ...) 1/tourLength(tour, ...)
+</code></pre>
+</li>
+</ol>
+<h3 id="執行GA"><a href="#執行GA" class="headerlink" title="執行GA"></a>執行GA</h3><p><code>執行迭代數(run):</code>100</p>
+<pre><code>GA.fit &lt;- ga(type = &quot;permutation&quot;, 
+             fitness = tspfitness, 
+             distMatrix = data,
+             lower  = 1, 
+             upper = 5,
+             popSize = 100,
+             maxiter = 20,
+             run = 10, 
+             pmutation = 0.05, 
+             monitor = NULL)
+</code></pre>
+<h3 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h3><p><code>GA.fit@solution</code>結果</p>
+<pre><code>&gt; GA.fit@solution
+     x1 x2 x3 x4 x5
+[1,]  4  3  1  5  2
+[2,]  5  3  2  4  1
+[3,]  4  5  1  3  2
+[4,]  5  3  1  4  2
+[5,]  2  5  1  4  3
+[6,]  1  3  2  4  5
+</code></pre>
+<p>或是使用</p>
+<pre><code>summary(GA.fit)
+</code></pre>
+<p>今天的程式碼<a target="_blank" rel="noopener" href="https://github.com/wang-chi/gawithyou/blob/master/Day24-TSP.R">Github</a><br>剛剛在客運上刻完這篇 差點沒發成功(暈倒)</p>
+<hr>
+<p>相關資料參考：<br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/GA/versions/3.2/topics/ga">R Documentation-GA</a><br><a target="_blank" rel="noopener" href="https://zsc.netlify.com/post/2015-11-09-ga/">GA包–遗传算法</a><br><a target="_blank" rel="noopener" href="https://rpubs.com/karthy1988/TSP_GA">RPubs - Optimized Delivery Route using Genetic Algorithm: Cost cutting for e-commerce</a><br><a target="_blank" rel="noopener" href="http://rpubs.com/somasdhavala/GAeg">RPubs - Genetic Algorithm on TSP</a></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-10-18T14:29:51.000Z" itemprop="datePublished">2021-10-18</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day23"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/10/18/GA-Day23/">GA_Day23</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>這幾天會跟大家介紹如何使用基因演算法來解決旅行銷售員問題～<br>(終於要認真實作啦XDDDD)</p>
+<h2 id="什麼是旅行銷售員問題？"><a href="#什麼是旅行銷售員問題？" class="headerlink" title="什麼是旅行銷售員問題？"></a>什麼是旅行銷售員問題？</h2><p>旅行銷售員問題(Traveling Salesman Problems)<br><strong>情境</strong><br>一個旅行業務員要必需到各個城市去擴展業務<br>而每一個城市間都有不一樣的距離<br>而要找出一條路線可以滿足<br>每一個城市都只去過一次<br>且花費最少的成本</p>
+<p>n個城市，1,2,3,….,n</p>
+<p>那用正常的邏輯去思考<br>如果6座城市要去拜訪，<br>則可能的路徑就有6!，<br>答案就非常多種了～</p>
+<hr>
+<p>那這次所使用到的套件就是使用R語言的<code>mcga</code><br>如果對於<code>ga</code>不熟悉的朋友<br>記得回到之前的文章去了解歐～～<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221963/">【Day20】GA with you - R Package GA R套件GA</a></p>
+<hr>
+<ol>
+<li><p>引入所需要用到的套件</p>
+<pre><code>library(GA)
+</code></pre>
+</li>
+<li><p>設定路徑的權重(花費)<br>假設有5座城市，那每一座城市所需要的成本<br><img src="https://i.imgur.com/StMMRNc.png" alt="city"></p>
+</li>
+</ol>
+<pre><code>A&lt;-c(0,25,25,10,35)
+B&lt;-c(25,0,25,35,25)
+C&lt;-c(25,25,0,30,15)
+D&lt;-c(10,35,30,0,20)
+E&lt;-c(35,25,15,20,0)
+city&lt;-rbind(A,B,C,D,E)
+colnames(city)&lt;-c(&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;)
+data&lt;-as.matrix(city)
+</code></pre>
+<p>所以我們設定的矩陣會像是</p>
+<pre><code>&gt; data
+   A  B  C  D  E
+A  0 25 25 10 35
+B 25  0 25 35 25
+C 25 25  0 30 15
+D 10 35 30  0 20
+E 35 25 15 20  0
+</code></pre>
+<p>今天所使用到的程式碼<br><a target="_blank" rel="noopener" href="https://github.com/wang-chi/gawithyou/blob/master/Day23-TSP.R">Github</a></p>
+<hr>
+<p>相關資料：<br>iT邦幫忙也有其他大大文章有提到<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10211706">用基因遺傳演算法(Genetic Algorithm)解旅行推銷員問題(TSP)</a></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-10-18T14:29:50.000Z" itemprop="datePublished">2021-10-18</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day22"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/10/18/GA-Day22/">GA_Day22</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>今天終於順利挺過長達7個小時的meeting時光<br>真的是坐如針氈<br>還因此與末班車差身而過&gt;&lt;</p>
+<hr>
+<p>上週介紹了各種R語言中基因演算法(遺傳演算法)的套件<br>那今天就來比較說這些套件間的差異以及對此的建議</p>
+<p>在前幾天的介紹後<br>相信大家都有發現到某些套件非常複雜<br>有些卻很簡單而易懂的<br>那主要常被使用且比較好找到相關資料的就是<br><code>mcga</code>和<code>rbga</code>這兩個套件<br>在使用的參數複雜狀況來說<br>並不會過於複雜<br>而每一個核心的概念都有提到<br>也都可以靈活使用<br>所以也比較建議大家使用這兩個套件</p>
+<p>而<code>GA</code>和<code>genound</code>這兩個套件就非常複雜<br>我在研究並撰寫文章<br>也發現自己有很多地方不明白的<br>所以未來也會陸續補上</p>
+<hr>
+<p>那預估明天會跟大家講解Python的應用或是開始用實際範例來實作<br>而不是用簡單的數學方程式</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-10-18T14:29:48.000Z" itemprop="datePublished">2021-10-18</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day21"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/10/18/GA-Day21/">GA_Day21</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>今天要介紹是R語言裡面的<code>genoud</code>套件<br>又再度發生了打完沒存到檔的悲劇<br>在這種時候就有那麼一丁點憎恨mac往旁邊滑就可以回到上一頁的功能</p>
+<hr>
+<p>R Documentation: <a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/rgenoud/versions/5.8-3.0/topics/genoud">Link</a></p>
+<h3 id="Usage-用法"><a href="#Usage-用法" class="headerlink" title="Usage 用法"></a>Usage 用法</h3><pre><code>genoud(fn, nvars, max=FALSE, pop.size=1000, max.generations=100, 
+       wait.generations=10, hard.generation.limit=TRUE, starting.values=NULL, 
+       MemoryMatrix=TRUE, Domains=NULL, default.domains=10, 
+       solution.tolerance=0.001, gr=NULL, boundary.enforcement=0, lexical=FALSE,
+       gradient.check=TRUE, BFGS=TRUE, data.type.int=FALSE, hessian=FALSE, 
+       unif.seed=round(runif(1, 1, 2147483647L)), 
+       int.seed=round(runif(1, 1, 2147483647L)),print.level=2, share.type=0, 
+       instance.number=0, output.path=&quot;stdout&quot;, output.append=FALSE, 
+       project.path=NULL, P1=50, P2=50, P3=50, P4=50, P5=50, P6=50, P7=50, 
+       P8=50, P9=0, P9mix=NULL, BFGSburnin=0, BFGSfn=NULL, BFGShelp=NULL, 
+       control=list(), optim.method=ifelse(boundary.enforcement &lt; 2, &quot;BFGS&quot;, 
+       &quot;L-BFGS-B&quot;), transform=FALSE, debug=FALSE, cluster=FALSE, balance=FALSE, 
+       ...)
+</code></pre>
+<h3 id="Arguments-參數"><a href="#Arguments-參數" class="headerlink" title="Arguments 參數"></a>Arguments 參數</h3><p><code>fn</code>:函數<br><code>nvars</code>:有多少個參數將帶入計算適應值的函數中<br><code>max</code>:決定是要求最大值還是最小值<br><code>pop.size</code>:群體的大小<br><code>max.generations</code>:迭代的世代數</p>
+<h3 id="Example-範例"><a href="#Example-範例" class="headerlink" title="Example 範例"></a>Example 範例</h3><p>這邊提醒一下 <code>genoud</code>在R v3.6.1版本下是不支援的<br>(<code>genoud</code>在R v3.1.1以後就不支援了～～)</p>
+<pre><code>install.packages(&quot;genoud&quot;)
+library(&quot;genoud&quot;)
+</code></pre>
+<pre><code>#maximize the sin function
+sin1 &lt;- genoud(sin, nvars=1, max=TRUE)
+
+#minimize the sin function
+sin2 &lt;- genoud(sin, nvars=1, max=FALSE)
+</code></pre>
+<hr>
+<p>R Documentation: <a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/rgenoud/versions/5.8-3.0/topics/genoud">Link</a></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-10-18T14:29:47.000Z" itemprop="datePublished">2021-10-18</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li></ul>
+        </div>
     
     </div>
 </footer>
@@ -316,6 +994,10 @@ class="article article-type-post"
     
   
 
+  
+    <nav class="pagination">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+    </nav>
   
 </div>
 
@@ -358,15 +1040,23 @@ class="article article-type-post"
       <ul>
         
           <li>
-            <a href="/2021/10/18/GA-Day02/">GA_Day02</a>
+            <a href="/2021/10/18/GA-Day30/">GA_Day30</a>
           </li>
         
           <li>
-            <a href="/2021/10/18/GA-Day01/">GA_Day01</a>
+            <a href="/2021/10/18/GA-Day29/">GA_Day29</a>
           </li>
         
           <li>
-            <a href="/2021/10/11/hello-world/">Hello World</a>
+            <a href="/2021/10/18/GA-Day28/">GA_Day28</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/18/GA-Day27/">GA_Day27</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/18/GA-Day26/">GA_Day26</a>
           </li>
         
       </ul>

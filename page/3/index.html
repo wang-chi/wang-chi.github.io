@@ -130,6 +130,90 @@
   
     
       <article
+id="post-GA-Day11"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/09/26/GA-Day11/">【Day11】GA with you - GA Process Review 流程回顧</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>今天的內容呢大家可能會覺得搞什麼<br>出一篇什麼Review<br>出來充篇數的是嗎(怒)<br>但是這篇是為了明天做準備的<br>不知道前面的10篇文章大家有沒有認真看<br>希望大家還有繼續在追蹤這個系列</p>
+<p>有鑒於前面的內容太過於長篇大論<br>所以出一篇簡單的瀏覽與複習<br>讓沒有認真看我前面的文章也可以快速銜接上<br>何謂是基因演算法<br>基因演算法的流程<br>先來個總覽<br><img src="https://i.imgur.com/wOjRpbr.png" alt="基因演算法流程"><br>想必大家對這張圖並不陌生吧<br>今天會用程式的角度來講解這個流程</p>
+<h3 id="Step-1-設定參數"><a href="#Step-1-設定參數" class="headerlink" title="Step 1 - 設定參數"></a>Step 1 - <strong>設定參數</strong></h3><p>在圖片中沒有看到<br>但要設定什麼參數呢??</p>
+<blockquote>
+<ol>
+<li>族群的大小(Population Size):每一個世代有多少個染色體</li>
+<li>染色體的長度(Length of Chromosone):一個染色體中包含了多少個基因(Gene)</li>
+<li>交配機率(Crossover Rate/Probability):發生交配的機率，並不是每次都會發生，而是達到交配機率才會進行交配</li>
+<li>突變機率(Mutation Rate/Probability):發生突變的機率，也是要達到突變機率才會進行突變，通常突變率會設定在0.005~0.01之間，不會設定過高</li>
+<li>終止條件(Termination Criteria):可以設定適應值的程度或是世代數等等來進行收斂</li>
+</ol>
+</blockquote>
+<h3 id="Step-2-初始族群-Initialize-Population"><a href="#Step-2-初始族群-Initialize-Population" class="headerlink" title="Step 2 - 初始族群(Initialize Population)"></a>Step 2 - <strong>初始族群(Initialize Population)</strong></h3><p>前面第一步驟定義的族群的大小<br>前面是讓自己知道，開始撰寫的時候就把數值帶入即可<br>那麼這麼就會要透過這個大小來產生出一定數量的染色體(Chromosome)</p>
+<h3 id="Step-3-計算適應函數-Calculate-Function"><a href="#Step-3-計算適應函數-Calculate-Function" class="headerlink" title="Step 3 - 計算適應函數(Calculate Function)"></a>Step 3 - <strong>計算適應函數(Calculate Function)</strong></h3><p>所謂的<strong>適應函數</strong>就是用於計算染色體對於目前條件或是目標的適應程度<br>(以自然界來說，可以理解成該目前這個物種對於現在環境的適應程度)</p>
+<p>在程式撰寫過程中，適應函數就會像是一個額外的函數<br>當你將染色體當成參數帶入其中</p>
+<p>而適應函數所計算出來的值就稱之為「 <strong>適應值(Fitness Value)</strong> 」<br>而這個適應值也可以用來當作終止條件之一<br>例如當適應值大於某數，則滿足停止條件，就會結束整個流程。</p>
+<h3 id="Step-4-交配-Crossover"><a href="#Step-4-交配-Crossover" class="headerlink" title="Step 4 - 交配(Crossover)"></a>Step 4 - <strong>交配(Crossover)</strong></h3><p>在交配的階段會根據透過Step1發生交配<br>交配的種類就主要有單點交配、雙點交配和字罩交配這三種，其餘的交配方式可以回到</p>
+<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10218678">【Day07】GA with you - Crossover 交配 (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219030">【Day08】GA with you - Crossover 交配 (2)</a></p>
+<h3 id="Step-5-突變-Mutation"><a href="#Step-5-突變-Mutation" class="headerlink" title="Step 5 - 突變(Mutation)"></a>Step 5 - <strong>突變(Mutation)</strong></h3><p>而到了突變階段也會透過Step1所設定的突變率去計算<br>會讓每一個染色體都計算是否要突變<br>當該染色體的突變率低於所設定的突變率時則會產昇<strong>突變</strong></p>
+<blockquote>
+<p>突變主要是開發新的搜尋區域，發現更多可能性，避免發生區域最佳解。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219032">【Day09】GA with you - Mutation 突變 (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219211">【Day10】GA with you - Mutation 突變 (2)</a></p>
+<h3 id="Step6-計算終止條件"><a href="#Step6-計算終止條件" class="headerlink" title="Step6 - 計算終止條件"></a>Step6 - 計算終止條件</h3><p>經過交配、突變後會再次計算新的子代的適應程度，<br>並判斷是否有符合終止條件，<br>當符合終止條件，就會結束基因演算法的計算流程；<br>而若不符合終止條件，則會回到Step3反覆執行，<br>直到符合終止條件。</p>
+<hr>
+<p>明天就要正式開始了<br>接來的一週(大約)都會來介紹R語言如何實作<br>之後在介紹Python如何實作<br>在這邊有任何相關的想法都可以留言告訴我<br>(雖然都沒有人留言 傷心)<br>思考有需要出一篇安裝R的教學嗎???<br>但是大家應該可能或許都已經在其他的大神那邊拜讀過了(掙扎ing)<br>反正，明天的內容是什麼等明天的我來思考(欠揍)<br>老話一句，希望明天可以見到大家<br>也希望這個系列給予在這條古老的路上的人有所幫助</p>
+<hr>
+<p>相關資料來源：</p>
+<ul>
+<li>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。</li>
+<li>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。</li>
+<li>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</li>
+</ul>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-09-26T14:29:32.000Z" itemprop="datePublished">2019-09-26</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
 id="post-GA-Day10"
 class="article article-type-post"
 >
@@ -141,7 +225,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day10/">GA_Day10</a>
+        <a href="/2019/09/25/GA-Day10/">【Day10】GA with you - Mutation 突變 (2)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -185,7 +269,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:30.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-25T14:29:30.000Z" itemprop="datePublished">2019-09-25</time>
 </div>
     
         <div class="article-category">
@@ -217,7 +301,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day09/">GA_Day09</a>
+        <a href="/2019/09/24/GA-Day09/">【Day09】GA with you - Mutation 突變 (1)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -259,7 +343,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:28.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-24T14:29:28.000Z" itemprop="datePublished">2019-09-24</time>
 </div>
     
         <div class="article-category">
@@ -291,7 +375,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day08/">GA_Day08</a>
+        <a href="/2019/09/23/GA-Day08/">【Day08】GA with you - Crossover 交配 (2)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -327,7 +411,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:27.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-23T14:29:27.000Z" itemprop="datePublished">2019-09-23</time>
 </div>
     
         <div class="article-category">
@@ -359,7 +443,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day07/">GA_Day07</a>
+        <a href="/2019/09/22/GA-Day07/">【Day07】GA with you - Crossover 交配 (1)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -388,7 +472,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:24.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-22T14:29:24.000Z" itemprop="datePublished">2019-09-22</time>
 </div>
     
         <div class="article-category">
@@ -420,7 +504,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day06/">GA_Day06</a>
+        <a href="/2019/09/21/GA-Day06/">【Day06】GA with you - Reproduction &amp; Selection 複製與選擇 (3)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -456,7 +540,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:22.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-21T14:29:22.000Z" itemprop="datePublished">2019-09-21</time>
 </div>
     
         <div class="article-category">
@@ -488,7 +572,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day05/">GA_Day05</a>
+        <a href="/2019/09/20/GA-Day05/">【Day05】GA with you - Reproduction &amp; Selection 複製與選擇 (2)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -521,7 +605,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:20.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-20T14:29:20.000Z" itemprop="datePublished">2019-09-20</time>
 </div>
     
         <div class="article-category">
@@ -553,7 +637,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day04/">GA_Day04</a>
+        <a href="/2019/09/19/GA-Day04/">【Day04】GA with you - Reproduction &amp; Selection 複製與選擇 (1)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -580,7 +664,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:19.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-19T14:29:19.000Z" itemprop="datePublished">2019-09-19</time>
 </div>
     
         <div class="article-category">
@@ -612,7 +696,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day03/">GA_Day03</a>
+        <a href="/2019/09/18/GA-Day03/">【Day03】GA with you - Process 基因演算法的流程</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -640,7 +724,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:17.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-18T14:29:17.000Z" itemprop="datePublished">2019-09-18</time>
 </div>
     
         <div class="article-category">
@@ -672,7 +756,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day02/">GA_Day02</a>
+        <a href="/2019/09/17/GA-Day02/">【Day02】GA with you - GA Element 基因演算法元素</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -702,76 +786,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:22:53.000Z" itemprop="datePublished">2021-10-18</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-GA-Day01"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2021/10/18/GA-Day01/">GA_Day01</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>何謂「基因演算法」?<br>「基因演算法」能帶來甚麼?<br>「遺傳演算法」和「基因演算法」相同嗎?<br>哪些軟體可以實作基因演算法呢?<br>聽起來好遙不可及阿～</p>
-<p>接下來這系列 GA wtih you 會一一跟大家做介紹，希望整個系列可以讓大家更了解基因演算法，也能夠應用在生活之中(?)<br>這個題目聽起來有點浮誇（有點累），沒有那麼活潑，但還是希望大家可以與基因演算法共度未來的30天<br>終於趕在開賽最後一天開始了&gt;&lt;</p>
-<hr>
-<p>未來30天的學習內容（GA with you 30days Index）<br>總共會分成4個部分</p>
-<h3 id="第一部分-介紹基因演算法"><a href="#第一部分-介紹基因演算法" class="headerlink" title="第一部分 介紹基因演算法"></a>第一部分 介紹基因演算法</h3><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10216417">【Day02】GA with you - GA Element 基因演算法元素</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10216676">【Day03】GA with you - Process 基因演算法的流程</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10216689">【Day04】GA with you - Reproduction &amp; Selection 複製與選擇 (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10217277">【Day05】GA with you - Reproduction &amp; Selection 複製與選擇 (2)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10218408">【Day06】GA with you - Reproduction &amp; Selection 複製與選擇 (3)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10218678">【Day07】GA with you - Crossover 交配 (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10218678">【Day08】GA with you - Crossover 交配 (2)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219032">【Day09】GA with you - Mutation 突變 (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219211">【Day10】GA with you - Mutation 突變 (2)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219271">【Day11】GA with you - GA Process Review 流程回顧</a></p>
-<h3 id="第二部分-實作基因演算法－R語言"><a href="#第二部分-實作基因演算法－R語言" class="headerlink" title="第二部分 實作基因演算法－R語言"></a>第二部分 實作基因演算法－R語言</h3><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221308">【Day12】GA with you - Develop on R 環境安裝</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221954">【Day13】GA with you - R Related Package Introduction R套件介紹</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221961">【Day14】GA with you - R Package mcga R套件mcga (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221957">【Day15】GA with you - R Package mcga R套件mcga (2)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221996">【Day16】GA with you - R Package mcga R套件mcga (3)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221959">【Day17】GA with you - R Package genalg R套件 genalg (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221960">【Day18】GA with you - R Package genalg R套件genalg (2)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10223141">【Day19】GA with you - R Package genalg R套件 genalg (3)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221963">【Day20】GA with you - R Package GA R套件GA</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221965">【Day21】GA with you - R Package genoud R套件 genoud</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221968">【Day22】GA with you - R Package Review R語言套件</a></p>
-<h3 id="第三部分-旅行銷售員問題實作"><a href="#第三部分-旅行銷售員問題實作" class="headerlink" title="第三部分 旅行銷售員問題實作"></a>第三部分 旅行銷售員問題實作</h3><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10226203">【Day23】GA with you - R 基因演算法應用於旅行銷售員問題 (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10226531">【Day24】GA with you - R 基因演算法應用於旅行銷售員問題 (2)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10226624">【Day25】GA with you - R 基因演算法應用於旅行銷售員問題 (3)</a></p>
-<h3 id="第四部分-相關演算法和延伸的應用"><a href="#第四部分-相關演算法和延伸的應用" class="headerlink" title="第四部分 相關演算法和延伸的應用"></a>第四部分 相關演算法和延伸的應用</h3><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10226980">【Day26】GA with you - Ant Colony Optimization 蟻群演算法</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10227251">【Day27】GA with you - Memetic algorithm 模因演算法</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10227303">【Day28】GA with you - Simulation Annealing 模擬退火法</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10227847">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a></p>
-<hr>
-<p><strong>甚麼是「基因演算法」?</strong></p>
-<p>「基因演算法」(GA, Genetic Algorithm)，又叫作「遺傳演算法」，為所有演化式演算法(EA, Evolutionary Algorithms)著名的理論，也是應用最為廣泛的演化式演算法。（後續的文章都會以ＧＡ來表示基因演算法）<br>從達爾文【物競天擇】理論中所衍伸出來，大家常聽到的【適者生存，不適者淘汰】是相同的原理的，在大自然的群體中，逐漸淘汰掉適應能力較差、不適應於目前環境條件下的物種，在反覆的疊代下收斂至一個平衡的機制。基因演算法屬於最佳化演算法之一，以模擬自然生態的演算法。1960年代John Von Neumann提出一個「自我複製」(Self-reproducing)的理論，奠定了基因演算法的基礎。而完整的基因演算法的概念則是到1975年John Holland與其學生共同提出來的。</p>
-<p>基因演算法是一種最佳化空間搜尋法，主要用在解決一個最佳化問題的演算法，相當適合用來解決最佳化的問題，目前GA已被廣泛應用在求解最佳化的問題、資料搜尋、人工智慧及機器學習等領域上。</p>
-<p><strong>甚麼情況可以應用?</strong></p>
-<p>演算法中常間的旅行推銷員問題 (Travel Salesman Problem) 和 工作排程問題<br>後續的文章中也實際透過code來實作。</p>
-<p>希望第一天簡單的開始不要讓大家太有負擔，<br>如果有任何跟基因演算法的問題都可以在文章下面提出來，<br>說不定你的疑惑也是其他人的疑惑，<br>我會盡可能的為大家解答，<br>如果有想要的應用也可以在底下留言告訴我，<br>後續的文章會盡量採納整理給大家～～</p>
-<p>希望我們都可以堅持到最後一天 加油加油～～</p>
-<hr>
-<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2021-10-18T14:02:29.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-17T14:22:53.000Z" itemprop="datePublished">2019-09-17</time>
 </div>
     
         <div class="article-category">
@@ -824,7 +839,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genalg/" rel="tag">genalg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genoud/" rel="tag">genoud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcga/" rel="tag">mcga</a></li></ul>
     </div>
   </div>
 
@@ -837,23 +852,23 @@ class="article article-type-post"
       <ul>
         
           <li>
-            <a href="/2021/10/18/GA-Day30/">GA_Day30</a>
+            <a href="/2021/10/11/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2021/10/18/GA-Day29/">GA_Day29</a>
+            <a href="/2019/10/29/GA-Day29/">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a>
           </li>
         
           <li>
-            <a href="/2021/10/18/GA-Day28/">GA_Day28</a>
+            <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
           </li>
         
           <li>
-            <a href="/2021/10/18/GA-Day27/">GA_Day27</a>
+            <a href="/2019/10/13/GA-Day28/">【Day28】GA with you - Simulation Annealing 模擬退火法</a>
           </li>
         
           <li>
-            <a href="/2021/10/18/GA-Day26/">GA_Day26</a>
+            <a href="/2019/10/12/GA-Day27/">【Day27】GA with you - Memetic algorithm 模因演算法</a>
           </li>
         
       </ul>
@@ -865,7 +880,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-archive">
     <div class="widget-title"><span>Archive</span></div>
     <div class="widget-inner">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li></ul>
     </div>
   </div>
 

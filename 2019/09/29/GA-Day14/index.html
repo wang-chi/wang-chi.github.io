@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>【Day14】GA with you - R Package mcga R套件mcga (1) | Wang-Chi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+
+    
+
+    
+
+    
+
+    
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1633679241878.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1633679241878.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            
+        }
+        window.aomori_logo_typed_animated = true
+        window.aomori_search_algolia = false
+
+    </script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/images/icon.png" alt="Wang-Chi, Ho">
+            </div>
+            
+            <div class="header-type-inner">
+                
+                    <div id="typed-strings" style="display:none">
+                        <p>Wang-Chi</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+                <a href="/">Home</a>
+                
+                <a href="/photography">Photography</a>
+                
+                <a href="/archives">Archives</a>
+                
+                <a href="/friends">Friends</a>
+                
+            </div>
+            <div class="header-menu-social">
+                
+    <a class="social" target="_blank" href="https://github.com/wang-chi">
+        <box-icon type='logo' name='github'></box-icon>
+    </a>
+
+    <a class="social" target="_blank" href="https://www.linkedin.com/in/wang-chi-ho/">
+        <box-icon type='logo' name='linkedin-square'></box-icon>
+    </a>
+
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                    <a href="/">Home</a>
+                    
+                    <a href="/photography">Photography</a>
+                    
+                    <a href="/archives">Archives</a>
+                    
+                    <a href="/friends">Friends</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-ckuy3tkda0013zbe71pli84il" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      【Day14】GA with you - R Package mcga R套件mcga (1)
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2019-09-29T14:29:35.000Z" itemprop="datePublished">2019-09-29</time>
+</div>
+
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+            </div>
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
+            </div>
+            
+
+            
+            <div class="article-busuanzi">
+                有 <span id="busuanzi_value_page_pv">N</span> 人看过
+            </div>
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <p>明天又要開始上課了(淚奔)<br>時間過太快了啦<br>東西都還沒有做完(拖延症發作中)<br>明明整個假日都電腦前工作(吐血)</p>
+<hr>
+<h1 id="mcga套件"><a href="#mcga套件" class="headerlink" title="mcga套件"></a>mcga套件</h1><p>R Documetation : <a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/mcga">https://www.rdocumentation.org/packages/mcga</a></p>
+<h2 id="Description-描述"><a href="#Description-描述" class="headerlink" title="Description 描述"></a>Description 描述</h2><p>是用於解決實數(real-valued)最佳化問題<br>突變(mutation)則是透過 <strong>-1/+1</strong> 進行改變</p>
+<h2 id="Usage-用法"><a href="#Usage-用法" class="headerlink" title="Usage 用法"></a>Usage 用法</h2><pre><code>mcga(popsize, chsize, crossprob = 1.0, mutateprob = 0.01, 
+     elitism = 1, minval, maxval, maxiter = 10, evalFunc)
+</code></pre>
+<h2 id="Arguments-參數"><a href="#Arguments-參數" class="headerlink" title="Arguments 參數"></a>Arguments 參數</h2><p>這邊的參數就會跟前面所介紹的一一對應上</p>
+<p><code>popsize</code> : 群體數量<br><code>chsize</code> : 有多少參數<br><code>crossprob</code> : 交配機率，預設值為 <strong>1.0</strong><br><code>mutateprob</code> : 突變機率，預設值為 <strong>0.01</strong><br><code>elitism</code> : 菁英策略，預設值為 <strong>1</strong><br><code>minval</code> : 最小數值<br><code>maxval</code> : 最大數值<br><code>maxiter</code> : 最多有多少代數，預設值為 <strong>10</strong><br><code>evalFunc</code> : 適應函數，預設情形都為求最小值</p>
+<h2 id="Example-範例"><a href="#Example-範例" class="headerlink" title="Example 範例"></a>Example 範例</h2><p>這邊會先用官網的範例示範一次<br>今天所使用的程式碼都來自R Documetation</p>
+<h3 id="下載套件"><a href="#下載套件" class="headerlink" title="下載套件"></a>下載套件</h3><p>第一次使用的時候要先安裝套件</p>
+<pre><code>install.packages(&quot;mcga&quot;)
+</code></pre>
+<h3 id="引用套件"><a href="#引用套件" class="headerlink" title="引用套件"></a>引用套件</h3><p>在引用<strong>mcga</strong></p>
+<pre><code>require(&quot;mcga&quot;)
+</code></pre>
+<p>如果出現以下訊息的話就要再多一個步驟(沒有就省略)</p>
+<pre><code>Loading required package: mcga
+Loading required package: GA
+Loading required package: foreach
+Loading required package: iterators
+  ____    _    
+ / ___|  / \     Genetic 
+| |  _  / _ \    Algorithms
+| |_| |/ ___ \   
+ \____/_/   \_\  version 3.2
+Type &#39;citation(&quot;GA&quot;)&#39; for citing this R package in publications.
+
+Attaching package: &#39;GA&#39;
+
+The following object is masked from &#39;package:utils&#39;:
+
+    de
+
+Please use &#39;citation(&quot;mcga&quot;)&#39; for citing the R package mcga
+</code></pre>
+<p>上面寫說請用<strong>citation(“mcga”)</strong><br>就按照指示輸入</p>
+<pre><code>citation(&quot;mcga&quot;)
+</code></pre>
+<h3 id="設定適應函數"><a href="#設定適應函數" class="headerlink" title="設定適應函數"></a>設定適應函數</h3><p>尋求x[1]、x[2]、x[3]、x[4]、x[5]五個數值最佳的答案來求出其最小值</p>
+<pre><code>f&lt;-function(x)&#123;
+  return ((x[1]-7)^2 + (x[2]-77)^2 +(x[3]-777)^2 +(x[4]-7777)^2 +(x[5]-77777)^2)
+&#125;
+</code></pre>
+<h3 id="執行基因演算法"><a href="#執行基因演算法" class="headerlink" title="執行基因演算法"></a>執行基因演算法</h3><p>這邊的設定都先跟官網一樣</p>
+<pre><code>m &lt;- mcga( popsize=200, 
+           chsize=5, 
+           minval=0.0, 
+           maxval=999999999.9, 
+           maxiter=2500, 
+           crossprob=1.0, 
+           mutateprob=0.01, 
+           evalFunc=f)
+</code></pre>
+<h3 id="印出結果"><a href="#印出結果" class="headerlink" title="印出結果"></a>印出結果</h3><pre><code>cat(&quot;Best chromosome:\n&quot;)
+print(m$population[1,])
+cat(&quot;Cost: &quot;,m$costs[1],&quot;\n&quot;)
+</code></pre>
+<p>你以為這樣就完了嗎?!!!!<br>不～<br>我們來回顧一下剛剛執行的結果吧～<br>由於基因演算法 每個人的答案不一定會是一樣的<br>那就以我剛剛的輸出結果來講解</p>
+<pre><code>&gt; cat(&quot;Best chromosome:\n&quot;)
+Best chromosome:
+&gt; print(m$population[1,])
+[1] 3.958119e-01 1.549891e+01 7.770356e+02 7.777070e+03 7.777600e+04
+&gt; cat(&quot;Cost: &quot;,m$costs[1],&quot;\n&quot;)
+Cost:  3827.006 
+</code></pre>
+<p>這邊可以看到<code>m$population[1,]</code><br>所得到的結果是 <code>3.958119e-01 1.549891e+01 7.770356e+02 7.777070e+03 7.777600e+04</code><br>是這樣一連串的東西<br>那這些是什麼呢???<br>請往上回憶一下下剛剛<code>chsize</code>的設定<br>剛剛介紹說<code>chsize</code>表示有多少參數對吧<br>所以<code>chsize</code>這個就是代表這五個參數計算出來的結果<br>這時候你心中一定有個問號就是那個是數字嗎???<br>(沒有沒關係，就表示你很聰明知道那是啥)<br>我們分別把他抓出來看</p>
+<pre><code>&gt; print(m$population[1,])
+[1] 3.958119e-01 1.549891e+01 7.770356e+02 7.777070e+03 7.777600e+04
+&gt; print(m$population[1,][1])
+[1] 0.3958119
+&gt; print(m$population[1,][2])
+[1] 15.49891
+&gt; print(m$population[1,][3])
+[1] 777.0356
+&gt; print(m$population[1,][4])
+[1] 7777.07
+&gt; print(m$population[1,][5])
+[1] 77776
+</code></pre>
+<p>這樣就可以知道其實數值算出來個別為<br>[1]: <code>0.3958119</code><br>[2]: <code>15.49891</code><br>[3]: <code>777.0356</code><br>[4]: <code>7777.07</code><br>[5]: <code>77776</code><br>把這個答案帶入原本的適應程度的函數 <code>f</code> 計算</p>
+<pre><code>f = (0.3958119-7)^2 + (15.49891-77)^2 +(777.0356-777)^2 +(7777.07-7777)^2 +(77776-77777)^2
+</code></pre>
+<p>就會得到 <code>3827.006</code> (有沒有突然眼熟這個數字)<br>這個數字就是剛剛的 <code>Cost</code><br>沒有沒關係 在列印一次總該有印象了吧～</p>
+<pre><code>&gt; cat(&quot;Cost: &quot;,m$costs[1],&quot;\n&quot;)
+Cost:  3827.006 
+</code></pre>
+<p>有沒有覺得很神奇(&lt;- 自己說)<br>這就是該染色體(chromosome)的適應程度<br>可以發現這樣的結果是最適合的</p>
+<hr>
+<p>不知道這樣的講法大家能不能更加認識<br>我想就這樣一步一步帶大家瞭解基因演算法的奧妙(誤)</p>
+<p>今天的程式碼也會放到<a target="_blank" rel="noopener" href="https://github.com/wang-chi/gawithyou/blob/master/Day14_Command.R">Github</a>上</p>
+<hr>
+<p>相關資料來源:<br>R Documetation : <a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/mcga">https://www.rdocumentation.org/packages/mcga</a></p>
+
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+<div class="article-copyright hairline">
+  <p>
+    本網站 <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">屬於技術之術分享網站</a> 未經許可，請勿任意轉載。
+  </p>
+</div>
+
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2019/09/30/GA-Day15/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          【Day15】GA with you - R Package mcga R套件mcga (2)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/28/GA-Day13/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">【Day13】GA with you - R Related Package Introduction R套件介紹</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=【Day14】GA with you - R Package mcga R套件mcga (1) - Wang-Chi&url=http://wang-chi.github.io/2019/09/29/GA-Day14/">
+            <box-icon type='logo' name='twitter'></box-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=【Day14】GA with you - R Package mcga R套件mcga (1) - Wang-Chi&u=http://wang-chi.github.io/2019/09/29/GA-Day14/">
+            <box-icon name='facebook-square' type='logo' ></box-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=【Day14】GA with you - R Package mcga R套件mcga (1) - Wang-Chi&url=http://wang-chi.github.io/2019/09/29/GA-Day14/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar ">
+                
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genalg/" rel="tag">genalg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genoud/" rel="tag">genoud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcga/" rel="tag">mcga</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/11/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/29/GA-Day29/">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/13/GA-Day28/">【Day28】GA with you - Simulation Annealing 模擬退火法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/12/GA-Day27/">【Day27】GA with you - Memetic algorithm 模因演算法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Wang-Chi &copy; 2021<br>
+            Powered By Hexo · Theme By <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Aomori</a>
+        </div>
+    </div>
+
+</footer>
+
+
+
+
+
+
+<script src="/dist/build.js?1633679241878.js"></script>
+
+
+<script src="/dist/custom.js?1633679241878.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

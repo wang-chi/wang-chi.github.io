@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>【Day30】GA with you - Final Day | Wang-Chi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+
+    
+
+    
+
+    
+
+    
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1633679241878.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1633679241878.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            
+        }
+        window.aomori_logo_typed_animated = true
+        window.aomori_search_algolia = false
+
+    </script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/images/icon.png" alt="Wang-Chi, Ho">
+            </div>
+            
+            <div class="header-type-inner">
+                
+                    <div id="typed-strings" style="display:none">
+                        <p>Wang-Chi</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+                <a href="/">Home</a>
+                
+                <a href="/photography">Photography</a>
+                
+                <a href="/archives">Archives</a>
+                
+                <a href="/friends">Friends</a>
+                
+            </div>
+            <div class="header-menu-social">
+                
+    <a class="social" target="_blank" href="https://github.com/wang-chi">
+        <box-icon type='logo' name='github'></box-icon>
+    </a>
+
+    <a class="social" target="_blank" href="https://www.linkedin.com/in/wang-chi-ho/">
+        <box-icon type='logo' name='linkedin-square'></box-icon>
+    </a>
+
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                    <a href="/">Home</a>
+                    
+                    <a href="/photography">Photography</a>
+                    
+                    <a href="/archives">Archives</a>
+                    
+                    <a href="/friends">Friends</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-ckuy3tkdf002czbe71k8o4geg" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      【Day30】GA with you - Final Day
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2019-10-15T14:30:01.000Z" itemprop="datePublished">2019-10-15</time>
+</div>
+
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+            </div>
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+            </div>
+            
+
+            
+            <div class="article-busuanzi">
+                有 <span id="busuanzi_value_page_pv">N</span> 人看过
+            </div>
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <p>感謝大家不離不棄的堅持到最後一天，希望每天的一點點閱讀可以對基因演算法(遺傳演算法)有更多的了解。<br>雖然在寫文章的時候，有很多資料都是邊查邊寫的，參考了很多大神們的傑作，<br>不知道有沒有哪邊不夠完整，或是描述不清楚的。<br>回顧一下基因演算法的<strong>流程</strong><br><img src="https://i.imgur.com/wOjRpbr.png" alt="基因演算法流程"></p>
+<p>基因演算法的<strong>組成</strong>–群體、染色體、基因<br><img src="https://i.imgur.com/wo0yypC.png" alt="基因演算法元素組成介紹"></p>
+<p>這邊總結一下基因演算法的<strong>特點</strong>：</p>
+<ol>
+<li>在適應值設定不當下將可能得到區域最佳解，而非全域最佳解。</li>
+<li>透過多點搜尋所以得到的解會盡可能避免發生區域最佳解。</li>
+<li>染色體( chromosome )最終得到的結果不一定代表真實的結果，需要經過解碼才是得到。</li>
+<li>需要手動去設定適應值( Fitness Value )等數值。</li>
+<li>採取隨機搜尋方式，適合各式各樣求取最佳解的問題。</li>
+<li>可以和神經網絡結合。</li>
+</ol>
+<p>說了這麼多基因演算法的優點，也來說說他的<strong>缺點</strong>：</p>
+<ol>
+<li>運算成本高：在每個世代交替下都要進行運算，若世代數大或是群體大，所需的運算成本也會相對提高</li>
+<li>現行的商業套裝軟體支援較少</li>
+<li>不保證最佳化，GA可能會得到區域的最佳解而非整體的最佳解</li>
+<li>在編碼的應用上仍有許多可以改善的地方</li>
+</ol>
+<hr>
+<p>說實在這篇早在我快要放棄時就開始撰寫了<br>內心一直思考著哪天我才能真正按下發佈<br>忐忑著擔心著自己沒有機會按下去<br>研究生的生活實在有些忙碌<br>不是學校的課業 不是研究室的專案計畫<br>他的優先順序就這樣時時往後延後<br>常擔心在每天23點沒有機會按下送出<br>就此斷更<br>因此不太敢宣傳給親朋好友<br>深怕自己的耐力沒能堅持到最後<br>但是希望真得到了那麼一天可以按下去<br>開心到了發佈這篇文章的最後一天<br>後續我會盡可能把前面的文章在調整過<br>讓這個基因演算法給更多不了解他的人知道</p>
+<hr>
+<p>全系列參考資料來源:<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。<br>郭定。(2009)。 基因演算法中不同選擇策略的替代性與互補性。Journal of Science and Engineering Technology，5(2)， 25-34。<br>突變(遺傳演算法)。2013。突變(遺傳演算法)。維基百科，自由的百科全書。<br>莊凱智(2011)。應用改良式粒子群演算法於旅行銷售員問題。工程科技與教育學刊, 2011, 8.3: 533-546.<br>Soni, N., &amp; Kumar, T. (2014). Study of various mutation operators in genetic algorithms. International Journal of Computer Science and Information Technologies, 5(3), 4519-4521.<br><a target="_blank" rel="noopener" href="https://kknews.cc/zh-tw/tech/p5yjpe.html">R語言中的遺傳演算法</a><br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/">R Documentation</a><br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/GA/versions/3.2/topics/ga">R Documetation-ga</a><br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/genalg">R Documetation-genalg</a><br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/rgenoud/versions/5.8-3.0/topics/genoud">R Documetation-genoud</a><br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/mcga">R Documetation-mcga</a><br><a target="_blank" rel="noopener" href="https://zsc.netlify.com/post/2015-11-09-ga/">GA包–遗传算法</a><br><a target="_blank" rel="noopener" href="https://rpubs.com/karthy1988/TSP_GA">RPubs - Optimized Delivery Route using Genetic Algorithm: Cost cutting for e-commerce</a><br><a target="_blank" rel="noopener" href="http://rpubs.com/somasdhavala/GAeg">RPubs - Genetic Algorithm on TSP</a><br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Memetic_algorithm">Wikipedia-Memetic Algorithm</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10211706">用基因遺傳演算法(Genetic Algorithm)解旅行推銷員問題(TSP)</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95">維基百科-蟻群演算法</a><br><a target="_blank" rel="noopener" href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/631655/">蟻群演算法、遺傳演算法、模擬退火演算法介紹 | 程式前沿</a><br><a target="_blank" rel="noopener" href="http://ccckmit.wikidot.com/so:antcolony">蟻群優化演算法 (Ant Colony Optimization) - 陳鍾誠的網站</a><br><a target="_blank" rel="noopener" href="https://wiki.mbalib.com/zh-tw/%E7%B2%92%E5%AD%90%E7%BE%A4%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95">粒子群優化演算法－MBA智庫</a><br><a target="_blank" rel="noopener" href="https://www.itread01.com/content/1546354445.html">基本粒子群優化演算法（PSO）的matlab實現 - IT閱讀</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB">維基百科－模擬退火</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10186172">[Day 21] Simulated annealing – 演算法</a></p>
+
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+<div class="article-copyright hairline">
+  <p>
+    本網站 <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">屬於技術之術分享網站</a> 未經許可，請勿任意轉載。
+  </p>
+</div>
+
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2019/10/29/GA-Day29/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/13/GA-Day28/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">【Day28】GA with you - Simulation Annealing 模擬退火法</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=【Day30】GA with you - Final Day - Wang-Chi&url=http://wang-chi.github.io/2019/10/15/GA-Day30/">
+            <box-icon type='logo' name='twitter'></box-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=【Day30】GA with you - Final Day - Wang-Chi&u=http://wang-chi.github.io/2019/10/15/GA-Day30/">
+            <box-icon name='facebook-square' type='logo' ></box-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=【Day30】GA with you - Final Day - Wang-Chi&url=http://wang-chi.github.io/2019/10/15/GA-Day30/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar ">
+                
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genalg/" rel="tag">genalg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genoud/" rel="tag">genoud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcga/" rel="tag">mcga</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/11/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/29/GA-Day29/">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/13/GA-Day28/">【Day28】GA with you - Simulation Annealing 模擬退火法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/12/GA-Day27/">【Day27】GA with you - Memetic algorithm 模因演算法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Wang-Chi &copy; 2021<br>
+            Powered By Hexo · Theme By <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Aomori</a>
+        </div>
+    </div>
+
+</footer>
+
+
+
+
+
+
+<script src="/dist/build.js?1633679241878.js"></script>
+
+
+<script src="/dist/custom.js?1633679241878.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

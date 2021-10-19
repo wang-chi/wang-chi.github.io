@@ -130,6 +130,87 @@
   
     
       <article
+id="post-GA-Day21"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/10/06/GA-Day21/">【Day21】GA with you - R Package genoud R套件 genoud</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>今天要介紹是R語言裡面的<code>genoud</code>套件<br>又再度發生了打完沒存到檔的悲劇<br>在這種時候就有那麼一丁點憎恨mac往旁邊滑就可以回到上一頁的功能</p>
+<hr>
+<p>R Documentation: <a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/rgenoud/versions/5.8-3.0/topics/genoud">Link</a></p>
+<h3 id="Usage-用法"><a href="#Usage-用法" class="headerlink" title="Usage 用法"></a>Usage 用法</h3><pre><code>genoud(fn, nvars, max=FALSE, pop.size=1000, max.generations=100, 
+       wait.generations=10, hard.generation.limit=TRUE, starting.values=NULL, 
+       MemoryMatrix=TRUE, Domains=NULL, default.domains=10, 
+       solution.tolerance=0.001, gr=NULL, boundary.enforcement=0, lexical=FALSE,
+       gradient.check=TRUE, BFGS=TRUE, data.type.int=FALSE, hessian=FALSE, 
+       unif.seed=round(runif(1, 1, 2147483647L)), 
+       int.seed=round(runif(1, 1, 2147483647L)),print.level=2, share.type=0, 
+       instance.number=0, output.path=&quot;stdout&quot;, output.append=FALSE, 
+       project.path=NULL, P1=50, P2=50, P3=50, P4=50, P5=50, P6=50, P7=50, 
+       P8=50, P9=0, P9mix=NULL, BFGSburnin=0, BFGSfn=NULL, BFGShelp=NULL, 
+       control=list(), optim.method=ifelse(boundary.enforcement &lt; 2, &quot;BFGS&quot;, 
+       &quot;L-BFGS-B&quot;), transform=FALSE, debug=FALSE, cluster=FALSE, balance=FALSE, 
+       ...)
+</code></pre>
+<h3 id="Arguments-參數"><a href="#Arguments-參數" class="headerlink" title="Arguments 參數"></a>Arguments 參數</h3><p><code>fn</code>:函數<br><code>nvars</code>:有多少個參數將帶入計算適應值的函數中<br><code>max</code>:決定是要求最大值還是最小值<br><code>pop.size</code>:群體的大小<br><code>max.generations</code>:迭代的世代數</p>
+<h3 id="Example-範例"><a href="#Example-範例" class="headerlink" title="Example 範例"></a>Example 範例</h3><p>這邊提醒一下 <code>genoud</code>在R v3.6.1版本下是不支援的<br>(<code>genoud</code>在R v3.1.1以後就不支援了～～)</p>
+<pre><code>install.packages(&quot;genoud&quot;)
+library(&quot;genoud&quot;)
+</code></pre>
+<pre><code>#maximize the sin function
+sin1 &lt;- genoud(sin, nvars=1, max=TRUE)
+
+#minimize the sin function
+sin2 &lt;- genoud(sin, nvars=1, max=FALSE)
+</code></pre>
+<hr>
+<p>R Documentation: <a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/rgenoud/versions/5.8-3.0/topics/genoud">Link</a></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-10-06T14:29:47.000Z" itemprop="datePublished">2019-10-06</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
 id="post-GA-Day20"
 class="article article-type-post"
 >
@@ -141,7 +222,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day20/">GA_Day20</a>
+        <a href="/2019/10/05/GA-Day20/">【Day20】GA with you - R Package GA R套件GA</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -225,7 +306,7 @@ plot(GA)
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:46.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-10-05T14:29:46.000Z" itemprop="datePublished">2019-10-05</time>
 </div>
     
         <div class="article-category">
@@ -234,7 +315,7 @@ plot(GA)
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
         </div>
     
     </div>
@@ -257,7 +338,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day19/">GA_Day19</a>
+        <a href="/2019/10/04/GA-Day19/">【Day19】GA with you - R Package genalg R套件 genalg (3)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -338,7 +419,7 @@ plot(rbga.results, type=&quot;vars&quot;)
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:44.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-10-04T14:29:44.000Z" itemprop="datePublished">2019-10-04</time>
 </div>
     
         <div class="article-category">
@@ -347,7 +428,7 @@ plot(rbga.results, type=&quot;vars&quot;)
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
         </div>
     
     </div>
@@ -370,7 +451,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day18/">GA_Day18</a>
+        <a href="/2019/10/03/GA-Day18/">【Day18】GA with you - R Package genalg R套件genalg (2)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -414,7 +495,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:42.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-10-03T14:29:42.000Z" itemprop="datePublished">2019-10-03</time>
 </div>
     
         <div class="article-category">
@@ -423,7 +504,7 @@ class="article article-type-post"
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
         </div>
     
     </div>
@@ -446,7 +527,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day17/">GA_Day17</a>
+        <a href="/2019/10/02/GA-Day17/">【Day17】GA with you - R Package genalg R套件 genalg (1)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -511,7 +592,7 @@ rbga.results = rbga.bin(size=10, mutationChance=0.01, zeroToOneRatio=0.5,
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:40.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-10-02T14:29:40.000Z" itemprop="datePublished">2019-10-02</time>
 </div>
     
         <div class="article-category">
@@ -520,7 +601,7 @@ rbga.results = rbga.bin(size=10, mutationChance=0.01, zeroToOneRatio=0.5,
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
         </div>
     
     </div>
@@ -543,7 +624,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day16/">GA_Day16</a>
+        <a href="/2019/10/01/GA-Day16/">【Day16】GA with you - R Package mcga R套件mcga (3)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -650,7 +731,7 @@ Cost:  0.3525391
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:39.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-10-01T14:29:39.000Z" itemprop="datePublished">2019-10-01</time>
 </div>
     
         <div class="article-category">
@@ -659,7 +740,7 @@ Cost:  0.3525391
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
         </div>
     
     </div>
@@ -682,7 +763,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day15/">GA_Day15</a>
+        <a href="/2019/09/30/GA-Day15/">【Day15】GA with you - R Package mcga R套件mcga (2)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -805,7 +886,7 @@ $maxiter
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:37.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-30T14:29:37.000Z" itemprop="datePublished">2019-09-30</time>
 </div>
     
         <div class="article-category">
@@ -814,7 +895,7 @@ $maxiter
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
         </div>
     
     </div>
@@ -837,7 +918,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day14/">GA_Day14</a>
+        <a href="/2019/09/29/GA-Day14/">【Day14】GA with you - R Package mcga R套件mcga (1)</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -949,7 +1030,7 @@ Cost:  3827.006
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:35.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-29T14:29:35.000Z" itemprop="datePublished">2019-09-29</time>
 </div>
     
         <div class="article-category">
@@ -958,7 +1039,7 @@ Cost:  3827.006
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
         </div>
     
     </div>
@@ -981,7 +1062,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day13/">GA_Day13</a>
+        <a href="/2019/09/28/GA-Day13/">【Day13】GA with you - R Related Package Introduction R套件介紹</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -1035,7 +1116,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:34.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-28T14:29:34.000Z" itemprop="datePublished">2019-09-28</time>
 </div>
     
         <div class="article-category">
@@ -1044,7 +1125,7 @@ class="article article-type-post"
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
         </div>
     
     </div>
@@ -1067,7 +1148,7 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2021/10/18/GA-Day12/">GA_Day12</a>
+        <a href="/2019/09/27/GA-Day12/">【Day12】GA with you - Develop on R 環境安裝</a>
     </header>
     <div class="article-entry post-inner-html">
         
@@ -1105,7 +1186,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2021-10-18T14:29:33.000Z" itemprop="datePublished">2021-10-18</time>
+  <time datetime="2019-09-27T14:29:33.000Z" itemprop="datePublished">2019-09-27</time>
 </div>
     
         <div class="article-category">
@@ -1114,91 +1195,7 @@ class="article article-type-post"
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-GA-Day11"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2021/10/18/GA-Day11/">GA_Day11</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>今天的內容呢大家可能會覺得搞什麼<br>出一篇什麼Review<br>出來充篇數的是嗎(怒)<br>但是這篇是為了明天做準備的<br>不知道前面的10篇文章大家有沒有認真看<br>希望大家還有繼續在追蹤這個系列</p>
-<p>有鑒於前面的內容太過於長篇大論<br>所以出一篇簡單的瀏覽與複習<br>讓沒有認真看我前面的文章也可以快速銜接上<br>何謂是基因演算法<br>基因演算法的流程<br>先來個總覽<br><img src="https://i.imgur.com/wOjRpbr.png" alt="基因演算法流程"><br>想必大家對這張圖並不陌生吧<br>今天會用程式的角度來講解這個流程</p>
-<h3 id="Step-1-設定參數"><a href="#Step-1-設定參數" class="headerlink" title="Step 1 - 設定參數"></a>Step 1 - <strong>設定參數</strong></h3><p>在圖片中沒有看到<br>但要設定什麼參數呢??</p>
-<blockquote>
-<ol>
-<li>族群的大小(Population Size):每一個世代有多少個染色體</li>
-<li>染色體的長度(Length of Chromosone):一個染色體中包含了多少個基因(Gene)</li>
-<li>交配機率(Crossover Rate/Probability):發生交配的機率，並不是每次都會發生，而是達到交配機率才會進行交配</li>
-<li>突變機率(Mutation Rate/Probability):發生突變的機率，也是要達到突變機率才會進行突變，通常突變率會設定在0.005~0.01之間，不會設定過高</li>
-<li>終止條件(Termination Criteria):可以設定適應值的程度或是世代數等等來進行收斂</li>
-</ol>
-</blockquote>
-<h3 id="Step-2-初始族群-Initialize-Population"><a href="#Step-2-初始族群-Initialize-Population" class="headerlink" title="Step 2 - 初始族群(Initialize Population)"></a>Step 2 - <strong>初始族群(Initialize Population)</strong></h3><p>前面第一步驟定義的族群的大小<br>前面是讓自己知道，開始撰寫的時候就把數值帶入即可<br>那麼這麼就會要透過這個大小來產生出一定數量的染色體(Chromosome)</p>
-<h3 id="Step-3-計算適應函數-Calculate-Function"><a href="#Step-3-計算適應函數-Calculate-Function" class="headerlink" title="Step 3 - 計算適應函數(Calculate Function)"></a>Step 3 - <strong>計算適應函數(Calculate Function)</strong></h3><p>所謂的<strong>適應函數</strong>就是用於計算染色體對於目前條件或是目標的適應程度<br>(以自然界來說，可以理解成該目前這個物種對於現在環境的適應程度)</p>
-<p>在程式撰寫過程中，適應函數就會像是一個額外的函數<br>當你將染色體當成參數帶入其中</p>
-<p>而適應函數所計算出來的值就稱之為「 <strong>適應值(Fitness Value)</strong> 」<br>而這個適應值也可以用來當作終止條件之一<br>例如當適應值大於某數，則滿足停止條件，就會結束整個流程。</p>
-<h3 id="Step-4-交配-Crossover"><a href="#Step-4-交配-Crossover" class="headerlink" title="Step 4 - 交配(Crossover)"></a>Step 4 - <strong>交配(Crossover)</strong></h3><p>在交配的階段會根據透過Step1發生交配<br>交配的種類就主要有單點交配、雙點交配和字罩交配這三種，其餘的交配方式可以回到</p>
-<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10218678">【Day07】GA with you - Crossover 交配 (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219030">【Day08】GA with you - Crossover 交配 (2)</a></p>
-<h3 id="Step-5-突變-Mutation"><a href="#Step-5-突變-Mutation" class="headerlink" title="Step 5 - 突變(Mutation)"></a>Step 5 - <strong>突變(Mutation)</strong></h3><p>而到了突變階段也會透過Step1所設定的突變率去計算<br>會讓每一個染色體都計算是否要突變<br>當該染色體的突變率低於所設定的突變率時則會產昇<strong>突變</strong></p>
-<blockquote>
-<p>突變主要是開發新的搜尋區域，發現更多可能性，避免發生區域最佳解。</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219032">【Day09】GA with you - Mutation 突變 (1)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10219211">【Day10】GA with you - Mutation 突變 (2)</a></p>
-<h3 id="Step6-計算終止條件"><a href="#Step6-計算終止條件" class="headerlink" title="Step6 - 計算終止條件"></a>Step6 - 計算終止條件</h3><p>經過交配、突變後會再次計算新的子代的適應程度，<br>並判斷是否有符合終止條件，<br>當符合終止條件，就會結束基因演算法的計算流程；<br>而若不符合終止條件，則會回到Step3反覆執行，<br>直到符合終止條件。</p>
-<hr>
-<p>明天就要正式開始了<br>接來的一週(大約)都會來介紹R語言如何實作<br>之後在介紹Python如何實作<br>在這邊有任何相關的想法都可以留言告訴我<br>(雖然都沒有人留言 傷心)<br>思考有需要出一篇安裝R的教學嗎???<br>但是大家應該可能或許都已經在其他的大神那邊拜讀過了(掙扎ing)<br>反正，明天的內容是什麼等明天的我來思考(欠揍)<br>老話一句，希望明天可以見到大家<br>也希望這個系列給予在這條古老的路上的人有所幫助</p>
-<hr>
-<p>相關資料來源：</p>
-<ul>
-<li>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。</li>
-<li>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。</li>
-<li>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</li>
-</ul>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2021-10-18T14:29:32.000Z" itemprop="datePublished">2021-10-18</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
         </div>
     
     </div>
@@ -1242,7 +1239,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genalg/" rel="tag">genalg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genoud/" rel="tag">genoud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcga/" rel="tag">mcga</a></li></ul>
     </div>
   </div>
 
@@ -1255,23 +1252,23 @@ class="article article-type-post"
       <ul>
         
           <li>
-            <a href="/2021/10/18/GA-Day30/">GA_Day30</a>
+            <a href="/2021/10/11/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2021/10/18/GA-Day29/">GA_Day29</a>
+            <a href="/2019/10/29/GA-Day29/">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a>
           </li>
         
           <li>
-            <a href="/2021/10/18/GA-Day28/">GA_Day28</a>
+            <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
           </li>
         
           <li>
-            <a href="/2021/10/18/GA-Day27/">GA_Day27</a>
+            <a href="/2019/10/13/GA-Day28/">【Day28】GA with you - Simulation Annealing 模擬退火法</a>
           </li>
         
           <li>
-            <a href="/2021/10/18/GA-Day26/">GA_Day26</a>
+            <a href="/2019/10/12/GA-Day27/">【Day27】GA with you - Memetic algorithm 模因演算法</a>
           </li>
         
       </ul>
@@ -1283,7 +1280,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-archive">
     <div class="widget-title"><span>Archive</span></div>
     <div class="widget-inner">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li></ul>
     </div>
   </div>
 

@@ -130,6 +130,306 @@
   
     
       <article
+id="post-GA-Day14"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/09/29/GA-Day14/">【Day14】GA with you - R Package mcga R套件mcga (1)</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>明天又要開始上課了(淚奔)<br>時間過太快了啦<br>東西都還沒有做完(拖延症發作中)<br>明明整個假日都電腦前工作(吐血)</p>
+<hr>
+<h1 id="mcga套件"><a href="#mcga套件" class="headerlink" title="mcga套件"></a>mcga套件</h1><p>R Documetation : <a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/mcga">https://www.rdocumentation.org/packages/mcga</a></p>
+<h2 id="Description-描述"><a href="#Description-描述" class="headerlink" title="Description 描述"></a>Description 描述</h2><p>是用於解決實數(real-valued)最佳化問題<br>突變(mutation)則是透過 <strong>-1/+1</strong> 進行改變</p>
+<h2 id="Usage-用法"><a href="#Usage-用法" class="headerlink" title="Usage 用法"></a>Usage 用法</h2><pre><code>mcga(popsize, chsize, crossprob = 1.0, mutateprob = 0.01, 
+     elitism = 1, minval, maxval, maxiter = 10, evalFunc)
+</code></pre>
+<h2 id="Arguments-參數"><a href="#Arguments-參數" class="headerlink" title="Arguments 參數"></a>Arguments 參數</h2><p>這邊的參數就會跟前面所介紹的一一對應上</p>
+<p><code>popsize</code> : 群體數量<br><code>chsize</code> : 有多少參數<br><code>crossprob</code> : 交配機率，預設值為 <strong>1.0</strong><br><code>mutateprob</code> : 突變機率，預設值為 <strong>0.01</strong><br><code>elitism</code> : 菁英策略，預設值為 <strong>1</strong><br><code>minval</code> : 最小數值<br><code>maxval</code> : 最大數值<br><code>maxiter</code> : 最多有多少代數，預設值為 <strong>10</strong><br><code>evalFunc</code> : 適應函數，預設情形都為求最小值</p>
+<h2 id="Example-範例"><a href="#Example-範例" class="headerlink" title="Example 範例"></a>Example 範例</h2><p>這邊會先用官網的範例示範一次<br>今天所使用的程式碼都來自R Documetation</p>
+<h3 id="下載套件"><a href="#下載套件" class="headerlink" title="下載套件"></a>下載套件</h3><p>第一次使用的時候要先安裝套件</p>
+<pre><code>install.packages(&quot;mcga&quot;)
+</code></pre>
+<h3 id="引用套件"><a href="#引用套件" class="headerlink" title="引用套件"></a>引用套件</h3><p>在引用<strong>mcga</strong></p>
+<pre><code>require(&quot;mcga&quot;)
+</code></pre>
+<p>如果出現以下訊息的話就要再多一個步驟(沒有就省略)</p>
+<pre><code>Loading required package: mcga
+Loading required package: GA
+Loading required package: foreach
+Loading required package: iterators
+  ____    _    
+ / ___|  / \     Genetic 
+| |  _  / _ \    Algorithms
+| |_| |/ ___ \   
+ \____/_/   \_\  version 3.2
+Type &#39;citation(&quot;GA&quot;)&#39; for citing this R package in publications.
+
+Attaching package: &#39;GA&#39;
+
+The following object is masked from &#39;package:utils&#39;:
+
+    de
+
+Please use &#39;citation(&quot;mcga&quot;)&#39; for citing the R package mcga
+</code></pre>
+<p>上面寫說請用<strong>citation(“mcga”)</strong><br>就按照指示輸入</p>
+<pre><code>citation(&quot;mcga&quot;)
+</code></pre>
+<h3 id="設定適應函數"><a href="#設定適應函數" class="headerlink" title="設定適應函數"></a>設定適應函數</h3><p>尋求x[1]、x[2]、x[3]、x[4]、x[5]五個數值最佳的答案來求出其最小值</p>
+<pre><code>f&lt;-function(x)&#123;
+  return ((x[1]-7)^2 + (x[2]-77)^2 +(x[3]-777)^2 +(x[4]-7777)^2 +(x[5]-77777)^2)
+&#125;
+</code></pre>
+<h3 id="執行基因演算法"><a href="#執行基因演算法" class="headerlink" title="執行基因演算法"></a>執行基因演算法</h3><p>這邊的設定都先跟官網一樣</p>
+<pre><code>m &lt;- mcga( popsize=200, 
+           chsize=5, 
+           minval=0.0, 
+           maxval=999999999.9, 
+           maxiter=2500, 
+           crossprob=1.0, 
+           mutateprob=0.01, 
+           evalFunc=f)
+</code></pre>
+<h3 id="印出結果"><a href="#印出結果" class="headerlink" title="印出結果"></a>印出結果</h3><pre><code>cat(&quot;Best chromosome:\n&quot;)
+print(m$population[1,])
+cat(&quot;Cost: &quot;,m$costs[1],&quot;\n&quot;)
+</code></pre>
+<p>你以為這樣就完了嗎?!!!!<br>不～<br>我們來回顧一下剛剛執行的結果吧～<br>由於基因演算法 每個人的答案不一定會是一樣的<br>那就以我剛剛的輸出結果來講解</p>
+<pre><code>&gt; cat(&quot;Best chromosome:\n&quot;)
+Best chromosome:
+&gt; print(m$population[1,])
+[1] 3.958119e-01 1.549891e+01 7.770356e+02 7.777070e+03 7.777600e+04
+&gt; cat(&quot;Cost: &quot;,m$costs[1],&quot;\n&quot;)
+Cost:  3827.006 
+</code></pre>
+<p>這邊可以看到<code>m$population[1,]</code><br>所得到的結果是 <code>3.958119e-01 1.549891e+01 7.770356e+02 7.777070e+03 7.777600e+04</code><br>是這樣一連串的東西<br>那這些是什麼呢???<br>請往上回憶一下下剛剛<code>chsize</code>的設定<br>剛剛介紹說<code>chsize</code>表示有多少參數對吧<br>所以<code>chsize</code>這個就是代表這五個參數計算出來的結果<br>這時候你心中一定有個問號就是那個是數字嗎???<br>(沒有沒關係，就表示你很聰明知道那是啥)<br>我們分別把他抓出來看</p>
+<pre><code>&gt; print(m$population[1,])
+[1] 3.958119e-01 1.549891e+01 7.770356e+02 7.777070e+03 7.777600e+04
+&gt; print(m$population[1,][1])
+[1] 0.3958119
+&gt; print(m$population[1,][2])
+[1] 15.49891
+&gt; print(m$population[1,][3])
+[1] 777.0356
+&gt; print(m$population[1,][4])
+[1] 7777.07
+&gt; print(m$population[1,][5])
+[1] 77776
+</code></pre>
+<p>這樣就可以知道其實數值算出來個別為<br>[1]: <code>0.3958119</code><br>[2]: <code>15.49891</code><br>[3]: <code>777.0356</code><br>[4]: <code>7777.07</code><br>[5]: <code>77776</code><br>把這個答案帶入原本的適應程度的函數 <code>f</code> 計算</p>
+<pre><code>f = (0.3958119-7)^2 + (15.49891-77)^2 +(777.0356-777)^2 +(7777.07-7777)^2 +(77776-77777)^2
+</code></pre>
+<p>就會得到 <code>3827.006</code> (有沒有突然眼熟這個數字)<br>這個數字就是剛剛的 <code>Cost</code><br>沒有沒關係 在列印一次總該有印象了吧～</p>
+<pre><code>&gt; cat(&quot;Cost: &quot;,m$costs[1],&quot;\n&quot;)
+Cost:  3827.006 
+</code></pre>
+<p>有沒有覺得很神奇(&lt;- 自己說)<br>這就是該染色體(chromosome)的適應程度<br>可以發現這樣的結果是最適合的</p>
+<hr>
+<p>不知道這樣的講法大家能不能更加認識<br>我想就這樣一步一步帶大家瞭解基因演算法的奧妙(誤)</p>
+<p>今天的程式碼也會放到<a target="_blank" rel="noopener" href="https://github.com/wang-chi/gawithyou/blob/master/Day14_Command.R">Github</a>上</p>
+<hr>
+<p>相關資料來源:<br>R Documetation : <a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/mcga">https://www.rdocumentation.org/packages/mcga</a></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-09-29T14:29:35.000Z" itemprop="datePublished">2019-09-29</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day13"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/09/28/GA-Day13/">【Day13】GA with you - R Related Package Introduction R套件介紹</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>今天要跟大家介紹有哪些R語言的套件可以輔助我們實作基因演算法<br>那不囉唆就開始介紹~</p>
+<h3 id="R-Package"><a href="#R-Package" class="headerlink" title="R Package"></a>R Package</h3><p>這邊羅列了一些可以使用的套件</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/mcga/versions/3.0.3/topics/mcga">mcga</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/genalg/versions/0.2.0">genalg</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/GA/versions/3.2">GA</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/rgenoud/versions/5.8-3.0">rgenoud</a></li>
+</ol>
+<h4 id="R-mcga"><a href="#R-mcga" class="headerlink" title="R - mcga"></a>R - mcga</h4><ul>
+<li><strong>Link:</strong> <a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/mcga/versions/3.0.3/topics/mcga">clcik here</a></li>
+<li><strong>Function:</strong> mcga()</li>
+<li><strong>Objectitive:</strong>  透過多變量函數求解多維度函數之最小值</li>
+</ul>
+<h4 id="R-genalg"><a href="#R-genalg" class="headerlink" title="R - genalg"></a>R - genalg</h4><ul>
+<li><strong>Link:</strong> <a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/genalg/versions/0.2.0">clcik here</a></li>
+<li><strong>Function:</strong> rbga.bin() / rbga() / plot.rbga / summary.rbga</li>
+<li><strong>Objectitive:</strong>  透過多變量函數求解多維度函數之最小值</li>
+</ul>
+<h4 id="R-GA"><a href="#R-GA" class="headerlink" title="R - GA"></a>R - GA</h4><ul>
+<li><strong>Link:</strong> <a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/GA/versions/3.2">clcik here</a></li>
+<li><strong>Function:</strong> ga()</li>
+<li><strong>Objectitive:</strong>  求取適應值最佳之函數</li>
+</ul>
+<h4 id="R-rgenoud"><a href="#R-rgenoud" class="headerlink" title="R - rgenoud"></a>R - rgenoud</h4><ul>
+<li><strong>Link:</strong> <a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/rgenoud/versions/5.8-3.0">clcik here</a></li>
+<li><strong>Function:</strong> genoud()</li>
+<li><strong>Objectitive:</strong>  將遺傳算法和衍生的擬牛頓算法結合起來，可以求解複雜函數的最優化化問題</li>
+</ul>
+<p>今天跟大家介紹一下有哪些在R裡面可以使用的套件來協助完成基因演算法<br>那明天就會開始依序詳細介紹並實作囉～<br>預告一下明天應該是先介紹<strong>mcga</strong></p>
+<hr>
+<p>相關資料來源:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/">R Documentation</a></li>
+<li><a target="_blank" rel="noopener" href="https://kknews.cc/zh-tw/tech/p5yjpe.html">R語言中的遺傳演算法</a></li>
+</ul>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-09-28T14:29:34.000Z" itemprop="datePublished">2019-09-28</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day12"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/09/27/GA-Day12/">【Day12】GA with you - Develop on R 環境安裝</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>今天就輕鬆一點<br>雖然昨天掙扎很久是否要寫這篇安裝<br>但是有點忙碌(想偷懶)<br>所以今天就是環境安裝</p>
+<hr>
+<p>這次教學文章中所使用的是R Studio<br>個人的開發環境是Mac<br>如果有遇到指令等有問題時<br>歡迎留言反應<br>說不定是作業系統的問題</p>
+<p>如果已經有安裝的已可以用原先安裝的<br>或是更新R和R Studio</p>
+<h3 id="更新R-amp-R-Studio"><a href="#更新R-amp-R-Studio" class="headerlink" title="更新R &amp; R Studio"></a>更新R &amp; R Studio</h3><h4 id="Download-from-Official-Website"><a href="#Download-from-Official-Website" class="headerlink" title="Download from Official Website"></a>Download from Official Website</h4><ol>
+<li>上官網：<a target="_blank" rel="noopener" href="https://www.r-project.org/">https://www.r-project.org/</a></li>
+<li>左側選單 <strong>CRAN</strong> 點下去</li>
+<li>選擇一個你喜歡的 這邊選擇 <a target="_blank" rel="noopener" href="http://cran.csie.ntu.edu.tw/">http://cran.csie.ntu.edu.tw/</a></li>
+<li>根據使用的作業系統，點選 Download R for XXX</li>
+<li>選擇一個版本下載，這邊選最新釋出的 R-3.6.1.pkg</li>
+<li>就開始安裝步驟，一直點下去就對了</li>
+<li>看到完成安裝就對了</li>
+<li>重新開啟R Studio即可<br>(後面補述一下，安裝到最新版本的話，某些套件就不能使用了，要注意要開發的套件支援的版本)</li>
+</ol>
+<hr>
+<p>今天幫大家整理幾篇不錯的安裝教學<br>如果有發現不錯的文章也可以在下方留言<br>讓更多人知道~~</p>
+<h4 id="鐵人文章"><a href="#鐵人文章" class="headerlink" title="鐵人文章"></a>鐵人文章</h4><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10202411">03. 安裝RStudio(Mac版)</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10190868">(Day2) RStudio安裝與介紹</a></p>
+<hr>
+<p>今天外面大雨<br>心裏下毛毛雨<br><del>(時間著急晚點更新內文)</del></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-09-27T14:29:33.000Z" itemprop="datePublished">2019-09-27</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
 id="post-GA-Day11"
 class="article article-type-post"
 >
@@ -624,191 +924,10 @@ class="article article-type-post"
 
     
   
-    
-      <article
-id="post-GA-Day04"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2019/09/19/GA-Day04/">【Day04】GA with you - Reproduction &amp; Selection 複製與選擇 (1)</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>今天要跟大家介紹的是在基因演算法中的複製(Reproduction)和選擇(Selection)，<br>分開敘述有點困難就一起跟大家介紹了。<br>還記得昨天的那張圖嗎？今天要講解的是右邊的Selection<br><img src="https://i.imgur.com/oJBOpwV.png" alt="基因演算法流程－選擇"></p>
-<p>今天要講的區塊是Selection的部分，<br>大家一定會想怎麼就這樣跳過了Fitness Calculation的部分，<br>因為適應程度計算又是一片新天地，<br>在後續大家比較了解GA之後再跟大家說明，<br>這邊就把Fitness Calculation當成一個運算式，<br>會回傳他的結果即可。</p>
-<p>那從一開始到選擇這邊的順序概念是什麼呢？<br>初始群組-&gt;計算染色體的適應程度並排序-&gt;將較好的染色體複製下來<br>那我們要介紹的就是複製較好的染色體的步驟了</p>
-<p>複製和選擇的精神在於【留下好的基因序列】，使得好的基因保留下去。<br>為了演化出更好的個體，將從原先的母體中篩選出較佳的個體，進而組成下一代的群組，<br>根據不同的染色體( chromosome )所對應到的適應值 ( Fitness Value )，<br>當適應值越高，該群體則有越高的機率被選取，以確保好的基因序列將被保留。<br>白話一點說，就想像是我們要做基因改造，會把比較好的基因給留下來，不好的基因給去除這樣的概念。</p>
-<p>選擇有哪些方法呢？<br>常見的選擇方式有隨機選擇( Random Selection Schema )、分裂選擇( Disrupt Selection Schema )及機率選擇( Proportionate Selection Schema )。<br>此外，後續也有人提出一種制度『菁英選擇』，這種選擇方式是直接將較好的群體完整保留下來，就不需要再經過隨機或是機率等等的選擇方式。</p>
-<p>今天的內容比較簡單，<br>明天會詳細跟大家介紹複製和選擇的部分，<br>一樣如果有任何疑惑都可以在下面留言告訴我，<br>無論是核心理論、表達上有誤的歡迎指教<br>希望明天還可以再次遇見大家</p>
-<hr>
-<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2019-09-19T14:29:19.000Z" itemprop="datePublished">2019-09-19</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-GA-Day03"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2019/09/18/GA-Day03/">【Day03】GA with you - Process 基因演算法的流程</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>今天為大家就要跟大家介紹基因演算法的流程<br>先上張圖，讓大家對照的圖和文章<br><img src="https://i.imgur.com/wOjRpbr.png" alt="基因演算法流程"></p>
-<p><strong>初始化群體 ( Initialize Population )</strong><br>一開始需要確定群體的大小( Population Size )。就是每一次的染色體有多少個啦~<br>例如我要透過50個染色體運算，所以我該次的群體大小就是50。</p>
-<p><strong>適應函數 ( Fitness Function)</strong><br>適應函數用來計算染色體( chromosome )好壞的標準，用來篩選出適應程度較佳的個體(染色體)。<br>適應值( Fitness Value )就是用來顯示其適應程度的數值表現，而不同的適應函數在不同的應用情境下將對應到不同的計算方式。<br>設定適應值 ( Fitness Value ) ，當該組染色體 ( chromosome ) 的適應值達到目標適應值時，該組染色體( chromosome )即為欲尋找的解。</p>
-<p><strong>選擇 ( Selection )</strong><br>選擇的精神為【留下好的基因序列】，使得好的基因流傳下去。<br>根據不同的染色體所對應到的適應值 ( Fitness Value )，當適應值越高，該群體則有越高的機率被選取，以確保好的基因序列將被保留。<br>白話一點說，就想像是我們要做基因改造，會把比較好的基因給留下來，不好的基因給去除這樣的概念。<br>之前不是有什麼基因改造的人，把可能得到愛滋病的基因拿掉，就有點這樣的概念，把有疑慮（？）不好的（？）基因去除，保留好的。<br>而選擇的方法有很多種，在後續的文章中也會跟大家介紹每一種的選擇方式。（鋪梗…)</p>
-<p><strong>交配( Crossover )</strong><br>如同名稱所述，將兩兩基因進行交配進而產生出新的染色體。而兩兩染色體是否交配也會透過交配機率進行控制。<br>交配的方式也有很多種，單點、多點等等的方式，也是日後會介紹。（怎麼有種老高上身）</p>
-<p><strong>突變 ( Mutation )</strong><br>突變會在選中的chromosome中對某些基因進行變化，以二進位來說0-&gt;1，1 -&gt; 0。<br>突變也是會根據突變機率來改變，有了Crossover之後，一定有人會有疑問為什麼還要突變，這是因為避免最後的結果陷入區域最佳解的狀況。</p>
-<p>希望今天的介紹可以讓大家更能理解基因演算法的流程，<br>有任何問題歡迎留言，<br>進度的部分就別提醒我了（掩面），<br>希望這個系列可以讓大家有更多的收穫。<br>讓我們一起努力學習～～～</p>
-<hr>
-<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2019-09-18T14:29:17.000Z" itemprop="datePublished">2019-09-18</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-GA-Day02"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2019/09/17/GA-Day02/">【Day02】GA with you - GA Element 基因演算法元素</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>在介紹基因演算法的全部流程前，需要先瞭解會運用到哪些元素來組成，需要哪些元素才能進行。</p>
-<p>基因演算法的整體架構和運作的流程可以產生高度的解答搜尋能力，也具備較高的問題獨立性。在基因演算法的執行過程中以達到適應函數標準的適應值(Fitness Value)為判斷標準，而適應值的好壞同時決定了該個體是否保留或是淘汰，進而確保下一代的個體優於上一代。</p>
-<p>這邊先介紹一下基因演算法組成的元素，以免大家到了後面還是傻傻分不清楚<br>(或許是我的文筆要要再多加油)<br><img src="https://i.imgur.com/upWQe4t.png" alt="基因演算法組成的元素"></p>
-<p><strong>最基本的元素 － 基因 (Gene)</strong><br>在GA的過程中，要變化每一個個體中的基因(Gene)片段，基因就是最基本的編碼單位啦~~<br>有點像是「APPLE」這個個體是由「A」、 「P」、 「P」、 「L」、 「E」這五個基因所組成的感覺<br>而可以根據要解決的類型來決定基因的型態，不同的基因型態就可以表示成不同的基因演算法<br>像是使用實數編碼的基因就是實數型基因演算法、符號編碼的基因就是符號型基因演算法～～<br>（實數型和符號型基因演算法也會在後續的文章中陸續為大家介紹，繼續埋梗的我）</p>
-<p><strong>基因的集合  － 染色體 (Chromosome)</strong><br>好，到這邊大家千萬別轉台，現在不是生物課<br>染色體就是所謂的個體(這樣誰聽得懂啦)，再明白一點就是前面基因的集合，<br>以上面的例子來說「APPLE」這個染色體是由「A」、 「P」、 「P」、 「L」、 「E」這五個基因所組成</p>
-<p><strong>染色的集合  － 族群(Population)</strong><br>到這邊朋友們都還在吧(?!)<br>族群就是前面染色體的集合啦~<br>當每一次的世代交替中，全部的染色體就是候選人，而這些候選解救是所謂的族群啦~<br>用上面的例子繼續延續，「APPLE」 、「GRAPE」 、「GUAVA」 、「LEMON」這些染色體(Chromosome)合起來就是所謂的族群(Population)，希望這樣簡單的例子可以讓大家更明白一點。</p>
-<p>這邊用一張圖來表示上述說的基因、染色體和族群的關係：<br>橘色方框表示族群 Population<br>綠色方框表示染色體 Chromosome<br>藍色方框表示基因 Gene<br><img src="https://i.imgur.com/wo0yypC.png" alt="基因演算法元素組成介紹"></p>
-<p>以上就是基因演算法中會遇到的幾個重要元素，<br>明天會給大家帶來基因演算法的流程介紹～</p>
-<p>一樣如果有任何疑惑都可以在下面留言告訴我，<br>無論是核心理論、表達上有誤的歡迎指教<br>希望明天還可以再次遇見大家</p>
-<hr>
-<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2019-09-17T14:22:53.000Z" itemprop="datePublished">2019-09-17</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
 
   
     <nav class="pagination">
-        <a class="extend prev" rel="prev" href="/page/2/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next</a>
+        <a class="extend prev" rel="prev" href="/page/2/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next</a>
     </nav>
   
 </div>
@@ -829,7 +948,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python-Lesson/">Python Lesson</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/">Speech Note</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/Visit/">Visit</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -839,7 +958,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genalg/" rel="tag">genalg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genoud/" rel="tag">genoud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcga/" rel="tag">mcga</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analyze/" rel="tag">Data Analyze</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/" rel="tag">Facebook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genalg/" rel="tag">genalg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genoud/" rel="tag">genoud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcga/" rel="tag">mcga</a></li></ul>
     </div>
   </div>
 
@@ -856,19 +975,19 @@ class="article article-type-post"
           </li>
         
           <li>
+            <a href="/2021/04/19/Python-Lesson01-basic/">Python Lesson 1 基本指令</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/19/Python-DataAnalyze/">Python 數據分析指令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/25/2019-facebook-speech/">Facebook Speech</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/14/GA-Day29/">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/13/GA-Day28/">【Day28】GA with you - Simulation Annealing 模擬退火法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/12/GA-Day27/">【Day27】GA with you - Memetic algorithm 模因演算法</a>
           </li>
         
       </ul>
@@ -880,7 +999,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-archive">
     <div class="widget-title"><span>Archive</span></div>
     <div class="widget-inner">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li></ul>
     </div>
   </div>
 

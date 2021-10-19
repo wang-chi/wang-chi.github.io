@@ -186,6 +186,392 @@ class="article article-type-post"
   
     
       <article
+id="post-Python-Lesson01-basic"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/04/19/Python-Lesson01-basic/">Python Lesson 1 基本指令</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h1 id="Python-Lesson-1-基本指令"><a href="#Python-Lesson-1-基本指令" class="headerlink" title="Python Lesson 1 基本指令"></a>Python Lesson 1 基本指令</h1><h2 id="變數的使用"><a href="#變數的使用" class="headerlink" title="變數的使用"></a>變數的使用</h2><h3 id="String-字串"><a href="#String-字串" class="headerlink" title="String 字串"></a>String 字串</h3><pre><code>&#39;Hello World!&#39;
+</code></pre>
+<pre><code>s=&#39;hello&#39;
+print(s)
+
+s=&#39;hahaha&#39;
+print(s)
+</code></pre>
+<p><strong>變數命名的注意事項:</strong></p>
+<ul>
+<li>只能有英文字母，數字和底線</li>
+<li>變數名稱裡不能有空格，可以用底線代替 ex : student_id</li>
+</ul>
+<p><strong>基本應用</strong></p>
+<pre><code>student_name=&quot;Weiting&quot;
+school=&quot;FJU&quot;
+student_id=405570147
+print(student_name.title())    #title()讓第一個字大寫
+print(student_name.upper())    #upper()讓全部變大寫
+print(student_name.lower())    #lower()讓全部變小寫
+print(len(student_name))       #len()計算長度
+
+print(school + &quot; &quot; + student_name) #字串串連
+print(school + student_name)       #字串串連
+</code></pre>
+<p>輸出時，若有str型態，則串連變數屬性皆為str，  <code>str(student_id)</code></p>
+<pre><code>print(school + &quot; &quot; + str(student_id) + &quot; &quot; + student_name)
+</code></pre>
+<h3 id="Integer-數字"><a href="#Integer-數字" class="headerlink" title="Integer 數字"></a>Integer 數字</h3><p>分成</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-04-19T13:45:23.000Z" itemprop="datePublished">2021-04-19</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/Python-Lesson/">Python Lesson</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-Python-DataAnalyze"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/02/19/Python-DataAnalyze/">Python 數據分析指令</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h1 id="Python-數據分析指令"><a href="#Python-數據分析指令" class="headerlink" title="Python 數據分析指令"></a>Python 數據分析指令</h1><h2 id="Read-Write-File"><a href="#Read-Write-File" class="headerlink" title="Read/Write File"></a>Read/Write File</h2><p>Read</p>
+<pre><code>import pandas as pd
+# read from csv
+train = pd.read_csv(&#39;application_train.csv&#39;)
+train = pd.read_excel(&#39;application.xlsx&#39;)
+</code></pre>
+<p>Write</p>
+<pre><code># export as csv
+train.to_csv(&#39;train.csv&#39;, index=False)
+</code></pre>
+<h2 id="Message-Setting"><a href="#Message-Setting" class="headerlink" title="Message Setting"></a>Message Setting</h2><h3 id="Ignore-Warning-Message"><a href="#Ignore-Warning-Message" class="headerlink" title="Ignore Warning Message"></a>Ignore Warning Message</h3><pre><code>import warnings
+warnings.filterwarnings(&#39;ignore&#39;)
+</code></pre>
+<h3 id="Show-all-column-data"><a href="#Show-all-column-data" class="headerlink" title="Show all column data"></a>Show all column data</h3><pre><code># 顯示所有資料
+import pandas as pd
+pd.set_option(&#39;display.max_rows&#39;, None)
+pd.set_option(&#39;display.max_column&#39;, None)
+</code></pre>
+<h2 id="Data-info"><a href="#Data-info" class="headerlink" title="Data info"></a>Data info</h2><ul>
+<li>檢視特徵型別（非數值型別需要LabelEncoder或者one-hot編碼成數值型）<pre><code>app_train.dtypes.value_counts()
+</code></pre>
+</li>
+<li>統計非數值型資料的unique數<pre><code>app_train.select_dtypes(&#39;object&#39;).apply(pd.Series.nunique, axis = 0)
+</code></pre>
+</li>
+<li>對齊訓練和測試資料的列數（訓練資料只應該比測試資料多出TARGET一列）<pre><code>train_target = app_train[&#39;TARGET&#39;] #Target Column
+app_train, app_test = app_train.align(other=app_test, join=&#39;inner&#39;, axis=1)
+app_train[&#39;TARGET&#39;] = train_target
+print(&#39;train: &#39;, app_train.shape)
+print(&#39;test:  &#39;, app_test.shape)
+</code></pre>
+</li>
+</ul>
+<h2 id="String-Method"><a href="#String-Method" class="headerlink" title="String Method"></a>String Method</h2><h4 id="將換行符號改成空白"><a href="#將換行符號改成空白" class="headerlink" title="將換行符號改成空白"></a>將換行符號改成空白</h4><pre><code>a = &#39;Hello&#39;
+b = 3
+print(a, end=&#39; &#39;)
+print(b)
+</code></pre>
+<p><strong>Result</strong> <code>Hello 3</code></p>
+<h3 id="f-string"><a href="#f-string" class="headerlink" title="f_string"></a>f_string</h3><h4 id="f-string-使用"><a href="#f-string-使用" class="headerlink" title="f_string 使用"></a>f_string 使用</h4><pre><code>a = &#39;hello&#39;
+b = 3
+f&#39;&#123;a&#125; &#123;b&#125;&#39;
+</code></pre>
+<p><strong>Result</strong> <code>&#39;hello 3&#39;</code></p>
+<h4 id="f-string-千位數逗號"><a href="#f-string-千位數逗號" class="headerlink" title="f_string 千位數逗號"></a>f_string 千位數逗號</h4><pre><code>data = 12500
+f&#39;&#123;data:,&#125;&#39;
+</code></pre>
+<p><strong>Result</strong> <code>12,500</code></p>
+<h4 id="f-string控制輸入長度"><a href="#f-string控制輸入長度" class="headerlink" title="f_string控制輸入長度"></a>f_string控制輸入長度</h4><pre><code>f&#39;&#123;data:&gt;10,&#125;&#39;
+</code></pre>
+<p><strong>Result</strong> <code>&#39;    12,500&#39;</code></p>
+<h4 id="f-string裡的空白用-填補"><a href="#f-string裡的空白用-填補" class="headerlink" title="f_string裡的空白用*填補"></a>f_string裡的空白用*填補</h4><pre><code>f&#39;&#123;data:*&gt;10,&#125;&#39;
+</code></pre>
+<p><strong>Result</strong> <code>&#39;****12,500&#39;</code></p>
+<h4 id="f-string的資料對齊方向"><a href="#f-string的資料對齊方向" class="headerlink" title="f_string的資料對齊方向"></a>f_string的資料對齊方向</h4><pre><code>f&#39;&#123;data:&lt;10,&#125;&#39;
+</code></pre>
+<p><strong>Result</strong> <code>&#39;12,500    &#39;</code></p>
+<h4 id="f-string的資料置中對齊"><a href="#f-string的資料置中對齊" class="headerlink" title="f_string的資料置中對齊"></a>f_string的資料置中對齊</h4><pre><code>f&#39;&#123;data:^10,&#125;&#39;
+</code></pre>
+<p><strong>Result</strong> <code>&#39;  12,500  &#39;</code></p>
+<h3 id="將每個字的第一個字元大寫"><a href="#將每個字的第一個字元大寫" class="headerlink" title="將每個字的第一個字元大寫"></a>將每個字的第一個字元大寫</h3><pre><code>name = &#39;peter hsu&#39;
+name.title()
+</code></pre>
+<p><strong>Result</strong> <code>&#39;Peter Hsu&#39;</code></p>
+<h3 id="將所有字元大寫"><a href="#將所有字元大寫" class="headerlink" title="將所有字元大寫"></a>將所有字元大寫</h3><p><code>&lt;string&gt;.upper()</code></p>
+<h3 id="將所有字元小寫"><a href="#將所有字元小寫" class="headerlink" title="將所有字元小寫"></a>將所有字元小寫</h3><p><code>&lt;string&gt;.lower()</code></p>
+<h3 id="去除空白"><a href="#去除空白" class="headerlink" title="去除空白"></a>去除空白</h3><p><code>&lt;string&gt;.strip()</code><br>左邊<br><code>&lt;string&gt;.lstrip()</code><br>右邊<br><code>&lt;string&gt;.rstrip()</code></p>
+<h3 id="置換字元"><a href="#置換字元" class="headerlink" title="置換字元"></a>置換字元</h3><p><code>replace</code>a to b<br><code>&lt;string&gt;.replace(a, b)</code></p>
+<h2 id="變數小技巧"><a href="#變數小技巧" class="headerlink" title="變數小技巧"></a>變數小技巧</h2><pre><code>1. 變數  : 純變數，例如：a, b, c
+2. 變數(): 小括號表示函數，函數內用逗號區隔，var(a, b, c)
+3. 變數[]: 抽取變數內容的元素
+4. 變數. ： 使用物件內的屬性或函數
+</code></pre>
+<h2 id="Dict"><a href="#Dict" class="headerlink" title="Dict"></a>Dict</h2><p>字典有三種迴圈使用方式<code>items()</code>、<code>keys()</code>、<code>values()</code></p>
+<pre><code>name = &#123;&#39;Billy&#39;: 155, &#39;Chi&#39;: 163, &#39;Vicki&#39;: 166&#125;
+name.items()
+</code></pre>
+<p><strong>Result</strong><br><code>dict_items([(&#39;Billy&#39;, 155), (&#39;Chi&#39;, 163), (&#39;Vicki&#39;, 166)])</code><br><strong><code>items()</code></strong></p>
+<pre><code>for k,v in name.items():
+    print(k, v)
+</code></pre>
+<p><strong><code>keys()</code></strong><br>使用鍵值k進行迴圈</p>
+<pre><code>for k in name.keys():
+    print(k, name[k])
+</code></pre>
+<p><strong><code>values()</code></strong><br>使用<strong>值</strong>進行迴圈，只關心數值</p>
+<pre><code>for v in name.values():
+    print(v)
+</code></pre>
+<h2 id="Pandas-套件"><a href="#Pandas-套件" class="headerlink" title="Pandas 套件"></a>Pandas 套件</h2><p>Pandas 資料結構</p>
+<ol>
+<li>Series 單維度欄位</li>
+<li>DataFrame 雙維度表格<h3 id="Series資料"><a href="#Series資料" class="headerlink" title="Series資料"></a>Series資料</h3></li>
+</ol>
+<ul>
+<li>使用<code>Series()</code>函數建立</li>
+<li>import pandas</li>
+<li>可同時指定index和values</li>
+</ul>
+<h4 id="創建Series資料-一"><a href="#創建Series資料-一" class="headerlink" title="創建Series資料(一)"></a>創建Series資料(一)</h4><pre><code>pd.Series(data=range(1,5), index=list(&#39;abcd&#39;))
+</code></pre>
+<p><strong>Result</strong></p>
+<pre><code>a    1
+b    2
+c    3
+d    4
+dtype: int64
+</code></pre>
+<h4 id="創建Series資料-二"><a href="#創建Series資料-二" class="headerlink" title="創建Series資料(二)"></a>創建Series資料(二)</h4><pre><code>pd.Series(data=range(1,5))
+</code></pre>
+<p><strong>Result</strong></p>
+<pre><code>0    1
+1    2
+2    3
+3    4
+dtype: int64
+</code></pre>
+<h4 id="變更索引鍵"><a href="#變更索引鍵" class="headerlink" title="變更索引鍵"></a>變更索引鍵</h4><p><code>rename()</code></p>
+<h4 id="資料的常見用法"><a href="#資料的常見用法" class="headerlink" title="資料的常見用法"></a>資料的常見用法</h4><ul>
+<li><code>describe()</code>: 取得資料的描述性統計</li>
+<li><code>unique()</code>: 取得資料中不同的資料型態</li>
+<li><code>nunique()</code>: n代表number</li>
+<li><code>value_counts()</code>: 不同資料型態個別出現次數 (百分比顯示 normalize = True)</li>
+<li><code>sort_index()</code>: 按照鍵值大小排序</li>
+</ul>
+<h3 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h3><h4 id="修改索引列名稱"><a href="#修改索引列名稱" class="headerlink" title="修改索引列名稱"></a>修改索引列名稱</h4><p>方法一<br>需要設定axis=1</p>
+<pre><code>df = df.rename(&#123;&#39;Math&#39;: &#39;math&#39;&#125;, axis=1)
+</code></pre>
+<p>方法二</p>
+<pre><code>df = df.rename(columns=&#123;&#39;Math&#39;: &#39;math&#39;&#125;)
+</code></pre>
+<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><h4 id="檢查資料是否為NaN"><a href="#檢查資料是否為NaN" class="headerlink" title="檢查資料是否為NaN"></a>檢查資料是否為NaN</h4><pre><code>import numpy as np
+pd.isnull(np.NaN)
+pd.notnull(np.NaN)
+</code></pre>
+<h4 id="用dropna-丟棄遺漏值"><a href="#用dropna-丟棄遺漏值" class="headerlink" title="用dropna()丟棄遺漏值"></a>用<code>dropna()</code>丟棄遺漏值</h4><h4 id="將遺漏值填滿-fillna"><a href="#將遺漏值填滿-fillna" class="headerlink" title="將遺漏值填滿 fillna()"></a>將遺漏值填滿 <code>fillna()</code></h4><p>ffill =&gt; fotward fill<br>bfill =&gt; back fill</p>
+<pre><code>df.fillna(value=None, mthod=ffill)
+</code></pre>
+<h3 id="列索引鍵取值"><a href="#列索引鍵取值" class="headerlink" title="列索引鍵取值"></a>列索引鍵取值</h3><ul>
+<li><code>.loc[index label, column label]</code>: 索引鍵</li>
+<li><code>.iloc[index position, column position]</code>:串列用的位置</li>
+</ul>
+<h3 id="資料合併"><a href="#資料合併" class="headerlink" title="資料合併"></a>資料合併</h3><h4 id="橫向合併"><a href="#橫向合併" class="headerlink" title="橫向合併"></a>橫向合併</h4><pre><code>pd.concat([df, df2], axis=1, sort=False)
+</code></pre>
+<h4 id="縱向合併"><a href="#縱向合併" class="headerlink" title="縱向合併"></a>縱向合併</h4><pre><code>pd.concat([df, df2], axis=0)
+df.append(df2)
+</code></pre>
+<h4 id="使用merge-合併"><a href="#使用merge-合併" class="headerlink" title="使用merge()合併"></a>使用<code>merge()</code>合併</h4><p>df.merge(df2, on=’labelname’)</p>
+<h3 id="常用函數"><a href="#常用函數" class="headerlink" title="常用函數"></a>常用函數</h3><h4 id="印出前後幾筆資料"><a href="#印出前後幾筆資料" class="headerlink" title="印出前後幾筆資料"></a>印出前後幾筆資料</h4><pre><code>df.head() #印出前5筆
+df.head(3) #印出前3筆
+df.iloc[0:3] #印出前3筆
+df.tail(3) #印出後3筆
+df.iloc[-3:] #印出後3筆
+df.sample(3) #隨機3筆資料
+</code></pre>
+<h4 id="資料的資料資料describe"><a href="#資料的資料資料describe" class="headerlink" title="資料的資料資料describe()"></a>資料的資料資料<code>describe()</code></h4><pre><code>df.describe() 
+</code></pre>
+<h4 id="特定項最高nlargest"><a href="#特定項最高nlargest" class="headerlink" title="特定項最高nlargest()"></a>特定項最高<code>nlargest()</code></h4><pre><code>df.nlargest(1,&#39;Math&#39;)
+</code></pre>
+<h3 id="繪製圖表"><a href="#繪製圖表" class="headerlink" title="繪製圖表"></a>繪製圖表</h3><h4 id="柱狀圖bar-chart"><a href="#柱狀圖bar-chart" class="headerlink" title="柱狀圖bar chart"></a>柱狀圖bar chart</h4><pre><code>df.plot(kind=&#39;bar&#39;)
+</code></pre>
+<p><strong>堆疊長條圖</strong></p>
+<pre><code>df.plot(kind=&#39;bar&#39;, stacked=True)
+</code></pre>
+<p><code>rot</code>控制x軸文字角度<br><strong>水平柱狀圖</strong></p>
+<pre><code>df.plot(kind=&#39;barh&#39;)
+</code></pre>
+<h4 id="圓餅圖-pie-chart"><a href="#圓餅圖-pie-chart" class="headerlink" title="圓餅圖 pie chart"></a>圓餅圖 pie chart</h4><pre><code>df.plot(kind=&#39;pie&#39;)
+</code></pre>
+<p>凸顯最大佔比</p>
+<pre><code>df.plot(kind=&#39;pie&#39;, explode=explode)
+</code></pre>
+<p>加入百分比 <code>autopct=&#39;%.1f%%&#39;</code></p>
+<h4 id="直方圖"><a href="#直方圖" class="headerlink" title="直方圖"></a>直方圖</h4><pre><code>df.plot(kind=&#39;hist&#39;)
+</code></pre>
+<p>設定區間間隔值<code>bins</code></p>
+<pre><code>df.plot(kind=&#39;pie&#39;, bins=30)
+</code></pre>
+<h4 id="箱型圖"><a href="#箱型圖" class="headerlink" title="箱型圖"></a>箱型圖</h4><pre><code>df.plot(kind=&#39;box&#39;)
+</code></pre>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-02-19T13:46:14.000Z" itemprop="datePublished">2021-02-19</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/Python-Lesson/">Python Lesson</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Analyze/" rel="tag">Data Analyze</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-2019-facebook-speech"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/10/25/2019-facebook-speech/">Facebook Speech</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p><strong>Date:</strong> 2019/12/05<br><strong>Company:</strong> Facebook<br><strong>Title:</strong><br><strong>Solgan:</strong> 我們的使命-賦予人們打造社群的力量攜手拉近世界距離<br><strong>Product:</strong> Facebook, iMessage, Instagram, Whatsapp</p>
+<hr>
+<h3 id="平台內容的樣態"><a href="#平台內容的樣態" class="headerlink" title="平台內容的樣態"></a>平台內容的樣態</h3><ul>
+<li>使用者原生內容User generally contnet</li>
+<li>廣告內容</li>
+</ul>
+<h3 id="平台內容的規範"><a href="#平台內容的規範" class="headerlink" title="平台內容的規範"></a>平台內容的規範</h3><ul>
+<li>社群守則Community Standards</li>
+<li>當地法令Local Laws</li>
+<li>廣告政策ADS Policy<br>(社群允許，但廣告不允許 ex)</li>
+</ul>
+<h3 id="FB處理不當使用的邏輯"><a href="#FB處理不當使用的邏輯" class="headerlink" title="FB處理不當使用的邏輯"></a>FB處理不當使用的邏輯</h3><ul>
+<li>移除 REMOVE</li>
+<li>減少擴散 REDUCE</li>
+<li>提供更多資訊 INFORM<h4 id="Senario"><a href="#Senario" class="headerlink" title="Senario"></a>Senario</h4></li>
+</ul>
+<p><strong>不得發布</strong>：可能立即導致人身傷害的錯誤資訊<br><strong>基於當地法令而採取的內容限制(Content Restrictions Based on Local Law)</strong><br>/社群：限制IP區域存取<br>\廣告：移除廣告<br><strong>打擊不當使用者</strong><br>移除句協調性不正使用的行為</p>
+<p>減少瘋傳不實資訊的排序及散佈</p>
+<p>每次開啟Facebook App，內容排序不同，會根據手機的狀態、地需、位置等資訊排序貼文內容。</p>
+<h4 id="第三方事實查核機制"><a href="#第三方事實查核機制" class="headerlink" title="第三方事實查核機制"></a>第三方事實查核機制</h4><p>辨識-&gt;評估-&gt;行動</p>
+<ul>
+<li>通知使用者</li>
+<li>其他相關文章</li>
+</ul>
+<h3 id="媒體識讀能力提升計畫"><a href="#媒體識讀能力提升計畫" class="headerlink" title="媒體識讀能力提升計畫"></a>媒體識讀能力提升計畫</h3>
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-10-25T13:47:57.000Z" itemprop="datePublished">2019-10-25</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/Speech-Note/">Speech Note</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Facebook/" rel="tag">Facebook</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
 id="post-GA-Day30"
 class="article article-type-post"
 >
@@ -718,260 +1104,10 @@ text(x, y - 100, labels(city)[[1]], cex = 0.8)
 
     
   
-    
-      <article
-id="post-GA-Day24"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2019/10/09/GA-Day24/">【Day24】GA with you - R 基因演算法應用於旅行銷售員問題 (2)</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>昨天的文章已經有在更新過了<br>實在是太趕了xddd<br>這個題目可能會一點一點跟大家介紹<br>期盼在雙十連假講完(受不了自己拖拖拉拉)<br>要給自己信心(?)</p>
-<hr>
-<p>可以先把昨天的內容補上<br>(其實只有引入套件和設定path cost而已)</p>
-<h3 id="路徑成本"><a href="#路徑成本" class="headerlink" title="路徑成本"></a>路徑成本</h3><pre><code># fitness vector
-A&lt;-c(-1,25,25,10,35)
-B&lt;-c(25,-1,25,35,25)
-C&lt;-c(25,25,-1,30,15)
-D&lt;-c(10,35,30,-1,20)
-E&lt;-c(35,25,15,20,-1)
-city&lt;-rbind(A,B,C,D,E)
-colnames(city)&lt;-c(&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;)
-</code></pre>
-<p>路徑圖形<br><img src="https://i.imgur.com/StMMRNc.png" alt="path-cost"></p>
-<h3 id="適應函數"><a href="#適應函數" class="headerlink" title="適應函數"></a>適應函數</h3><p>那昨天定義完各條路徑的成本後，<br>我們來思考要怎麼去計算旅行一條路的成本<br>需要求解最小值<br>但是路徑的花費是正數<br>所以我們就用<code>1/X</code>這樣的方式取倒數<br>加起來就是變成<strong>最小值</strong></p>
-<ol>
-<li>計算旅程的長度<br><code>tourLength</code>用來求解整個旅程的長度<pre><code>tourLength &lt;- function(tour, distMatrix) &#123;
-tour &lt;- c(tour, tour[1])
-route &lt;- embed(tour, 2)[, 2:1]
-sum(route)
-&#125;
-</code></pre>
-</li>
-<li>計算成本<br>將剛剛<code>tourLength</code>的總和用倒數呈現<pre><code>tspfitness  &lt;- function(tour, ...) 1/tourLength(tour, ...)
-</code></pre>
-</li>
-</ol>
-<h3 id="執行GA"><a href="#執行GA" class="headerlink" title="執行GA"></a>執行GA</h3><p><code>執行迭代數(run):</code>100</p>
-<pre><code>GA.fit &lt;- ga(type = &quot;permutation&quot;, 
-             fitness = tspfitness, 
-             distMatrix = data,
-             lower  = 1, 
-             upper = 5,
-             popSize = 100,
-             maxiter = 20,
-             run = 10, 
-             pmutation = 0.05, 
-             monitor = NULL)
-</code></pre>
-<h3 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h3><p><code>GA.fit@solution</code>結果</p>
-<pre><code>&gt; GA.fit@solution
-     x1 x2 x3 x4 x5
-[1,]  4  3  1  5  2
-[2,]  5  3  2  4  1
-[3,]  4  5  1  3  2
-[4,]  5  3  1  4  2
-[5,]  2  5  1  4  3
-[6,]  1  3  2  4  5
-</code></pre>
-<p>或是使用</p>
-<pre><code>summary(GA.fit)
-</code></pre>
-<p>今天的程式碼<a target="_blank" rel="noopener" href="https://github.com/wang-chi/gawithyou/blob/master/Day24-TSP.R">Github</a><br>剛剛在客運上刻完這篇 差點沒發成功(暈倒)</p>
-<hr>
-<p>相關資料參考：<br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/GA/versions/3.2/topics/ga">R Documentation-GA</a><br><a target="_blank" rel="noopener" href="https://zsc.netlify.com/post/2015-11-09-ga/">GA包–遗传算法</a><br><a target="_blank" rel="noopener" href="https://rpubs.com/karthy1988/TSP_GA">RPubs - Optimized Delivery Route using Genetic Algorithm: Cost cutting for e-commerce</a><br><a target="_blank" rel="noopener" href="http://rpubs.com/somasdhavala/GAeg">RPubs - Genetic Algorithm on TSP</a></p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2019-10-09T14:29:51.000Z" itemprop="datePublished">2019-10-09</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-GA-Day23"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2019/10/08/GA-Day23/">【Day23】GA with you - R 基因演算法應用於旅行銷售員問題 (1)</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>這幾天會跟大家介紹如何使用基因演算法來解決旅行銷售員問題～<br>(終於要認真實作啦XDDDD)</p>
-<h2 id="什麼是旅行銷售員問題？"><a href="#什麼是旅行銷售員問題？" class="headerlink" title="什麼是旅行銷售員問題？"></a>什麼是旅行銷售員問題？</h2><p>旅行銷售員問題(Traveling Salesman Problems)<br><strong>情境</strong><br>一個旅行業務員要必需到各個城市去擴展業務<br>而每一個城市間都有不一樣的距離<br>而要找出一條路線可以滿足<br>每一個城市都只去過一次<br>且花費最少的成本</p>
-<p>n個城市，1,2,3,….,n</p>
-<p>那用正常的邏輯去思考<br>如果6座城市要去拜訪，<br>則可能的路徑就有6!，<br>答案就非常多種了～</p>
-<hr>
-<p>那這次所使用到的套件就是使用R語言的<code>mcga</code><br>如果對於<code>ga</code>不熟悉的朋友<br>記得回到之前的文章去了解歐～～<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10221963/">【Day20】GA with you - R Package GA R套件GA</a></p>
-<hr>
-<ol>
-<li><p>引入所需要用到的套件</p>
-<pre><code>library(GA)
-</code></pre>
-</li>
-<li><p>設定路徑的權重(花費)<br>假設有5座城市，那每一座城市所需要的成本<br><img src="https://i.imgur.com/StMMRNc.png" alt="city"></p>
-</li>
-</ol>
-<pre><code>A&lt;-c(0,25,25,10,35)
-B&lt;-c(25,0,25,35,25)
-C&lt;-c(25,25,0,30,15)
-D&lt;-c(10,35,30,0,20)
-E&lt;-c(35,25,15,20,0)
-city&lt;-rbind(A,B,C,D,E)
-colnames(city)&lt;-c(&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;)
-data&lt;-as.matrix(city)
-</code></pre>
-<p>所以我們設定的矩陣會像是</p>
-<pre><code>&gt; data
-   A  B  C  D  E
-A  0 25 25 10 35
-B 25  0 25 35 25
-C 25 25  0 30 15
-D 10 35 30  0 20
-E 35 25 15 20  0
-</code></pre>
-<p>今天所使用到的程式碼<br><a target="_blank" rel="noopener" href="https://github.com/wang-chi/gawithyou/blob/master/Day23-TSP.R">Github</a></p>
-<hr>
-<p>相關資料：<br>iT邦幫忙也有其他大大文章有提到<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10211706">用基因遺傳演算法(Genetic Algorithm)解旅行推銷員問題(TSP)</a></p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2019-10-08T14:29:50.000Z" itemprop="datePublished">2019-10-08</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-GA-Day22"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2019/10/07/GA-Day22/">【Day22】GA with you - R Package Review R語言套件</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>今天終於順利挺過長達7個小時的meeting時光<br>真的是坐如針氈<br>還因此與末班車差身而過&gt;&lt;</p>
-<hr>
-<p>上週介紹了各種R語言中基因演算法(遺傳演算法)的套件<br>那今天就來比較說這些套件間的差異以及對此的建議</p>
-<p>在前幾天的介紹後<br>相信大家都有發現到某些套件非常複雜<br>有些卻很簡單而易懂的<br>那主要常被使用且比較好找到相關資料的就是<br><code>mcga</code>和<code>rbga</code>這兩個套件<br>在使用的參數複雜狀況來說<br>並不會過於複雜<br>而每一個核心的概念都有提到<br>也都可以靈活使用<br>所以也比較建議大家使用這兩個套件</p>
-<p>而<code>GA</code>和<code>genound</code>這兩個套件就非常複雜<br>我在研究並撰寫文章<br>也發現自己有很多地方不明白的<br>所以未來也會陸續補上</p>
-<hr>
-<p>那預估明天會跟大家講解Python的應用或是開始用實際範例來實作<br>而不是用簡單的數學方程式</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2019-10-07T14:29:48.000Z" itemprop="datePublished">2019-10-07</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
 
   
     <nav class="pagination">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next</a>
     </nav>
   
 </div>
@@ -992,7 +1128,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python-Lesson/">Python Lesson</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/">Speech Note</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/Visit/">Visit</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -1002,7 +1138,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genalg/" rel="tag">genalg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genoud/" rel="tag">genoud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcga/" rel="tag">mcga</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analyze/" rel="tag">Data Analyze</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/" rel="tag">Facebook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genalg/" rel="tag">genalg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genoud/" rel="tag">genoud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcga/" rel="tag">mcga</a></li></ul>
     </div>
   </div>
 
@@ -1019,19 +1155,19 @@ class="article article-type-post"
           </li>
         
           <li>
+            <a href="/2021/04/19/Python-Lesson01-basic/">Python Lesson 1 基本指令</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/19/Python-DataAnalyze/">Python 數據分析指令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/25/2019-facebook-speech/">Facebook Speech</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/14/GA-Day29/">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/13/GA-Day28/">【Day28】GA with you - Simulation Annealing 模擬退火法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/12/GA-Day27/">【Day27】GA with you - Memetic algorithm 模因演算法</a>
           </li>
         
       </ul>
@@ -1043,7 +1179,7 @@ class="article article-type-post"
   <div class="widget-wrap widget-archive">
     <div class="widget-title"><span>Archive</span></div>
     <div class="widget-inner">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li></ul>
     </div>
   </div>
 

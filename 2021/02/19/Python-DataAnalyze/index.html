@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>Python 數據分析指令 | Wang-Chi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+
+    
+
+    
+
+    
+
+    
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1633679241878.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1633679241878.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            
+        }
+        window.aomori_logo_typed_animated = true
+        window.aomori_search_algolia = false
+
+    </script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/images/icon.png" alt="Wang-Chi, Ho">
+            </div>
+            
+            <div class="header-type-inner">
+                
+                    <div id="typed-strings" style="display:none">
+                        <p>Wang-Chi</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+                <a href="/">Home</a>
+                
+                <a href="/photography">Photography</a>
+                
+                <a href="/archives">Archives</a>
+                
+                <a href="/friends">Friends</a>
+                
+            </div>
+            <div class="header-menu-social">
+                
+    <a class="social" target="_blank" href="https://github.com/wang-chi">
+        <box-icon type='logo' name='github'></box-icon>
+    </a>
+
+    <a class="social" target="_blank" href="https://www.linkedin.com/in/wang-chi-ho/">
+        <box-icon type='logo' name='linkedin-square'></box-icon>
+    </a>
+
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                    <a href="/">Home</a>
+                    
+                    <a href="/photography">Photography</a>
+                    
+                    <a href="/archives">Archives</a>
+                    
+                    <a href="/friends">Friends</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-ckuy585c20004l3e74mnh5rk7" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      Python 數據分析指令
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2021-02-19T13:46:14.000Z" itemprop="datePublished">2021-02-19</time>
+</div>
+
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/Python-Lesson/">Python Lesson</a>
+            </div>
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Analyze/" rel="tag">Data Analyze</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+            </div>
+            
+
+            
+            <div class="article-busuanzi">
+                有 <span id="busuanzi_value_page_pv">N</span> 人看过
+            </div>
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <h1 id="Python-數據分析指令"><a href="#Python-數據分析指令" class="headerlink" title="Python 數據分析指令"></a>Python 數據分析指令</h1><h2 id="Read-Write-File"><a href="#Read-Write-File" class="headerlink" title="Read/Write File"></a>Read/Write File</h2><p>Read</p>
+<pre><code>import pandas as pd
+# read from csv
+train = pd.read_csv(&#39;application_train.csv&#39;)
+train = pd.read_excel(&#39;application.xlsx&#39;)
+</code></pre>
+<p>Write</p>
+<pre><code># export as csv
+train.to_csv(&#39;train.csv&#39;, index=False)
+</code></pre>
+<h2 id="Message-Setting"><a href="#Message-Setting" class="headerlink" title="Message Setting"></a>Message Setting</h2><h3 id="Ignore-Warning-Message"><a href="#Ignore-Warning-Message" class="headerlink" title="Ignore Warning Message"></a>Ignore Warning Message</h3><pre><code>import warnings
+warnings.filterwarnings(&#39;ignore&#39;)
+</code></pre>
+<h3 id="Show-all-column-data"><a href="#Show-all-column-data" class="headerlink" title="Show all column data"></a>Show all column data</h3><pre><code># 顯示所有資料
+import pandas as pd
+pd.set_option(&#39;display.max_rows&#39;, None)
+pd.set_option(&#39;display.max_column&#39;, None)
+</code></pre>
+<h2 id="Data-info"><a href="#Data-info" class="headerlink" title="Data info"></a>Data info</h2><ul>
+<li>檢視特徵型別（非數值型別需要LabelEncoder或者one-hot編碼成數值型）<pre><code>app_train.dtypes.value_counts()
+</code></pre>
+</li>
+<li>統計非數值型資料的unique數<pre><code>app_train.select_dtypes(&#39;object&#39;).apply(pd.Series.nunique, axis = 0)
+</code></pre>
+</li>
+<li>對齊訓練和測試資料的列數（訓練資料只應該比測試資料多出TARGET一列）<pre><code>train_target = app_train[&#39;TARGET&#39;] #Target Column
+app_train, app_test = app_train.align(other=app_test, join=&#39;inner&#39;, axis=1)
+app_train[&#39;TARGET&#39;] = train_target
+print(&#39;train: &#39;, app_train.shape)
+print(&#39;test:  &#39;, app_test.shape)
+</code></pre>
+</li>
+</ul>
+<h2 id="String-Method"><a href="#String-Method" class="headerlink" title="String Method"></a>String Method</h2><h4 id="將換行符號改成空白"><a href="#將換行符號改成空白" class="headerlink" title="將換行符號改成空白"></a>將換行符號改成空白</h4><pre><code>a = &#39;Hello&#39;
+b = 3
+print(a, end=&#39; &#39;)
+print(b)
+</code></pre>
+<p><strong>Result</strong> <code>Hello 3</code></p>
+<h3 id="f-string"><a href="#f-string" class="headerlink" title="f_string"></a>f_string</h3><h4 id="f-string-使用"><a href="#f-string-使用" class="headerlink" title="f_string 使用"></a>f_string 使用</h4><pre><code>a = &#39;hello&#39;
+b = 3
+f&#39;&#123;a&#125; &#123;b&#125;&#39;
+</code></pre>
+<p><strong>Result</strong> <code>&#39;hello 3&#39;</code></p>
+<h4 id="f-string-千位數逗號"><a href="#f-string-千位數逗號" class="headerlink" title="f_string 千位數逗號"></a>f_string 千位數逗號</h4><pre><code>data = 12500
+f&#39;&#123;data:,&#125;&#39;
+</code></pre>
+<p><strong>Result</strong> <code>12,500</code></p>
+<h4 id="f-string控制輸入長度"><a href="#f-string控制輸入長度" class="headerlink" title="f_string控制輸入長度"></a>f_string控制輸入長度</h4><pre><code>f&#39;&#123;data:&gt;10,&#125;&#39;
+</code></pre>
+<p><strong>Result</strong> <code>&#39;    12,500&#39;</code></p>
+<h4 id="f-string裡的空白用-填補"><a href="#f-string裡的空白用-填補" class="headerlink" title="f_string裡的空白用*填補"></a>f_string裡的空白用*填補</h4><pre><code>f&#39;&#123;data:*&gt;10,&#125;&#39;
+</code></pre>
+<p><strong>Result</strong> <code>&#39;****12,500&#39;</code></p>
+<h4 id="f-string的資料對齊方向"><a href="#f-string的資料對齊方向" class="headerlink" title="f_string的資料對齊方向"></a>f_string的資料對齊方向</h4><pre><code>f&#39;&#123;data:&lt;10,&#125;&#39;
+</code></pre>
+<p><strong>Result</strong> <code>&#39;12,500    &#39;</code></p>
+<h4 id="f-string的資料置中對齊"><a href="#f-string的資料置中對齊" class="headerlink" title="f_string的資料置中對齊"></a>f_string的資料置中對齊</h4><pre><code>f&#39;&#123;data:^10,&#125;&#39;
+</code></pre>
+<p><strong>Result</strong> <code>&#39;  12,500  &#39;</code></p>
+<h3 id="將每個字的第一個字元大寫"><a href="#將每個字的第一個字元大寫" class="headerlink" title="將每個字的第一個字元大寫"></a>將每個字的第一個字元大寫</h3><pre><code>name = &#39;peter hsu&#39;
+name.title()
+</code></pre>
+<p><strong>Result</strong> <code>&#39;Peter Hsu&#39;</code></p>
+<h3 id="將所有字元大寫"><a href="#將所有字元大寫" class="headerlink" title="將所有字元大寫"></a>將所有字元大寫</h3><p><code>&lt;string&gt;.upper()</code></p>
+<h3 id="將所有字元小寫"><a href="#將所有字元小寫" class="headerlink" title="將所有字元小寫"></a>將所有字元小寫</h3><p><code>&lt;string&gt;.lower()</code></p>
+<h3 id="去除空白"><a href="#去除空白" class="headerlink" title="去除空白"></a>去除空白</h3><p><code>&lt;string&gt;.strip()</code><br>左邊<br><code>&lt;string&gt;.lstrip()</code><br>右邊<br><code>&lt;string&gt;.rstrip()</code></p>
+<h3 id="置換字元"><a href="#置換字元" class="headerlink" title="置換字元"></a>置換字元</h3><p><code>replace</code>a to b<br><code>&lt;string&gt;.replace(a, b)</code></p>
+<h2 id="變數小技巧"><a href="#變數小技巧" class="headerlink" title="變數小技巧"></a>變數小技巧</h2><pre><code>1. 變數  : 純變數，例如：a, b, c
+2. 變數(): 小括號表示函數，函數內用逗號區隔，var(a, b, c)
+3. 變數[]: 抽取變數內容的元素
+4. 變數. ： 使用物件內的屬性或函數
+</code></pre>
+<h2 id="Dict"><a href="#Dict" class="headerlink" title="Dict"></a>Dict</h2><p>字典有三種迴圈使用方式<code>items()</code>、<code>keys()</code>、<code>values()</code></p>
+<pre><code>name = &#123;&#39;Billy&#39;: 155, &#39;Chi&#39;: 163, &#39;Vicki&#39;: 166&#125;
+name.items()
+</code></pre>
+<p><strong>Result</strong><br><code>dict_items([(&#39;Billy&#39;, 155), (&#39;Chi&#39;, 163), (&#39;Vicki&#39;, 166)])</code><br><strong><code>items()</code></strong></p>
+<pre><code>for k,v in name.items():
+    print(k, v)
+</code></pre>
+<p><strong><code>keys()</code></strong><br>使用鍵值k進行迴圈</p>
+<pre><code>for k in name.keys():
+    print(k, name[k])
+</code></pre>
+<p><strong><code>values()</code></strong><br>使用<strong>值</strong>進行迴圈，只關心數值</p>
+<pre><code>for v in name.values():
+    print(v)
+</code></pre>
+<h2 id="Pandas-套件"><a href="#Pandas-套件" class="headerlink" title="Pandas 套件"></a>Pandas 套件</h2><p>Pandas 資料結構</p>
+<ol>
+<li>Series 單維度欄位</li>
+<li>DataFrame 雙維度表格<h3 id="Series資料"><a href="#Series資料" class="headerlink" title="Series資料"></a>Series資料</h3></li>
+</ol>
+<ul>
+<li>使用<code>Series()</code>函數建立</li>
+<li>import pandas</li>
+<li>可同時指定index和values</li>
+</ul>
+<h4 id="創建Series資料-一"><a href="#創建Series資料-一" class="headerlink" title="創建Series資料(一)"></a>創建Series資料(一)</h4><pre><code>pd.Series(data=range(1,5), index=list(&#39;abcd&#39;))
+</code></pre>
+<p><strong>Result</strong></p>
+<pre><code>a    1
+b    2
+c    3
+d    4
+dtype: int64
+</code></pre>
+<h4 id="創建Series資料-二"><a href="#創建Series資料-二" class="headerlink" title="創建Series資料(二)"></a>創建Series資料(二)</h4><pre><code>pd.Series(data=range(1,5))
+</code></pre>
+<p><strong>Result</strong></p>
+<pre><code>0    1
+1    2
+2    3
+3    4
+dtype: int64
+</code></pre>
+<h4 id="變更索引鍵"><a href="#變更索引鍵" class="headerlink" title="變更索引鍵"></a>變更索引鍵</h4><p><code>rename()</code></p>
+<h4 id="資料的常見用法"><a href="#資料的常見用法" class="headerlink" title="資料的常見用法"></a>資料的常見用法</h4><ul>
+<li><code>describe()</code>: 取得資料的描述性統計</li>
+<li><code>unique()</code>: 取得資料中不同的資料型態</li>
+<li><code>nunique()</code>: n代表number</li>
+<li><code>value_counts()</code>: 不同資料型態個別出現次數 (百分比顯示 normalize = True)</li>
+<li><code>sort_index()</code>: 按照鍵值大小排序</li>
+</ul>
+<h3 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h3><h4 id="修改索引列名稱"><a href="#修改索引列名稱" class="headerlink" title="修改索引列名稱"></a>修改索引列名稱</h4><p>方法一<br>需要設定axis=1</p>
+<pre><code>df = df.rename(&#123;&#39;Math&#39;: &#39;math&#39;&#125;, axis=1)
+</code></pre>
+<p>方法二</p>
+<pre><code>df = df.rename(columns=&#123;&#39;Math&#39;: &#39;math&#39;&#125;)
+</code></pre>
+<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><h4 id="檢查資料是否為NaN"><a href="#檢查資料是否為NaN" class="headerlink" title="檢查資料是否為NaN"></a>檢查資料是否為NaN</h4><pre><code>import numpy as np
+pd.isnull(np.NaN)
+pd.notnull(np.NaN)
+</code></pre>
+<h4 id="用dropna-丟棄遺漏值"><a href="#用dropna-丟棄遺漏值" class="headerlink" title="用dropna()丟棄遺漏值"></a>用<code>dropna()</code>丟棄遺漏值</h4><h4 id="將遺漏值填滿-fillna"><a href="#將遺漏值填滿-fillna" class="headerlink" title="將遺漏值填滿 fillna()"></a>將遺漏值填滿 <code>fillna()</code></h4><p>ffill =&gt; fotward fill<br>bfill =&gt; back fill</p>
+<pre><code>df.fillna(value=None, mthod=ffill)
+</code></pre>
+<h3 id="列索引鍵取值"><a href="#列索引鍵取值" class="headerlink" title="列索引鍵取值"></a>列索引鍵取值</h3><ul>
+<li><code>.loc[index label, column label]</code>: 索引鍵</li>
+<li><code>.iloc[index position, column position]</code>:串列用的位置</li>
+</ul>
+<h3 id="資料合併"><a href="#資料合併" class="headerlink" title="資料合併"></a>資料合併</h3><h4 id="橫向合併"><a href="#橫向合併" class="headerlink" title="橫向合併"></a>橫向合併</h4><pre><code>pd.concat([df, df2], axis=1, sort=False)
+</code></pre>
+<h4 id="縱向合併"><a href="#縱向合併" class="headerlink" title="縱向合併"></a>縱向合併</h4><pre><code>pd.concat([df, df2], axis=0)
+df.append(df2)
+</code></pre>
+<h4 id="使用merge-合併"><a href="#使用merge-合併" class="headerlink" title="使用merge()合併"></a>使用<code>merge()</code>合併</h4><p>df.merge(df2, on=’labelname’)</p>
+<h3 id="常用函數"><a href="#常用函數" class="headerlink" title="常用函數"></a>常用函數</h3><h4 id="印出前後幾筆資料"><a href="#印出前後幾筆資料" class="headerlink" title="印出前後幾筆資料"></a>印出前後幾筆資料</h4><pre><code>df.head() #印出前5筆
+df.head(3) #印出前3筆
+df.iloc[0:3] #印出前3筆
+df.tail(3) #印出後3筆
+df.iloc[-3:] #印出後3筆
+df.sample(3) #隨機3筆資料
+</code></pre>
+<h4 id="資料的資料資料describe"><a href="#資料的資料資料describe" class="headerlink" title="資料的資料資料describe()"></a>資料的資料資料<code>describe()</code></h4><pre><code>df.describe() 
+</code></pre>
+<h4 id="特定項最高nlargest"><a href="#特定項最高nlargest" class="headerlink" title="特定項最高nlargest()"></a>特定項最高<code>nlargest()</code></h4><pre><code>df.nlargest(1,&#39;Math&#39;)
+</code></pre>
+<h3 id="繪製圖表"><a href="#繪製圖表" class="headerlink" title="繪製圖表"></a>繪製圖表</h3><h4 id="柱狀圖bar-chart"><a href="#柱狀圖bar-chart" class="headerlink" title="柱狀圖bar chart"></a>柱狀圖bar chart</h4><pre><code>df.plot(kind=&#39;bar&#39;)
+</code></pre>
+<p><strong>堆疊長條圖</strong></p>
+<pre><code>df.plot(kind=&#39;bar&#39;, stacked=True)
+</code></pre>
+<p><code>rot</code>控制x軸文字角度<br><strong>水平柱狀圖</strong></p>
+<pre><code>df.plot(kind=&#39;barh&#39;)
+</code></pre>
+<h4 id="圓餅圖-pie-chart"><a href="#圓餅圖-pie-chart" class="headerlink" title="圓餅圖 pie chart"></a>圓餅圖 pie chart</h4><pre><code>df.plot(kind=&#39;pie&#39;)
+</code></pre>
+<p>凸顯最大佔比</p>
+<pre><code>df.plot(kind=&#39;pie&#39;, explode=explode)
+</code></pre>
+<p>加入百分比 <code>autopct=&#39;%.1f%%&#39;</code></p>
+<h4 id="直方圖"><a href="#直方圖" class="headerlink" title="直方圖"></a>直方圖</h4><pre><code>df.plot(kind=&#39;hist&#39;)
+</code></pre>
+<p>設定區間間隔值<code>bins</code></p>
+<pre><code>df.plot(kind=&#39;pie&#39;, bins=30)
+</code></pre>
+<h4 id="箱型圖"><a href="#箱型圖" class="headerlink" title="箱型圖"></a>箱型圖</h4><pre><code>df.plot(kind=&#39;box&#39;)
+</code></pre>
+
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+<div class="article-copyright hairline">
+  <p>
+    本網站 <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">屬於技術之術分享網站</a> 未經許可，請勿任意轉載。
+  </p>
+</div>
+
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2021/04/19/Python-Lesson01-basic/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          Python Lesson 1 基本指令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/25/2019-facebook-speech/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">Facebook Speech</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=Python 數據分析指令 - Wang-Chi&url=http://wang-chi.github.io/2021/02/19/Python-DataAnalyze/">
+            <box-icon type='logo' name='twitter'></box-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=Python 數據分析指令 - Wang-Chi&u=http://wang-chi.github.io/2021/02/19/Python-DataAnalyze/">
+            <box-icon name='facebook-square' type='logo' ></box-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=Python 數據分析指令 - Wang-Chi&url=http://wang-chi.github.io/2021/02/19/Python-DataAnalyze/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar ">
+                
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python-Lesson/">Python Lesson</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/">Speech Note</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/Visit/">Visit</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analyze/" rel="tag">Data Analyze</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/" rel="tag">Facebook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genalg/" rel="tag">genalg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genoud/" rel="tag">genoud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcga/" rel="tag">mcga</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/11/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/19/Python-Lesson01-basic/">Python Lesson 1 基本指令</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/19/Python-DataAnalyze/">Python 數據分析指令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/25/2019-facebook-speech/">Facebook Speech</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Wang-Chi &copy; 2021<br>
+            Powered By Hexo · Theme By <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Aomori</a>
+        </div>
+    </div>
+
+</footer>
+
+
+
+
+
+
+<script src="/dist/build.js?1633679241878.js"></script>
+
+
+<script src="/dist/custom.js?1633679241878.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

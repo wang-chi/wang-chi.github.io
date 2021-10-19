@@ -130,6 +130,187 @@
   
     
       <article
+id="post-GA-Day04"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/09/19/GA-Day04/">【Day04】GA with you - Reproduction &amp; Selection 複製與選擇 (1)</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>今天要跟大家介紹的是在基因演算法中的複製(Reproduction)和選擇(Selection)，<br>分開敘述有點困難就一起跟大家介紹了。<br>還記得昨天的那張圖嗎？今天要講解的是右邊的Selection<br><img src="https://i.imgur.com/oJBOpwV.png" alt="基因演算法流程－選擇"></p>
+<p>今天要講的區塊是Selection的部分，<br>大家一定會想怎麼就這樣跳過了Fitness Calculation的部分，<br>因為適應程度計算又是一片新天地，<br>在後續大家比較了解GA之後再跟大家說明，<br>這邊就把Fitness Calculation當成一個運算式，<br>會回傳他的結果即可。</p>
+<p>那從一開始到選擇這邊的順序概念是什麼呢？<br>初始群組-&gt;計算染色體的適應程度並排序-&gt;將較好的染色體複製下來<br>那我們要介紹的就是複製較好的染色體的步驟了</p>
+<p>複製和選擇的精神在於【留下好的基因序列】，使得好的基因保留下去。<br>為了演化出更好的個體，將從原先的母體中篩選出較佳的個體，進而組成下一代的群組，<br>根據不同的染色體( chromosome )所對應到的適應值 ( Fitness Value )，<br>當適應值越高，該群體則有越高的機率被選取，以確保好的基因序列將被保留。<br>白話一點說，就想像是我們要做基因改造，會把比較好的基因給留下來，不好的基因給去除這樣的概念。</p>
+<p>選擇有哪些方法呢？<br>常見的選擇方式有隨機選擇( Random Selection Schema )、分裂選擇( Disrupt Selection Schema )及機率選擇( Proportionate Selection Schema )。<br>此外，後續也有人提出一種制度『菁英選擇』，這種選擇方式是直接將較好的群體完整保留下來，就不需要再經過隨機或是機率等等的選擇方式。</p>
+<p>今天的內容比較簡單，<br>明天會詳細跟大家介紹複製和選擇的部分，<br>一樣如果有任何疑惑都可以在下面留言告訴我，<br>無論是核心理論、表達上有誤的歡迎指教<br>希望明天還可以再次遇見大家</p>
+<hr>
+<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-09-19T14:29:19.000Z" itemprop="datePublished">2019-09-19</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day03"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/09/18/GA-Day03/">【Day03】GA with you - Process 基因演算法的流程</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>今天為大家就要跟大家介紹基因演算法的流程<br>先上張圖，讓大家對照的圖和文章<br><img src="https://i.imgur.com/wOjRpbr.png" alt="基因演算法流程"></p>
+<p><strong>初始化群體 ( Initialize Population )</strong><br>一開始需要確定群體的大小( Population Size )。就是每一次的染色體有多少個啦~<br>例如我要透過50個染色體運算，所以我該次的群體大小就是50。</p>
+<p><strong>適應函數 ( Fitness Function)</strong><br>適應函數用來計算染色體( chromosome )好壞的標準，用來篩選出適應程度較佳的個體(染色體)。<br>適應值( Fitness Value )就是用來顯示其適應程度的數值表現，而不同的適應函數在不同的應用情境下將對應到不同的計算方式。<br>設定適應值 ( Fitness Value ) ，當該組染色體 ( chromosome ) 的適應值達到目標適應值時，該組染色體( chromosome )即為欲尋找的解。</p>
+<p><strong>選擇 ( Selection )</strong><br>選擇的精神為【留下好的基因序列】，使得好的基因流傳下去。<br>根據不同的染色體所對應到的適應值 ( Fitness Value )，當適應值越高，該群體則有越高的機率被選取，以確保好的基因序列將被保留。<br>白話一點說，就想像是我們要做基因改造，會把比較好的基因給留下來，不好的基因給去除這樣的概念。<br>之前不是有什麼基因改造的人，把可能得到愛滋病的基因拿掉，就有點這樣的概念，把有疑慮（？）不好的（？）基因去除，保留好的。<br>而選擇的方法有很多種，在後續的文章中也會跟大家介紹每一種的選擇方式。（鋪梗…)</p>
+<p><strong>交配( Crossover )</strong><br>如同名稱所述，將兩兩基因進行交配進而產生出新的染色體。而兩兩染色體是否交配也會透過交配機率進行控制。<br>交配的方式也有很多種，單點、多點等等的方式，也是日後會介紹。（怎麼有種老高上身）</p>
+<p><strong>突變 ( Mutation )</strong><br>突變會在選中的chromosome中對某些基因進行變化，以二進位來說0-&gt;1，1 -&gt; 0。<br>突變也是會根據突變機率來改變，有了Crossover之後，一定有人會有疑問為什麼還要突變，這是因為避免最後的結果陷入區域最佳解的狀況。</p>
+<p>希望今天的介紹可以讓大家更能理解基因演算法的流程，<br>有任何問題歡迎留言，<br>進度的部分就別提醒我了（掩面），<br>希望這個系列可以讓大家有更多的收穫。<br>讓我們一起努力學習～～～</p>
+<hr>
+<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-09-18T14:29:17.000Z" itemprop="datePublished">2019-09-18</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day02"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/09/17/GA-Day02/">【Day02】GA with you - GA Element 基因演算法元素</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>在介紹基因演算法的全部流程前，需要先瞭解會運用到哪些元素來組成，需要哪些元素才能進行。</p>
+<p>基因演算法的整體架構和運作的流程可以產生高度的解答搜尋能力，也具備較高的問題獨立性。在基因演算法的執行過程中以達到適應函數標準的適應值(Fitness Value)為判斷標準，而適應值的好壞同時決定了該個體是否保留或是淘汰，進而確保下一代的個體優於上一代。</p>
+<p>這邊先介紹一下基因演算法組成的元素，以免大家到了後面還是傻傻分不清楚<br>(或許是我的文筆要要再多加油)<br><img src="https://i.imgur.com/upWQe4t.png" alt="基因演算法組成的元素"></p>
+<p><strong>最基本的元素 － 基因 (Gene)</strong><br>在GA的過程中，要變化每一個個體中的基因(Gene)片段，基因就是最基本的編碼單位啦~~<br>有點像是「APPLE」這個個體是由「A」、 「P」、 「P」、 「L」、 「E」這五個基因所組成的感覺<br>而可以根據要解決的類型來決定基因的型態，不同的基因型態就可以表示成不同的基因演算法<br>像是使用實數編碼的基因就是實數型基因演算法、符號編碼的基因就是符號型基因演算法～～<br>（實數型和符號型基因演算法也會在後續的文章中陸續為大家介紹，繼續埋梗的我）</p>
+<p><strong>基因的集合  － 染色體 (Chromosome)</strong><br>好，到這邊大家千萬別轉台，現在不是生物課<br>染色體就是所謂的個體(這樣誰聽得懂啦)，再明白一點就是前面基因的集合，<br>以上面的例子來說「APPLE」這個染色體是由「A」、 「P」、 「P」、 「L」、 「E」這五個基因所組成</p>
+<p><strong>染色的集合  － 族群(Population)</strong><br>到這邊朋友們都還在吧(?!)<br>族群就是前面染色體的集合啦~<br>當每一次的世代交替中，全部的染色體就是候選人，而這些候選解救是所謂的族群啦~<br>用上面的例子繼續延續，「APPLE」 、「GRAPE」 、「GUAVA」 、「LEMON」這些染色體(Chromosome)合起來就是所謂的族群(Population)，希望這樣簡單的例子可以讓大家更明白一點。</p>
+<p>這邊用一張圖來表示上述說的基因、染色體和族群的關係：<br>橘色方框表示族群 Population<br>綠色方框表示染色體 Chromosome<br>藍色方框表示基因 Gene<br><img src="https://i.imgur.com/wo0yypC.png" alt="基因演算法元素組成介紹"></p>
+<p>以上就是基因演算法中會遇到的幾個重要元素，<br>明天會給大家帶來基因演算法的流程介紹～</p>
+<p>一樣如果有任何疑惑都可以在下面留言告訴我，<br>無論是核心理論、表達上有誤的歡迎指教<br>希望明天還可以再次遇見大家</p>
+<hr>
+<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-09-17T14:22:53.000Z" itemprop="datePublished">2019-09-17</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
 id="post-GA-Day01"
 class="article article-type-post"
 >
@@ -188,6 +369,98 @@ class="article article-type-post"
     
         <div class="article-tag">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-2018-bigdata"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2018/10/25/2018-bigdata/">大數據思維下的智慧</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h1 id="大數據思維下的智慧"><a href="#大數據思維下的智慧" class="headerlink" title="大數據思維下的智慧"></a>大數據思維下的智慧</h1><p>時間:2018/10/25</p>
+<p><strong>何謂大數據?</strong></p>
+<blockquote>
+<p>一台電腦無法解決的。by台大教授</p>
+</blockquote>
+<pre><code>      / \
+     /   \
+    /     \
+   /       \
+  /knoeledge\
+ /information\
+/    Data     \
+</code></pre>
+<p><strong>IPO Model?</strong><br>Input - Process - Output</p>
+<p><strong>TPS ?</strong><br>交易處理系統 Transaction Processing System</p>
+<p><strong>OLTP?</strong><br>線上交易處理（OLTP, Online transaction processing）是指透過資訊系統、電腦網路及資料庫，以線上交易的方式處理一般即時性的作業資料，和更早期傳統資料庫系統大量批次的作業方式並不相同。</p>
+<p><strong>資料倉儲</strong><br>data warehouse，利用儲存大量歷史資料之資料庫，提供彙總或是統計的資訊以支援決策之使用。<br>ex:亞馬遜網站會將客戶所購買的書，進行相關書一的推薦。</p>
+<blockquote>
+<p>現行營運用的電腦系統並不是針對資料探勘分析而設計的。</p>
+</blockquote>
+<p><strong>大數據vs資料倉儲</strong><br>大數據是擷取、管理</p>
+<blockquote>
+<p>不在於所管理的資料量有多麼的巨大，而在於如何分析資料。</p>
+</blockquote>
+<p>大數據有三個不同於資料倉儲之處:<br>1.<strong>巨量</strong>，大數據的資料數量一定要夠多，但資料倉儲須適度空置其數量，否則需要非常冗長的時間才能有分析結果。<br>2.<strong>多樣</strong>，大數據涵蓋文字、語音、影像、日誌、地理位置等多種類型飛捷化資料，且多為金融機構外部資料。大數據相較於資料倉儲在資料結構上幾乎是雜亂，但對分析主體的涵蓋面上較為完整。<br>3.<strong>結果</strong>，大數據是要挖掘出隱含在複雜資料中的相關性，在從此相關性來推論未來，所強調是預測。 而資料倉儲是對過去的歷史資料做統計，以精準的計算各項指表，強調的是對現況的了解。</p>
+<blockquote>
+<p>Change is the only constant. </p>
+</blockquote>
+<blockquote>
+<p>數據分析是在分析理解數據模型，對數字有感覺。</p>
+</blockquote>
+<p><strong>CNN</strong></p>
+<ol>
+<li>監督式學習：給予有標籤的資料。Ex給他1000張標籤為蘋果和橘子的照片，</li>
+<li>非監督式學習：給予無標籤的資料，機器會自動從中找出潛在的規則。依據資料的分布、找出資料間的相似性。</li>
+<li>半監督學習：少部分資料有標籤，而大部分資料沒有標籤。</li>
+<li>增強學習</li>
+</ol>
+<ul>
+<li>捲積</li>
+</ul>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2018-10-25T13:43:54.000Z" itemprop="datePublished">2018-10-25</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/Speech-Note/">Speech Note</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li></ul>
         </div>
     
     </div>
@@ -266,7 +539,7 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a>
+        <a class="article-category-link" href="/categories/Speech-Note/">Speech Note</a>
         </div>
     
     
@@ -349,7 +622,7 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a>
+        <a class="article-category-link" href="/categories/Speech-Note/">Speech Note</a>
         </div>
     
     
@@ -402,7 +675,7 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a>
+        <a class="article-category-link" href="/categories/Speech-Note/">Speech Note</a>
         </div>
     
     
@@ -491,7 +764,7 @@ class="article article-type-post"
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a>
+        <a class="article-category-link" href="/categories/Speech-Note/">Speech Note</a>
         </div>
     
     
@@ -652,179 +925,9 @@ void setDataAndNotifyChange(Data data)&#123;
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a>
+        <a class="article-category-link" href="/categories/Speech-Note/">Speech Note</a>
         </div>
     
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-PBL-Activity-Notebook-1028-docker"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2017/10/21/PBL-Activity-Notebook-1028-docker/">Docker Taipei</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1 id="Docker-Taipei"><a href="#Docker-Taipei" class="headerlink" title="Docker Taipei"></a>Docker Taipei</h1><p>日期：2017.10.21 Sat.</p>
-<p>地點：國立臺中科技大學 資訊樓 2701</p>
-<p>內容：</p>
-<p>透過Web介面使用Docker：<a target="_blank" rel="noopener" href="http://labs.play-with-docker.com/">http://labs.play-with-docker.com/</a></p>
-<h4 id="虛擬化技術的歷史"><a href="#虛擬化技術的歷史" class="headerlink" title="# 虛擬化技術的歷史"></a># 虛擬化技術的歷史</h4><ul>
-<li>IBM zOS</li>
-<li>虛擬化軟體－VMware, KVM, Xen, VirtualBox</li>
-<li>Hardware-assisted virtualization 硬體加速</li>
-<li>Paravirtualiztion半虛擬化</li>
-<li>作業系統層虛擬化<ul>
-<li>OpenVZ</li>
-<li>LXC</li>
-<li>Docker</li>
-</ul>
-</li>
-<li>IaaS, PaaS, Saas - Snapshot, Migration</li>
-</ul>
-<p>container目前沒有snapshot</p>
-<h4 id="容器與虛擬化架構差異"><a href="#容器與虛擬化架構差異" class="headerlink" title="# 容器與虛擬化架構差異"></a># 容器與虛擬化架構差異</h4><ol>
-<li>一個虛擬機的單位叫做<strong>instance</strong></li>
-<li>VM和Container差異在於共用Host OS少掉Gust OS，效能上提升較多</li>
-<li>VM和Container在於VM會完全隔離，VM有Gust OS，病毒不會互相感染，Container僅有安全隔離</li>
-<li>Container在啟動速度、性能（接近原生）、</li>
-</ol>
-<h4 id="The-Matrix-of-Hell"><a href="#The-Matrix-of-Hell" class="headerlink" title="# The Matrix of Hell"></a># The Matrix of Hell</h4><p>只要可以運作Docker的環境都可以移植映像檔</p>
-<h4 id="Docker-Engine"><a href="#Docker-Engine" class="headerlink" title="# Docker Engine"></a># Docker Engine</h4><p>Client端可以透過REST API去控制server(Docker daemon)</p>
-<p>一個容器跑起來在運作就叫做container</p>
-<p>容器跟容器之間運作就可以叫做docker network</p>
-<h4 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="# Docker Compose"></a># Docker Compose</h4><ul>
-<li>一鍵完成多個容器</li>
-<li>docker-compose.yml</li>
-<li>支援Docker Network</li>
-<li>支援Docker Volume</li>
-<li>建構完整軟體服務<ul>
-<li>如：3-tier</li>
-</ul>
-</li>
-<li>快速建置測試模擬環境</li>
-</ul>
-<h4 id="Docker-Machine"><a href="#Docker-Machine" class="headerlink" title="# Docker Machine"></a># Docker Machine</h4><ul>
-<li>在多種平上建立VM</li>
-<li>一套工具適用所有雲端平台、虛擬化平台</li>
-<li>內建Dokcer Engine</li>
-<li>具備SSH功能</li>
-</ul>
-<h4 id="Docker-Swarm"><a href="#Docker-Swarm" class="headerlink" title="# Docker Swarm"></a># Docker Swarm</h4><ul>
-<li>Docker Engine 內建功能</li>
-<li>容器叢集系統<ul>
-<li>K8S, Mesos(用多台電腦跑多個container)</li>
-</ul>
-</li>
-<li>內建分散式鍵值儲存功能</li>
-</ul>
-<h4 id="Docker-Registry"><a href="#Docker-Registry" class="headerlink" title="# Docker Registry"></a># Docker Registry</h4><ul>
-<li>放Docker映像檔</li>
-<li>缺點：沒有權限管控</li>
-<li>Docker Hub想像成Docker Registry</li>
-<li>北榮有導入Docker</li>
-</ul>
-<h4 id="Docker-映像檔指令"><a href="#Docker-映像檔指令" class="headerlink" title="# Docker 映像檔指令"></a># Docker 映像檔指令</h4><blockquote>
-<p>build-&gt;build a docker file</p>
-</blockquote>
-<pre><code class="bash">docker build
-</code></pre>
-<blockquote>
-<p>commit</p>
-</blockquote>
-<pre><code class="bash">docker commit
-</code></pre>
-<blockquote>
-<p>history-&gt;看這個映像檔怎麼bulid出來的</p>
-</blockquote>
-<pre><code class="bash">docker history
-</code></pre>
-<h4 id="Docker-容器指令"><a href="#Docker-容器指令" class="headerlink" title="# Docker 容器指令"></a># Docker 容器指令</h4><p>指令後面都接 <strong>container id</strong></p>
-<blockquote>
-<p>exec：Run a command in a running container</p>
-</blockquote>
-<p>登入container 重新create一個</p>
-<p>和 attach 不同</p>
-<pre><code>docker exec CONTAINER_ID
-</code></pre>
-<blockquote>
-<p>ps：List container</p>
-</blockquote>
-<p>顯示目前container的列表</p>
-<pre><code>docker ps
-docker ps -a
-</code></pre>
-<blockquote>
-<p>kill：Kill a running container</p>
-</blockquote>
-<pre><code>docker kill CONTAINER_ID
-</code></pre>
-<blockquote>
-<p>logs：Fetch the logs of a container</p>
-</blockquote>
-<pre><code>docker logs CONTAINER_ID
-</code></pre>
-<h4 id="Dokcer-映像檔"><a href="#Dokcer-映像檔" class="headerlink" title="# Dokcer 映像檔"></a># Dokcer 映像檔</h4><ol>
-<li>Docker ocmmit</li>
-<li>Dockerfile  - docker build</li>
-</ol>
-<h4 id="Dockerfile撰寫原則"><a href="#Dockerfile撰寫原則" class="headerlink" title="# Dockerfile撰寫原則"></a># Dockerfile撰寫原則</h4><ol>
-<li>必須命名為”Docekrfile”</li>
-<li>可用 .dockerignore檔案</li>
-</ol>
-<p>add會解他</p>
-<p>add站得空間較大</p>
-<p>分析映像檔/container是否有漏洞，可用<strong>clair, anchore</strong></p>
-<h4 id="Docker-Network"><a href="#Docker-Network" class="headerlink" title="# Docker Network"></a># Docker Network</h4><p>Docker 內建Network Drivers</p>
-<p>macvlan直接給目前網斷的ip</p>
-<p>不要用link用network</p>
-<h4 id="Docker-volumn指令"><a href="#Docker-volumn指令" class="headerlink" title="# Docker volumn指令"></a># Docker volumn指令</h4><pre><code>docker volume create volume_name
-</code></pre>
-<p>Docker compose</p>
-<p>相關連結：</p>
-<p>線上課程學習：<a target="_blank" rel="noopener" href="https://www.katacoda.com/">https://www.katacoda.com/</a></p>
-<p>簡報連結：</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2017-10-21T13:20:15.000Z" itemprop="datePublished">2017-10-21</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
-        </div>
     
     </div>
 </footer>
@@ -836,7 +939,7 @@ docker ps -a
 
   
     <nav class="pagination">
-        <a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+        <a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next</a>
     </nav>
   
 </div>
@@ -857,7 +960,7 @@ docker ps -a
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python-Lesson/">Python Lesson</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/">Speech Note</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/Visit/">Visit</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -867,7 +970,7 @@ docker ps -a
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genalg/" rel="tag">genalg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genoud/" rel="tag">genoud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcga/" rel="tag">mcga</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analyze/" rel="tag">Data Analyze</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/" rel="tag">Facebook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genalg/" rel="tag">genalg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genoud/" rel="tag">genoud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcga/" rel="tag">mcga</a></li></ul>
     </div>
   </div>
 
@@ -884,19 +987,19 @@ docker ps -a
           </li>
         
           <li>
+            <a href="/2021/04/19/Python-Lesson01-basic/">Python Lesson 1 基本指令</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/19/Python-DataAnalyze/">Python 數據分析指令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/25/2019-facebook-speech/">Facebook Speech</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/14/GA-Day29/">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/13/GA-Day28/">【Day28】GA with you - Simulation Annealing 模擬退火法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/12/GA-Day27/">【Day27】GA with you - Memetic algorithm 模因演算法</a>
           </li>
         
       </ul>
@@ -908,7 +1011,7 @@ docker ps -a
   <div class="widget-wrap widget-archive">
     <div class="widget-title"><span>Archive</span></div>
     <div class="widget-inner">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li></ul>
     </div>
   </div>
 

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>Google尺度的IT營運問題解決方式 | Wang-Chi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+
+    
+
+    
+
+    
+
+    
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/dist/build.css?v=1633679241878.css">
+
+
+    
+<link rel="stylesheet" href="/dist/custom.css?v=1633679241878.css">
+
+
+    <script>
+        window.isPost = true
+        window.aomori = {
+            
+            
+            
+        }
+        window.aomori_logo_typed_animated = true
+        window.aomori_search_algolia = false
+
+    </script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+    <div class="container">
+    <header class="header">
+        <div class="header-type">
+            
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/images/icon.png" alt="Wang-Chi, Ho">
+            </div>
+            
+            <div class="header-type-inner">
+                
+                    <div id="typed-strings" style="display:none">
+                        <p>Wang-Chi</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
+                
+    
+                
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="header-menu-inner">
+                
+                <a href="/">Home</a>
+                
+                <a href="/photography">Photography</a>
+                
+                <a href="/archives">Archives</a>
+                
+                <a href="/friends">Friends</a>
+                
+            </div>
+            <div class="header-menu-social">
+                
+    <a class="social" target="_blank" href="https://github.com/wang-chi">
+        <box-icon type='logo' name='github'></box-icon>
+    </a>
+
+    <a class="social" target="_blank" href="https://www.linkedin.com/in/wang-chi-ho/">
+        <box-icon type='logo' name='linkedin-square'></box-icon>
+    </a>
+
+            </div>
+        </div>
+
+        <div class="header-menu-mobile">
+            <div class="header-menu-mobile-inner" id="mobile-menu-open">
+                <i class="icon icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-menu-mobile-menu">
+        <div class="header-menu-mobile-menu-bg"></div>
+        <div class="header-menu-mobile-menu-wrap">
+            <div class="header-menu-mobile-menu-inner">
+                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+                    <i class="icon icon-cross"></i>
+                </div>
+                <div class="header-menu-mobile-menu-list">
+                    
+                    <a href="/">Home</a>
+                    
+                    <a href="/photography">Photography</a>
+                    
+                    <a href="/archives">Archives</a>
+                    
+                    <a href="/friends">Friends</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container">
+        <div class="main">
+            <section class="inner">
+                <section class="inner-main">
+                    <div class="post">
+    <article id="post-ckuy4u79b00009pe78lfl0fkc" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+          
+        
+        
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      Google尺度的IT營運問題解決方式
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+
+            <div class="article-date">
+  <time datetime="2017-10-28T13:19:01.000Z" itemprop="datePublished">2017-10-28</time>
+</div>
+
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/PBL-Activity-Notebook/">PBL_Activity_Notebook</a>
+            </div>
+            
+
+            
+            <div class="article-tag">
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li></ul>
+            </div>
+            
+
+            
+            <div class="article-busuanzi">
+                有 <span id="busuanzi_value_page_pv">N</span> 人看过
+            </div>
+            
+
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <h1 id="Google尺度的IT營運問題解決方式"><a href="#Google尺度的IT營運問題解決方式" class="headerlink" title="Google尺度的IT營運問題解決方式"></a>Google尺度的IT營運問題解決方式</h1><p>講者：田哲禹</p>
+<p>內容：不管是 SRE (網站可靠性工程)、CRE (顧客可靠性工程)或是雲端營運等等，都是維持 Google Cloud 的運作、規模與效能的重要議題。在這場議程當中，Google 將與大家分享他們如何建構內部的流程去持續改善可靠性。我們亦將討論最佳的實作方式以減少平均偵測時間與平均恢復時間，以及如何應用 SRE 原則在你的組織當中運作。</p>
+<p>Google開放很多資訊讓大家一同開發</p>
+<p>NoSQL速度快 沒有關聯性</p>
+<p>分成4個Topic</p>
+<ul>
+<li><a href="#optimize%E6%9C%80%E4%BD%B3%E5%8C%96">Optimize</a></li>
+<li><a href="#collaborate%E5%90%88%E4%BD%9C">Collabroate</a></li>
+<li><a href="#accelerate%E5%BF%AB%E9%80%9F%E6%88%90%E9%95%B7">Accelerate</a></li>
+<li><a href="#partner">Partner</a></li>
+</ul>
+<h3 id="Optimize最佳化"><a href="#Optimize最佳化" class="headerlink" title="Optimize最佳化"></a>Optimize最佳化</h3><p>7 service products</p>
+<ul>
+<li><p>Top 5 drivers of your cloud decision</p>
+<ul>
+<li>Reliability</li>
+<li>Security</li>
+<li>Excellent support</li>
+<li>Performance</li>
+<li>Cost effectiveness</li>
+</ul>
+</li>
+</ul>
+<p><strong>不應該相信Google 應該要相信技術</strong></p>
+<h3 id="Collaborate合作"><a href="#Collaborate合作" class="headerlink" title="Collaborate合作"></a>Collaborate合作</h3><p>利用現有大家的創意匯集起來</p>
+<h3 id="Accelerate快速成長"><a href="#Accelerate快速成長" class="headerlink" title="Accelerate快速成長"></a>Accelerate快速成長</h3><p>如何拿到數據去創造一個商業模式</p>
+<p>Google Cloud Platform</p>
+<p>Cloud Machine Learing</p>
+<ul>
+<li>使用TensorFlow框架架構的模型</li>
+<li>利用Google可擴充的框架</li>
+</ul>
+<h3 id="Partner"><a href="#Partner" class="headerlink" title="Partner"></a>Partner</h3><p>Google Cloud Platform 是一個N2N的平台</p>
+
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+<div class="article-copyright hairline">
+  <p>
+    本網站 <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">屬於技術之術分享網站</a> 未經許可，請勿任意轉載。
+  </p>
+</div>
+
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2019/09/17/GA-Day01/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          【Day01】GA with you - What&#39;s GA? 什麼是基因演算法？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/28/PBL-Activity-Notebook-1028-aws-iot/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">AWS IoT與AI應用</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=Google尺度的IT營運問題解決方式 - Wang-Chi&url=http://wang-chi.github.io/2017/10/28/PBL-Activity-Notebook-1028-google-it/">
+            <box-icon type='logo' name='twitter'></box-icon>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=Google尺度的IT營運問題解決方式 - Wang-Chi&u=http://wang-chi.github.io/2017/10/28/PBL-Activity-Notebook-1028-google-it/">
+            <box-icon name='facebook-square' type='logo' ></box-icon>
+        </a>
+        <!-- <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=Google尺度的IT營運問題解決方式 - Wang-Chi&url=http://wang-chi.github.io/2017/10/28/PBL-Activity-Notebook-1028-google-it/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a> -->
+    </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div>
+                </section>
+            </section>
+
+            
+            <aside class="sidebar ">
+                
+
+
+<div class="widget" id="widget">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PBL-Activity-Notebook/">PBL_Activity_Notebook</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-tags">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genalg/" rel="tag">genalg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/genoud/" rel="tag">genoud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcga/" rel="tag">mcga</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/11/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/14/GA-Day29/">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/13/GA-Day28/">【Day28】GA with you - Simulation Annealing 模擬退火法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/12/GA-Day27/">【Day27】GA with you - Memetic algorithm 模因演算法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li></ul>
+    </div>
+  </div>
+
+
+    
+</div>
+
+<div id="backtop"><i class="icon icon-arrow-up"></i></div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
+
+    <div class="footer-wrap">
+        <div class="footer-inner"> 
+            Wang-Chi &copy; 2021<br>
+            Powered By Hexo · Theme By <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Aomori</a>
+        </div>
+    </div>
+
+</footer>
+
+
+
+
+
+
+<script src="/dist/build.js?1633679241878.js"></script>
+
+
+<script src="/dist/custom.js?1633679241878.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

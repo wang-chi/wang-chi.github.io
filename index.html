@@ -130,62 +130,6 @@
   
     
       <article
-id="post-hello-world"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2021/10/11/hello-world/">Hello World</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2021-10-11T13:26:21.380Z" itemprop="datePublished">2021-10-11</time>
-</div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
 id="post-Python-Lesson01-basic"
 class="article article-type-post"
 >
@@ -1104,10 +1048,115 @@ text(x, y - 100, labels(city)[[1]], cex = 0.8)
 
     
   
+    
+      <article
+id="post-GA-Day24"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/10/09/GA-Day24/">【Day24】GA with you - R 基因演算法應用於旅行銷售員問題 (2)</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>昨天的文章已經有在更新過了<br>實在是太趕了xddd<br>這個題目可能會一點一點跟大家介紹<br>期盼在雙十連假講完(受不了自己拖拖拉拉)<br>要給自己信心(?)</p>
+<hr>
+<p>可以先把昨天的內容補上<br>(其實只有引入套件和設定path cost而已)</p>
+<h3 id="路徑成本"><a href="#路徑成本" class="headerlink" title="路徑成本"></a>路徑成本</h3><pre><code># fitness vector
+A&lt;-c(-1,25,25,10,35)
+B&lt;-c(25,-1,25,35,25)
+C&lt;-c(25,25,-1,30,15)
+D&lt;-c(10,35,30,-1,20)
+E&lt;-c(35,25,15,20,-1)
+city&lt;-rbind(A,B,C,D,E)
+colnames(city)&lt;-c(&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;)
+</code></pre>
+<p>路徑圖形<br><img src="https://i.imgur.com/StMMRNc.png" alt="path-cost"></p>
+<h3 id="適應函數"><a href="#適應函數" class="headerlink" title="適應函數"></a>適應函數</h3><p>那昨天定義完各條路徑的成本後，<br>我們來思考要怎麼去計算旅行一條路的成本<br>需要求解最小值<br>但是路徑的花費是正數<br>所以我們就用<code>1/X</code>這樣的方式取倒數<br>加起來就是變成<strong>最小值</strong></p>
+<ol>
+<li>計算旅程的長度<br><code>tourLength</code>用來求解整個旅程的長度<pre><code>tourLength &lt;- function(tour, distMatrix) &#123;
+tour &lt;- c(tour, tour[1])
+route &lt;- embed(tour, 2)[, 2:1]
+sum(route)
+&#125;
+</code></pre>
+</li>
+<li>計算成本<br>將剛剛<code>tourLength</code>的總和用倒數呈現<pre><code>tspfitness  &lt;- function(tour, ...) 1/tourLength(tour, ...)
+</code></pre>
+</li>
+</ol>
+<h3 id="執行GA"><a href="#執行GA" class="headerlink" title="執行GA"></a>執行GA</h3><p><code>執行迭代數(run):</code>100</p>
+<pre><code>GA.fit &lt;- ga(type = &quot;permutation&quot;, 
+             fitness = tspfitness, 
+             distMatrix = data,
+             lower  = 1, 
+             upper = 5,
+             popSize = 100,
+             maxiter = 20,
+             run = 10, 
+             pmutation = 0.05, 
+             monitor = NULL)
+</code></pre>
+<h3 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h3><p><code>GA.fit@solution</code>結果</p>
+<pre><code>&gt; GA.fit@solution
+     x1 x2 x3 x4 x5
+[1,]  4  3  1  5  2
+[2,]  5  3  2  4  1
+[3,]  4  5  1  3  2
+[4,]  5  3  1  4  2
+[5,]  2  5  1  4  3
+[6,]  1  3  2  4  5
+</code></pre>
+<p>或是使用</p>
+<pre><code>summary(GA.fit)
+</code></pre>
+<p>今天的程式碼<a target="_blank" rel="noopener" href="https://github.com/wang-chi/gawithyou/blob/master/Day24-TSP.R">Github</a><br>剛剛在客運上刻完這篇 差點沒發成功(暈倒)</p>
+<hr>
+<p>相關資料參考：<br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/GA/versions/3.2/topics/ga">R Documentation-GA</a><br><a target="_blank" rel="noopener" href="https://zsc.netlify.com/post/2015-11-09-ga/">GA包–遗传算法</a><br><a target="_blank" rel="noopener" href="https://rpubs.com/karthy1988/TSP_GA">RPubs - Optimized Delivery Route using Genetic Algorithm: Cost cutting for e-commerce</a><br><a target="_blank" rel="noopener" href="http://rpubs.com/somasdhavala/GAeg">RPubs - Genetic Algorithm on TSP</a></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-10-09T14:29:51.000Z" itemprop="datePublished">2019-10-09</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
 
   
     <nav class="pagination">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next</a>
     </nav>
   
 </div>
@@ -1151,10 +1200,6 @@ text(x, y - 100, labels(city)[[1]], cex = 0.8)
       <ul>
         
           <li>
-            <a href="/2021/10/11/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
             <a href="/2021/04/19/Python-Lesson01-basic/">Python Lesson 1 基本指令</a>
           </li>
         
@@ -1168,6 +1213,10 @@ text(x, y - 100, labels(city)[[1]], cex = 0.8)
         
           <li>
             <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/14/GA-Day29/">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a>
           </li>
         
       </ul>

@@ -130,65 +130,6 @@
   
     
       <article
-id="post-GA-Day04"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2019/09/19/GA-Day04/">【Day04】GA with you - Reproduction &amp; Selection 複製與選擇 (1)</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>今天要跟大家介紹的是在基因演算法中的複製(Reproduction)和選擇(Selection)，<br>分開敘述有點困難就一起跟大家介紹了。<br>還記得昨天的那張圖嗎？今天要講解的是右邊的Selection<br><img src="https://i.imgur.com/oJBOpwV.png" alt="基因演算法流程－選擇"></p>
-<p>今天要講的區塊是Selection的部分，<br>大家一定會想怎麼就這樣跳過了Fitness Calculation的部分，<br>因為適應程度計算又是一片新天地，<br>在後續大家比較了解GA之後再跟大家說明，<br>這邊就把Fitness Calculation當成一個運算式，<br>會回傳他的結果即可。</p>
-<p>那從一開始到選擇這邊的順序概念是什麼呢？<br>初始群組-&gt;計算染色體的適應程度並排序-&gt;將較好的染色體複製下來<br>那我們要介紹的就是複製較好的染色體的步驟了</p>
-<p>複製和選擇的精神在於【留下好的基因序列】，使得好的基因保留下去。<br>為了演化出更好的個體，將從原先的母體中篩選出較佳的個體，進而組成下一代的群組，<br>根據不同的染色體( chromosome )所對應到的適應值 ( Fitness Value )，<br>當適應值越高，該群體則有越高的機率被選取，以確保好的基因序列將被保留。<br>白話一點說，就想像是我們要做基因改造，會把比較好的基因給留下來，不好的基因給去除這樣的概念。</p>
-<p>選擇有哪些方法呢？<br>常見的選擇方式有隨機選擇( Random Selection Schema )、分裂選擇( Disrupt Selection Schema )及機率選擇( Proportionate Selection Schema )。<br>此外，後續也有人提出一種制度『菁英選擇』，這種選擇方式是直接將較好的群體完整保留下來，就不需要再經過隨機或是機率等等的選擇方式。</p>
-<p>今天的內容比較簡單，<br>明天會詳細跟大家介紹複製和選擇的部分，<br>一樣如果有任何疑惑都可以在下面留言告訴我，<br>無論是核心理論、表達上有誤的歡迎指教<br>希望明天還可以再次遇見大家</p>
-<hr>
-<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2019-09-19T14:29:19.000Z" itemprop="datePublished">2019-09-19</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algo/" rel="tag">algo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
 id="post-GA-Day03"
 class="article article-type-post"
 >
@@ -936,10 +877,180 @@ void setDataAndNotifyChange(Data data)&#123;
 
     
   
+    
+      <article
+id="post-PBL-Activity-Notebook-1028-docker"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2017/10/21/PBL-Activity-Notebook-1028-docker/">Docker Taipei</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h1 id="Docker-Taipei"><a href="#Docker-Taipei" class="headerlink" title="Docker Taipei"></a>Docker Taipei</h1><p>日期：2017.10.21 Sat.</p>
+<p>地點：國立臺中科技大學 資訊樓 2701</p>
+<p>內容：</p>
+<p>透過Web介面使用Docker：<a target="_blank" rel="noopener" href="http://labs.play-with-docker.com/">http://labs.play-with-docker.com/</a></p>
+<h4 id="虛擬化技術的歷史"><a href="#虛擬化技術的歷史" class="headerlink" title="# 虛擬化技術的歷史"></a># 虛擬化技術的歷史</h4><ul>
+<li>IBM zOS</li>
+<li>虛擬化軟體－VMware, KVM, Xen, VirtualBox</li>
+<li>Hardware-assisted virtualization 硬體加速</li>
+<li>Paravirtualiztion半虛擬化</li>
+<li>作業系統層虛擬化<ul>
+<li>OpenVZ</li>
+<li>LXC</li>
+<li>Docker</li>
+</ul>
+</li>
+<li>IaaS, PaaS, Saas - Snapshot, Migration</li>
+</ul>
+<p>container目前沒有snapshot</p>
+<h4 id="容器與虛擬化架構差異"><a href="#容器與虛擬化架構差異" class="headerlink" title="# 容器與虛擬化架構差異"></a># 容器與虛擬化架構差異</h4><ol>
+<li>一個虛擬機的單位叫做<strong>instance</strong></li>
+<li>VM和Container差異在於共用Host OS少掉Gust OS，效能上提升較多</li>
+<li>VM和Container在於VM會完全隔離，VM有Gust OS，病毒不會互相感染，Container僅有安全隔離</li>
+<li>Container在啟動速度、性能（接近原生）、</li>
+</ol>
+<h4 id="The-Matrix-of-Hell"><a href="#The-Matrix-of-Hell" class="headerlink" title="# The Matrix of Hell"></a># The Matrix of Hell</h4><p>只要可以運作Docker的環境都可以移植映像檔</p>
+<h4 id="Docker-Engine"><a href="#Docker-Engine" class="headerlink" title="# Docker Engine"></a># Docker Engine</h4><p>Client端可以透過REST API去控制server(Docker daemon)</p>
+<p>一個容器跑起來在運作就叫做container</p>
+<p>容器跟容器之間運作就可以叫做docker network</p>
+<h4 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="# Docker Compose"></a># Docker Compose</h4><ul>
+<li>一鍵完成多個容器</li>
+<li>docker-compose.yml</li>
+<li>支援Docker Network</li>
+<li>支援Docker Volume</li>
+<li>建構完整軟體服務<ul>
+<li>如：3-tier</li>
+</ul>
+</li>
+<li>快速建置測試模擬環境</li>
+</ul>
+<h4 id="Docker-Machine"><a href="#Docker-Machine" class="headerlink" title="# Docker Machine"></a># Docker Machine</h4><ul>
+<li>在多種平上建立VM</li>
+<li>一套工具適用所有雲端平台、虛擬化平台</li>
+<li>內建Dokcer Engine</li>
+<li>具備SSH功能</li>
+</ul>
+<h4 id="Docker-Swarm"><a href="#Docker-Swarm" class="headerlink" title="# Docker Swarm"></a># Docker Swarm</h4><ul>
+<li>Docker Engine 內建功能</li>
+<li>容器叢集系統<ul>
+<li>K8S, Mesos(用多台電腦跑多個container)</li>
+</ul>
+</li>
+<li>內建分散式鍵值儲存功能</li>
+</ul>
+<h4 id="Docker-Registry"><a href="#Docker-Registry" class="headerlink" title="# Docker Registry"></a># Docker Registry</h4><ul>
+<li>放Docker映像檔</li>
+<li>缺點：沒有權限管控</li>
+<li>Docker Hub想像成Docker Registry</li>
+<li>北榮有導入Docker</li>
+</ul>
+<h4 id="Docker-映像檔指令"><a href="#Docker-映像檔指令" class="headerlink" title="# Docker 映像檔指令"></a># Docker 映像檔指令</h4><blockquote>
+<p>build-&gt;build a docker file</p>
+</blockquote>
+<pre><code class="bash">docker build
+</code></pre>
+<blockquote>
+<p>commit</p>
+</blockquote>
+<pre><code class="bash">docker commit
+</code></pre>
+<blockquote>
+<p>history-&gt;看這個映像檔怎麼bulid出來的</p>
+</blockquote>
+<pre><code class="bash">docker history
+</code></pre>
+<h4 id="Docker-容器指令"><a href="#Docker-容器指令" class="headerlink" title="# Docker 容器指令"></a># Docker 容器指令</h4><p>指令後面都接 <strong>container id</strong></p>
+<blockquote>
+<p>exec：Run a command in a running container</p>
+</blockquote>
+<p>登入container 重新create一個</p>
+<p>和 attach 不同</p>
+<pre><code>docker exec CONTAINER_ID
+</code></pre>
+<blockquote>
+<p>ps：List container</p>
+</blockquote>
+<p>顯示目前container的列表</p>
+<pre><code>docker ps
+docker ps -a
+</code></pre>
+<blockquote>
+<p>kill：Kill a running container</p>
+</blockquote>
+<pre><code>docker kill CONTAINER_ID
+</code></pre>
+<blockquote>
+<p>logs：Fetch the logs of a container</p>
+</blockquote>
+<pre><code>docker logs CONTAINER_ID
+</code></pre>
+<h4 id="Dokcer-映像檔"><a href="#Dokcer-映像檔" class="headerlink" title="# Dokcer 映像檔"></a># Dokcer 映像檔</h4><ol>
+<li>Docker ocmmit</li>
+<li>Dockerfile  - docker build</li>
+</ol>
+<h4 id="Dockerfile撰寫原則"><a href="#Dockerfile撰寫原則" class="headerlink" title="# Dockerfile撰寫原則"></a># Dockerfile撰寫原則</h4><ol>
+<li>必須命名為”Docekrfile”</li>
+<li>可用 .dockerignore檔案</li>
+</ol>
+<p>add會解他</p>
+<p>add站得空間較大</p>
+<p>分析映像檔/container是否有漏洞，可用<strong>clair, anchore</strong></p>
+<h4 id="Docker-Network"><a href="#Docker-Network" class="headerlink" title="# Docker Network"></a># Docker Network</h4><p>Docker 內建Network Drivers</p>
+<p>macvlan直接給目前網斷的ip</p>
+<p>不要用link用network</p>
+<h4 id="Docker-volumn指令"><a href="#Docker-volumn指令" class="headerlink" title="# Docker volumn指令"></a># Docker volumn指令</h4><pre><code>docker volume create volume_name
+</code></pre>
+<p>Docker compose</p>
+<p>相關連結：</p>
+<p>線上課程學習：<a target="_blank" rel="noopener" href="https://www.katacoda.com/">https://www.katacoda.com/</a></p>
+<p>簡報連結：</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2017-10-21T13:20:15.000Z" itemprop="datePublished">2017-10-21</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/Speech-Note/">Speech Note</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
 
   
     <nav class="pagination">
-        <a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next</a>
+        <a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
     </nav>
   
 </div>
@@ -983,10 +1094,6 @@ void setDataAndNotifyChange(Data data)&#123;
       <ul>
         
           <li>
-            <a href="/2021/10/11/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
             <a href="/2021/04/19/Python-Lesson01-basic/">Python Lesson 1 基本指令</a>
           </li>
         
@@ -1000,6 +1107,10 @@ void setDataAndNotifyChange(Data data)&#123;
         
           <li>
             <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/14/GA-Day29/">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a>
           </li>
         
       </ul>

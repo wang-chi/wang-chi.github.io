@@ -130,6 +130,259 @@
   
     
       <article
+id="post-GA-Day07"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/09/22/GA-Day07/">【Day07】GA with you - Crossover 交配 (1)</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>先來複習一下之前的東西，再來開始吧！<br>我們從前面的<strong>選擇(Reproduction)</strong> 到今天要講的 <strong>交配(Crossover)</strong><br>前三天的選擇了較好的染色體(chromosome)來到了交配的階段<br>但是不是每一個染色體都會進行交配<br>交配的機率在程式中是可以透過設定去控制改變的</p>
+<p><img src="https://i.imgur.com/xTbJyNF.png" alt="基因演算法流程-交配"></p>
+<p>那現在就來講講交配有哪些種類？這些有什麼差異吧～<br><img src="https://i.imgur.com/MnMLF7P.png" alt="基因演算法-交配種類"></p>
+<h4 id="單點交配-one-point-crossover-method"><a href="#單點交配-one-point-crossover-method" class="headerlink" title="單點交配(one-point crossover method)"></a>單點交配(one-point crossover method)</h4><p>單點交配，是目前基因演算法中最常被使用到的Crossover方法<br>顧名思義只透過一個節點(交換點)<br>那一個節點是什麼意思呢？<br>這邊就實際為大家示範<br><img src="https://i.imgur.com/UbAQH2l.png" alt="單點交配-原始"><br>根據箭頭的位置做交換<br>將兩者個基因(Gene)互換<br><img src="https://i.imgur.com/ixOhS7E.png" alt="單點交配-完成"><br>進行交換後就會產生新的染色體(chromosome)<br>單點交換就會是根據決定交換點進行互換<br>而這樣就代表著一個染色體(chromosome)會被分成兩個部分交換<br>但若我們只要交換某一小段呢？<br>這就可以使用雙點交換來解決這個需求</p>
+<h4 id="雙點交配-two-point-crossover-method"><a href="#雙點交配-two-point-crossover-method" class="headerlink" title="雙點交配(two-point crossover method)"></a>雙點交配(two-point crossover method)</h4><p>雙點交配就是會根據這兩個點進行交換<br>具體的方法和單點交換相似<br>當決定好兩個交換點之後<br>就會將這兩個交換點間的基因(Gene)互換<br>進而產生新的染色體序列<br><img src="https://i.imgur.com/bw3Lhtw.png" alt="雙點交配-原始"><br>根據箭頭的位置做交換<br>將兩者個基因(Gene)互換<br><img src="https://i.imgur.com/vCOabkv.png" alt="雙點交配-完成"></p>
+<p>這樣是不是很簡單呢～</p>
+<h4 id="多點交配-multi-point-crossover-method"><a href="#多點交配-multi-point-crossover-method" class="headerlink" title="多點交配(multi-point crossover method)"></a>多點交配(multi-point crossover method)</h4><p>再來，多點交配就是有多的節點<br>將各節點間的基因(Gene)互換<br><img src="https://i.imgur.com/yRXLIrv.png" alt="多點交配-原始"><br>根據箭頭的位置做交換<br>將兩組個基因(Gene)互換<br><img src="https://imgur.com/2vGIhDN.png" alt="多點交配-完成"><br>多點交換有多少個點也是可以自行決定呢，<br>要4個5個都行<br>ps. 一般遇到第一個開始交換的point前都是保持自己原始的，除非今天的交換點在第一個位置</p>
+<p>以上就是基因演算法中交配的三種常見的方式－單點、雙點以及多點<br>明天會各位介紹套選的方法～～</p>
+<hr>
+<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-09-22T14:29:24.000Z" itemprop="datePublished">2019-09-22</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day06"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/09/21/GA-Day06/">【Day06】GA with you - Reproduction &amp; Selection 複製與選擇 (3)</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>前情提要，昨天介紹的基因演算法中複製與選擇的種類<br>這邊一樣補上圖片<br><img src="https://i.imgur.com/t9ocx1J.png" alt="Imgur"></p>
+<p>那昨天沒有講到的是”<strong>分裂選擇</strong>“<br>那時麼是分裂選擇呢？<br>昨天有提到適應值對吧～～<br>大家還記得嗎？<br>當我們把適應值按照順序排列後<br>分裂選擇就是選擇適應程度最好跟適應程度最差的兩端的結果<br>這樣的選擇方式對於適應程度普通的染色體(chromosome)來說非常不利<br>因為既不是最好也是不是最差就不會被選到了<br>分裂選擇是淘汰掉平凡的個體（染色體）</p>
+<p>其實在查分裂選擇的時候<br>又有新的發現<br>分裂選擇是屬於新達爾文主義中演化過程的其中一種<br>分成了方向性選擇、分裂性選擇和平衡性選擇</p>
+<h3 id="方向性選擇-directional-selection"><a href="#方向性選擇-directional-selection" class="headerlink" title="方向性選擇(directional selection)"></a>方向性選擇(directional selection)</h3><p>這邊顧名思義就是朝著某一個表現方向去做選擇，<br>例如希望他越符合適應程度，就會希望他的適應值越大越好等等<br>朝著一個固定的方向去選擇使得結果偏向某一邊<br>用到之前所提到的，希望物種可以更適合環境來生存<br>就會透過物種的適應程度去辨別<br>故方向性選擇就會以越適合物種生存的面向去選擇</p>
+<h3 id="分裂性選擇-disruptive-selection"><a href="#分裂性選擇-disruptive-selection" class="headerlink" title="分裂性選擇(disruptive selection)"></a>分裂性選擇(disruptive selection)</h3><p>就如果前面介紹的<br>為了將族群分成兩部份<br>選擇了最好與最差的兩端</p>
+<h3 id="平衡性選擇-stabilizing-selection"><a href="#平衡性選擇-stabilizing-selection" class="headerlink" title="平衡性選擇(stabilizing selection)"></a>平衡性選擇(stabilizing selection)</h3><p>平衡性選擇就和分裂性選擇恰好相反<br>淘汰掉急湍的個體而使得整個群體朝向普通正常化的方式去發展</p>
+<p>這邊把三種選擇後會產生的結果一併整理出來<br>讓大家比較好理解<br><img src="https://i.imgur.com/cOueir5.png" alt="新達爾文選擇"></p>
+<p>那以上三種新達爾文主義的選擇就到這邊介紹了<br>相關的使用資料也會在文章最後</p>
+<hr>
+<p>相關資料來源：</p>
+<ul>
+<li>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。</li>
+<li>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。</li>
+<li>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</li>
+<li>選擇的部分參考這邊比較多：<a target="_blank" rel="noopener" href="https://slideplayer.com/slide/5366168/">https://slideplayer.com/slide/5366168/</a></li>
+<li>郭定。(2009)。 基因演算法中不同選擇策略的替代性與互補性。Journal of Science and Engineering Technology，5(2)， 25-34。</li>
+</ul>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-09-21T14:29:22.000Z" itemprop="datePublished">2019-09-21</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day05"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/09/20/GA-Day05/">【Day05】GA with you - Reproduction &amp; Selection 複製與選擇 (2)</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>昨天跟大家提到了隨機選擇（Random Selection Schema）、分裂選擇（Disrupt Selection Schema）、機率選擇（Proportionate Selection Schema）和菁英選擇這幾種<br>那今天會一一為各位介紹的～～～<br><img src="https://i.imgur.com/t9ocx1J.png" alt="Imgur"></p>
+<h4 id="隨機選擇（Random-Selection-Schema）"><a href="#隨機選擇（Random-Selection-Schema）" class="headerlink" title="隨機選擇（Random Selection Schema）"></a>隨機選擇（Random Selection Schema）</h4><p>顧名思義就是隨機的方式做選擇，<br>但當隨機選擇中帶有機率性的去選擇就是機率選擇。</p>
+<h4 id="分裂選擇（Disrupt-Selection-Schema）"><a href="#分裂選擇（Disrupt-Selection-Schema）" class="headerlink" title="分裂選擇（Disrupt Selection Schema）"></a>分裂選擇（Disrupt Selection Schema）</h4><h4 id="機率選擇（Proportionate-Selection-Schema）"><a href="#機率選擇（Proportionate-Selection-Schema）" class="headerlink" title="機率選擇（Proportionate Selection Schema）"></a>機率選擇（Proportionate Selection Schema）</h4><p>機率選擇故名思義就是透過一個比率來選擇，而又分成了輪盤式選擇、競爭式選擇和等級輪盤式選擇。<br>在這裏不會僅挑選適應程度最高的原因是這樣的做法可能導致局部最佳解，而非整體最佳解。<br>這邊就會有人質疑了，為什麼挑選適應程度最好的會發生局部最佳解呢？<br>假設我現在有10樣要去選擇，但是前三樣我都挑選最好的，後面七樣相較之下都是最差的就會拖垮全體。<br>所以在挑選時，不會把選擇方式綁死，會有彈性～<br>希望這樣的解釋大家可以明白～～～</p>
+<p>這邊介紹一下機率選擇中的幾個種類：<br>介紹的時候就假定我們族群(Population)有10個<br><img src="https://i.imgur.com/HsvrpE5.png" alt="適應程度列表"></p>
+<p><strong>1. 輪盤式選擇(Roulette Wheel Selection)</strong><br>輪盤式可以想像就是用一個輪盤來去選擇<br>該輪盤個別的大小是會按照適應程度去規劃的<br>適應程度越好，所佔有的面積就越大<br>適應程度越差，所佔有的面積就越小<br>如此以來，在選擇時適應程度越好的，也越有機會被選中<br><img src="https://i.imgur.com/PT0Cuez.png" alt="輪盤式選擇"></p>
+<p>**2. 競爭式選擇(Tournament Selection) **<br>競爭式選擇，聽起來就很競爭，其實就是“競爭”<br>他是怎麼競爭呢？<br>會隨機選取兩個物種，比較其適應程度，適應程度較好的保留，適應程度較差的淘汰<br>適應程度比較好的就會保留到下一階段的交配Crossover了～<br>在這邊就可以發現到在選擇時就是物競天擇，當你在環境的適應程度較差時，就會被其他物種所取代</p>
+<p><img src="https://i.imgur.com/ZbD6K9P.png" alt="競爭式選擇"></p>
+<p><strong>3. 等級輪盤式選擇（Rank Based Wheel Selection）</strong><br>等級輪盤式就比較少聽到了，也是在做研究的時候才發現<br>那什麼是等級輪盤式呢？<br>如上面我們所寫的族群列表，會先根據適應程度的大小進行排序，<br>每一個染色體都會按照適應值程度進行排序<br>我有算出輪盤式和等級輪盤式之間在面積上所佔比例的差異<br>可以看到，等級輪盤式會根據他的排名依序遞減他所佔面積的比例<br>這樣的作法是為了避免收斂速度過快<br>等級輪盤式選擇克服了停滯或是過早收斂的問題<br>相較其他的選擇方式也比較穩定<br><img src="https://i.imgur.com/y4y1N8B.png" alt="等級輪盤式"></p>
+<h4 id="菁英選擇"><a href="#菁英選擇" class="headerlink" title="菁英選擇"></a>菁英選擇</h4><p>這個選擇機制是建立在上面幾種之後，或是之前也是可以的<br>從上面可以知道，較好的不一定會被保留，較差的也不一定被淘汰<br>假設前面我使用「競爭式選擇」，當我的No.1和No.2比較，No.2就會被淘汰，而No.3和No.10比較，No.3被保留<br>就會發現剩下的可能是No.1,No.3…..<br>那我們的No.2就這樣被淘汰掉了，是不是太可惜<br>所以就延伸出了『<strong>菁英選擇</strong>』<br>這種菁英選擇就是可以去假定我們要保留在這個世代中最好的幾個<br>這個世代有100個，我要保留最好的5個，我就可以確保最好的這5個染色體被保留下來<br>就不會發生前面舉例的No.2被淘汰<br>希望這樣的說明大家可以理解<br>後面再實作的文章中也會實際使用菁英選擇的方式讓大家可以操縱～～</p>
+<hr>
+<p>今天的選擇時光就到這邊了，<br>話說圖片好多ㄚ～～<br>想說要用圖片比較清楚的讓大家明白<br>結果就越做越多張<br>希望這些圖片有助於大家瞭解<br>題外話，<br>說實在的圖片上傳這邊我還有待研究<br>Imgur的圖片要怎麼讓他再縮小一點？？？<br>版面大小的問題希望後面的我可以克服（擦汗）</p>
+<p>週末也要記得回來學習喔～～～（對著自己說）<br>有問題或是表達不清楚的在下面留言告訴我<br>你的問題或許也是別人的疑慮<br>謝謝大家</p>
+<hr>
+<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-09-20T14:29:20.000Z" itemprop="datePublished">2019-09-20</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-GA-Day04"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2019/09/19/GA-Day04/">【Day04】GA with you - Reproduction &amp; Selection 複製與選擇 (1)</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>今天要跟大家介紹的是在基因演算法中的複製(Reproduction)和選擇(Selection)，<br>分開敘述有點困難就一起跟大家介紹了。<br>還記得昨天的那張圖嗎？今天要講解的是右邊的Selection<br><img src="https://i.imgur.com/oJBOpwV.png" alt="基因演算法流程－選擇"></p>
+<p>今天要講的區塊是Selection的部分，<br>大家一定會想怎麼就這樣跳過了Fitness Calculation的部分，<br>因為適應程度計算又是一片新天地，<br>在後續大家比較了解GA之後再跟大家說明，<br>這邊就把Fitness Calculation當成一個運算式，<br>會回傳他的結果即可。</p>
+<p>那從一開始到選擇這邊的順序概念是什麼呢？<br>初始群組-&gt;計算染色體的適應程度並排序-&gt;將較好的染色體複製下來<br>那我們要介紹的就是複製較好的染色體的步驟了</p>
+<p>複製和選擇的精神在於【留下好的基因序列】，使得好的基因保留下去。<br>為了演化出更好的個體，將從原先的母體中篩選出較佳的個體，進而組成下一代的群組，<br>根據不同的染色體( chromosome )所對應到的適應值 ( Fitness Value )，<br>當適應值越高，該群體則有越高的機率被選取，以確保好的基因序列將被保留。<br>白話一點說，就想像是我們要做基因改造，會把比較好的基因給留下來，不好的基因給去除這樣的概念。</p>
+<p>選擇有哪些方法呢？<br>常見的選擇方式有隨機選擇( Random Selection Schema )、分裂選擇( Disrupt Selection Schema )及機率選擇( Proportionate Selection Schema )。<br>此外，後續也有人提出一種制度『菁英選擇』，這種選擇方式是直接將較好的群體完整保留下來，就不需要再經過隨機或是機率等等的選擇方式。</p>
+<p>今天的內容比較簡單，<br>明天會詳細跟大家介紹複製和選擇的部分，<br>一樣如果有任何疑惑都可以在下面留言告訴我，<br>無論是核心理論、表達上有誤的歡迎指教<br>希望明天還可以再次遇見大家</p>
+<hr>
+<p>相關資料來源：<br>林豐澤・2005。演化式計算上篇:演化式演算法的三種理論模式。智慧科技與應用統計學報，3(1)，1-28。<br>林豐澤・2005。演化式計算下篇:基因演算法以及三種應用實例。智慧科技與應用統計學報，3(1)，29-56。<br>林昇甫、徐永吉・2009。遺傳演算法及其應用・五南圖書出版。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2019-09-19T14:29:19.000Z" itemprop="datePublished">2019-09-19</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
 id="post-GA-Day03"
 class="article article-type-post"
 >
@@ -578,479 +831,10 @@ class="article article-type-post"
 
     
   
-    
-      <article
-id="post-PBL-Activity-Notebook-1028-go"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2017/10/28/PBL-Activity-Notebook-1028-go/">用 Go 語言打造輕量級 Push Notification 服務</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1 id="用-Go-語言打造輕量級-Push-Notification-服務"><a href="#用-Go-語言打造輕量級-Push-Notification-服務" class="headerlink" title="用 Go 語言打造輕量級 Push Notification 服務"></a>用 Go 語言打造輕量級 Push Notification 服務</h1><p>講者：<a target="_blank" rel="noopener" href="https://mopcon.org/2017/speakerDetail.php?speaker=15">吳柏毅 (Apple Boy)</a></p>
-<p>簡介：Gorush 是一套用 Go 語言所撰寫的輕量級 Push Notification 服務，除了可以輕鬆架設伺服器外，還讓 Mobile 開發者或測試人員輕鬆使用 Command line 發送測試訊息給 App。本議程會介紹 Gorush 架構設計及使用方式，為什麼選用 Go 語言，以及其中的 Go 開發技巧與經驗，及如何透過 Drone 來自動測試發佈版本。有在寫手機 App 的開發者或撰寫發送訊息的後端工程師一定不能錯過此議程。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2017-10-28T13:17:11.000Z" itemprop="datePublished">2017-10-28</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/Speech-Note/">Speech Note</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Go/" rel="tag">Go</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-PBL-Activity-Notebook-1028-sketch"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2017/10/28/PBL-Activity-Notebook-1028-sketch/">透過客製Sketch Plug-in 開發改善產品設計流程</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1 id="透過客製Sketch-Plug-in-開發改善產品設計流程"><a href="#透過客製Sketch-Plug-in-開發改善產品設計流程" class="headerlink" title="透過客製Sketch Plug-in 開發改善產品設計流程"></a>透過客製Sketch Plug-in 開發改善產品設計流程</h1><p>講者：楊維中</p>
-<p>介紹：UI設計是產品開發過程中的重要一環，但是在實務上，有太多與設計工作相關，但不應該由設計師負責、反而讓設計師分心的工作。我們嘗試改進設計師使用的工具，讓原本需要人力的工作自動化，解放設計師的生產力。</p>
-<h3 id="多國語系服務"><a href="#多國語系服務" class="headerlink" title="多國語系服務"></a>多國語系服務</h3><ul>
-<li>版權結構的差異</li>
-<li>法規不同<ul>
-<li>稅收差異</li>
-<li>金流服務</li>
-</ul>
-</li>
-<li>中文是字串長度最短的</li>
-<li>設計初期就先套用多國語文</li>
-</ul>
-<p>痛點：翻譯完自傳才發現過長，往往影響開發流程</p>
-<p>解法：初期就能夠預覽多國語言字串，而且可以自動化</p>
-<h2 id="Sketch-Plugins"><a href="#Sketch-Plugins" class="headerlink" title="Sketch Plugins"></a>Sketch Plugins</h2><p>URL:<a target="_blank" rel="noopener" href="https://www.sketchapp.com/extensions/plugins/">https://www.sketchapp.com/extensions/plugins/</a></p>
-<p>Google Translation API</p>
-<h2 id="主題面板"><a href="#主題面板" class="headerlink" title="主題面板"></a>主題面板</h2><p>通點：人工手動打包過程不但費時，而且容易出錯</p>
-<p>解法：除了上傳過程需要加上驗證機制外，打包過程也應該自動化</p>
-<ul>
-<li><p>Sketch Plugin開發/CocoaScript</p>
-</li>
-<li><p>CocoaScript,前身為JSTalk,缺乏IDE/Editor支援，可以使用Objective-J Syntax Hightlight.</p>
-</li>
-<li><p>錯誤訊息意味不明, 混用JavaScript 與 Objective-C 物件，有時不容易分辨是屬於哪一種類型的物件</p>
-</li>
-<li><p>因為呼叫macOS系統JavaScript Core直譯器，不同版本OS可以支援的JS與法不同</p>
-</li>
-<li><p>可呼叫所有Cocoa framework及sketch app中頭所有的class</p>
-</li>
-<li><p>要用setCOSJSTargetFunction:實作Target/Action</p>
-</li>
-<li><p>無法實作Delegate/Block，無法呼叫非同步的API</p>
-</li>
-<li><p>缺少API文件，基本上只能參考github上人家classdump出來的header files.</p>
-</li>
-<li><p>每一代Sketch能呼叫的API都不太一樣，所以在Sketch升級後，之前寫的Plug-in可能無法使用（Sketch改版不會通知已改版）</p>
-</li>
-</ul>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2017-10-28T13:16:04.000Z" itemprop="datePublished">2017-10-28</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/Speech-Note/">Speech Note</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-PBL-Activity-Notebook-1028-java"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2017/10/28/PBL-Activity-Notebook-1028-java/">如何寫出有效率、好讀、可維護的 Java Android 程式</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1 id="如何寫出有效率、好讀、可維護的-Java-Android-程式-如何寫出有效率、好讀、可維護的-java–android-程式"><a href="#如何寫出有效率、好讀、可維護的-Java-Android-程式-如何寫出有效率、好讀、可維護的-java–android-程式" class="headerlink" title="如何寫出有效率、好讀、可維護的 Java / Android 程式 {如何寫出有效率、好讀、可維護的-java–android-程式}"></a>如何寫出有效率、好讀、可維護的 Java / Android 程式 {如何寫出有效率、好讀、可維護的-java–android-程式}</h1><p>How to write quality code in Java/Android</p>
-<p>講者：曾冠諭</p>
-<p>簡介：在軟體公司工作最痛苦的一件事情就是看到前人留下來的程式碼像本天書——看也看不懂、改也改不動，跑起來卻健步如飛，不僅一切正常，甚至連重構後的程式都跑得不如舊程式順暢。這個 Session 就是要討論有哪些技巧及心法可以避免寫出這樣難讀、難懂也難維護的程式，不僅可用於改善自己的程式品質，也適用於 Code Review 時給別人建議。</p>
-<h2 id="What-is-Quality"><a href="#What-is-Quality" class="headerlink" title="What is Quality?"></a>What is Quality?</h2><ul>
-<li>Readable</li>
-<li>Maintainable</li>
-<li>Raliable</li>
-<li>Performant</li>
-<li>Reasonable</li>
-<li>Scalable</li>
-<li>Consistent</li>
-<li>Fool-proof</li>
-<li>Not scalable code example <ul>
-<li>use of View.getParent().getParent()</li>
-<li>Typecast Context to Activity</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-Phases-for-Pragram"><a href="#3-Phases-for-Pragram" class="headerlink" title="3 Phases  for Pragram"></a>3 Phases  for Pragram</h2><ul>
-<li><p>See the Mountain as a Mountain 見山是山</p>
-<ul>
-<li>直白 直接看得懂</li>
-<li>見山不是山</li>
-<li>見山又是山</li>
-</ul>
-</li>
-<li><p>A progamer try to learn more and more</p>
-<ul>
-<li>design pattern</li>
-<li>SetUp</li>
-</ul>
-</li>
-<li><p><strong>許多programmer會使用callback或抽象化技巧來達成彈性化的程式設計，但這樣其實不利於接手的人開發與理解</strong></p>
-</li>
-</ul>
-<h2 id="Simplicity-needs-delibable"><a href="#Simplicity-needs-delibable" class="headerlink" title="Simplicity needs delibable"></a>Simplicity needs delibable</h2><ul>
-<li>讓程式更簡潔</li>
-</ul>
-<h2 id="immutability"><a href="#immutability" class="headerlink" title="immutability"></a>immutability</h2><ul>
-<li><p>assign each variable only once</p>
-</li>
-<li><p>a single equation that functionally computes the result</p>
-</li>
-</ul>
-<h3 id="POJO（Plain-Old-Java-Object"><a href="#POJO（Plain-Old-Java-Object" class="headerlink" title="POJO（Plain Old Java Object)"></a>POJO（Plain Old Java Object)</h3><p>Why POJO? Because it’s simple.</p>
-<p>No magic on the data itself.</p>
-<p>Counter-example: Listeners inside a data class</p>
-<h3 id="Single-Source-Of-Truth"><a href="#Single-Source-Of-Truth" class="headerlink" title="Single Source Of Truth"></a>Single Source Of Truth</h3><ul>
-<li><p>Solving data inconsistency issues</p>
-</li>
-<li><p>Implementation</p>
-<ul>
-<li>ShoppingCartActivity.ProductDetailsActivity</li>
-</ul>
-</li>
-<li><h2 id="Single-way-of-doing-things"><a href="#Single-way-of-doing-things" class="headerlink" title="Single way of doing things"></a>Single way of doing things</h2></li>
-<li><p>Ikea</p>
-<ul>
-<li>single path from extrance to exit</li>
-</ul>
-</li>
-<li><p>Single Main Control Flow</p>
-</li>
-</ul>
-<h2 id="The-Beauty-Of-Vanilla-Library-Api"><a href="#The-Beauty-Of-Vanilla-Library-Api" class="headerlink" title="The Beauty Of Vanilla Library/Api"></a>The Beauty Of Vanilla Library/Api</h2><ul>
-<li>Everyone knows what it means and its implication</li>
-<li>Most common non-vanilla API</li>
-<li>It’s a nightmare if you modify Android support library<ul>
-<li>Customizes changes are surprising</li>
-<li>Not scalable</li>
-</ul>
-</li>
-</ul>
-<h2 id="Variable-Naming"><a href="#Variable-Naming" class="headerlink" title="Variable Naming"></a>Variable Naming</h2><ul>
-<li>Suffix the name with the measure unit<br><code>mTimestampMs, mDistancePx</code></li>
-<li>Avoid misleading name<br><code>getTotal() vs. updateAndGetTotal()</code></li>
-<li>No two function with similar names 不要讓函式名稱類似</li>
-</ul>
-<pre><code class="java">void setDataInternal(Data data)&#123;
-        mData = data;
-        &#125;
-
-void setDataAndNotifyChange(Data data)&#123;
-        setData(data);
-        notifyChange();
-        &#125;
-</code></pre>
-<h2 id="Separation-of-Concerns"><a href="#Separation-of-Concerns" class="headerlink" title="Separation of Concerns"></a>Separation of Concerns</h2><ul>
-<li><p>Don’t do fake decoupling</p>
-</li>
-<li><p>One data/state can’t be controlled by multiple classes/controllers</p>
-<ul>
-<li>Two controllers controlling the sane view</li>
-</ul>
-</li>
-<li><p>Separating the core functionality from product business logic</p>
-<ul>
-<li>Plugins</li>
-</ul>
-</li>
-<li><p>Use different decision variables if the decision is independent</p>
-<ul>
-<li>if background color is green, show dollar sign icon</li>
-</ul>
-</li>
-<li><p>Separating UI from data fetching and caching</p>
-</li>
-<li><p>Separating data from view model</p>
-</li>
-</ul>
-<h2 id="Composition-Over-Inheritance"><a href="#Composition-Over-Inheritance" class="headerlink" title="Composition Over Inheritance"></a>Composition Over Inheritance</h2>
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2017-10-28T13:14:13.000Z" itemprop="datePublished">2017-10-28</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/Speech-Note/">Speech Note</a>
-        </div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-PBL-Activity-Notebook-1028-docker"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2017/10/21/PBL-Activity-Notebook-1028-docker/">Docker Taipei</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1 id="Docker-Taipei"><a href="#Docker-Taipei" class="headerlink" title="Docker Taipei"></a>Docker Taipei</h1><p>日期：2017.10.21 Sat.</p>
-<p>地點：國立臺中科技大學 資訊樓 2701</p>
-<p>內容：</p>
-<p>透過Web介面使用Docker：<a target="_blank" rel="noopener" href="http://labs.play-with-docker.com/">http://labs.play-with-docker.com/</a></p>
-<h4 id="虛擬化技術的歷史"><a href="#虛擬化技術的歷史" class="headerlink" title="# 虛擬化技術的歷史"></a># 虛擬化技術的歷史</h4><ul>
-<li>IBM zOS</li>
-<li>虛擬化軟體－VMware, KVM, Xen, VirtualBox</li>
-<li>Hardware-assisted virtualization 硬體加速</li>
-<li>Paravirtualiztion半虛擬化</li>
-<li>作業系統層虛擬化<ul>
-<li>OpenVZ</li>
-<li>LXC</li>
-<li>Docker</li>
-</ul>
-</li>
-<li>IaaS, PaaS, Saas - Snapshot, Migration</li>
-</ul>
-<p>container目前沒有snapshot</p>
-<h4 id="容器與虛擬化架構差異"><a href="#容器與虛擬化架構差異" class="headerlink" title="# 容器與虛擬化架構差異"></a># 容器與虛擬化架構差異</h4><ol>
-<li>一個虛擬機的單位叫做<strong>instance</strong></li>
-<li>VM和Container差異在於共用Host OS少掉Gust OS，效能上提升較多</li>
-<li>VM和Container在於VM會完全隔離，VM有Gust OS，病毒不會互相感染，Container僅有安全隔離</li>
-<li>Container在啟動速度、性能（接近原生）、</li>
-</ol>
-<h4 id="The-Matrix-of-Hell"><a href="#The-Matrix-of-Hell" class="headerlink" title="# The Matrix of Hell"></a># The Matrix of Hell</h4><p>只要可以運作Docker的環境都可以移植映像檔</p>
-<h4 id="Docker-Engine"><a href="#Docker-Engine" class="headerlink" title="# Docker Engine"></a># Docker Engine</h4><p>Client端可以透過REST API去控制server(Docker daemon)</p>
-<p>一個容器跑起來在運作就叫做container</p>
-<p>容器跟容器之間運作就可以叫做docker network</p>
-<h4 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="# Docker Compose"></a># Docker Compose</h4><ul>
-<li>一鍵完成多個容器</li>
-<li>docker-compose.yml</li>
-<li>支援Docker Network</li>
-<li>支援Docker Volume</li>
-<li>建構完整軟體服務<ul>
-<li>如：3-tier</li>
-</ul>
-</li>
-<li>快速建置測試模擬環境</li>
-</ul>
-<h4 id="Docker-Machine"><a href="#Docker-Machine" class="headerlink" title="# Docker Machine"></a># Docker Machine</h4><ul>
-<li>在多種平上建立VM</li>
-<li>一套工具適用所有雲端平台、虛擬化平台</li>
-<li>內建Dokcer Engine</li>
-<li>具備SSH功能</li>
-</ul>
-<h4 id="Docker-Swarm"><a href="#Docker-Swarm" class="headerlink" title="# Docker Swarm"></a># Docker Swarm</h4><ul>
-<li>Docker Engine 內建功能</li>
-<li>容器叢集系統<ul>
-<li>K8S, Mesos(用多台電腦跑多個container)</li>
-</ul>
-</li>
-<li>內建分散式鍵值儲存功能</li>
-</ul>
-<h4 id="Docker-Registry"><a href="#Docker-Registry" class="headerlink" title="# Docker Registry"></a># Docker Registry</h4><ul>
-<li>放Docker映像檔</li>
-<li>缺點：沒有權限管控</li>
-<li>Docker Hub想像成Docker Registry</li>
-<li>北榮有導入Docker</li>
-</ul>
-<h4 id="Docker-映像檔指令"><a href="#Docker-映像檔指令" class="headerlink" title="# Docker 映像檔指令"></a># Docker 映像檔指令</h4><blockquote>
-<p>build-&gt;build a docker file</p>
-</blockquote>
-<pre><code class="bash">docker build
-</code></pre>
-<blockquote>
-<p>commit</p>
-</blockquote>
-<pre><code class="bash">docker commit
-</code></pre>
-<blockquote>
-<p>history-&gt;看這個映像檔怎麼bulid出來的</p>
-</blockquote>
-<pre><code class="bash">docker history
-</code></pre>
-<h4 id="Docker-容器指令"><a href="#Docker-容器指令" class="headerlink" title="# Docker 容器指令"></a># Docker 容器指令</h4><p>指令後面都接 <strong>container id</strong></p>
-<blockquote>
-<p>exec：Run a command in a running container</p>
-</blockquote>
-<p>登入container 重新create一個</p>
-<p>和 attach 不同</p>
-<pre><code>docker exec CONTAINER_ID
-</code></pre>
-<blockquote>
-<p>ps：List container</p>
-</blockquote>
-<p>顯示目前container的列表</p>
-<pre><code>docker ps
-docker ps -a
-</code></pre>
-<blockquote>
-<p>kill：Kill a running container</p>
-</blockquote>
-<pre><code>docker kill CONTAINER_ID
-</code></pre>
-<blockquote>
-<p>logs：Fetch the logs of a container</p>
-</blockquote>
-<pre><code>docker logs CONTAINER_ID
-</code></pre>
-<h4 id="Dokcer-映像檔"><a href="#Dokcer-映像檔" class="headerlink" title="# Dokcer 映像檔"></a># Dokcer 映像檔</h4><ol>
-<li>Docker ocmmit</li>
-<li>Dockerfile  - docker build</li>
-</ol>
-<h4 id="Dockerfile撰寫原則"><a href="#Dockerfile撰寫原則" class="headerlink" title="# Dockerfile撰寫原則"></a># Dockerfile撰寫原則</h4><ol>
-<li>必須命名為”Docekrfile”</li>
-<li>可用 .dockerignore檔案</li>
-</ol>
-<p>add會解他</p>
-<p>add站得空間較大</p>
-<p>分析映像檔/container是否有漏洞，可用<strong>clair, anchore</strong></p>
-<h4 id="Docker-Network"><a href="#Docker-Network" class="headerlink" title="# Docker Network"></a># Docker Network</h4><p>Docker 內建Network Drivers</p>
-<p>macvlan直接給目前網斷的ip</p>
-<p>不要用link用network</p>
-<h4 id="Docker-volumn指令"><a href="#Docker-volumn指令" class="headerlink" title="# Docker volumn指令"></a># Docker volumn指令</h4><pre><code>docker volume create volume_name
-</code></pre>
-<p>Docker compose</p>
-<p>相關連結：</p>
-<p>線上課程學習：<a target="_blank" rel="noopener" href="https://www.katacoda.com/">https://www.katacoda.com/</a></p>
-<p>簡報連結：</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2017-10-21T13:20:15.000Z" itemprop="datePublished">2017-10-21</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/Speech-Note/">Speech Note</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
 
   
     <nav class="pagination">
-        <a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+        <a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next</a>
     </nav>
   
 </div>
@@ -1071,7 +855,7 @@ docker ps -a
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python-Lesson/">Python Lesson</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/">Speech Note</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/Visit/">Visit</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python-Lesson/">Python Lesson</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/">Speech Note</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/Visit/">Visit</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -1081,7 +865,7 @@ docker ps -a
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analyze/" rel="tag">Data Analyze</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/" rel="tag">Facebook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analyze/" rel="tag">Data Analyze</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/" rel="tag">Facebook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MQTT/" rel="tag">MQTT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Modbus/" rel="tag">Modbus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket-IO/" rel="tag">Socket.IO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebSocket/" rel="tag">WebSocket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
     </div>
   </div>
 
@@ -1094,23 +878,23 @@ docker ps -a
       <ul>
         
           <li>
+            <a href="/2021/10/20/Connection-WebSocket/">WebSocket 連線方式</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/20/Connection-Modbus/">Modbus 連線機制</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/20/Connection-SocketIO/">Socket.IO 連線機制</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/20/Connection-MQTT/">MQTT 連線機制</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/19/Python-Lesson01-basic/">Python Lesson 1 基本指令</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/19/Python-DataAnalyze/">Python 數據分析指令</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/25/2019-facebook-speech/">Facebook Speech</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/14/GA-Day29/">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a>
           </li>
         
       </ul>

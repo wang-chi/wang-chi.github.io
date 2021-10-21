@@ -130,6 +130,271 @@
   
     
       <article
+id="post-Connection-WebSocket"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/10/20/Connection-WebSocket/">WebSocket 連線方式</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <ul>
+<li>會在固定interval不斷發送request，雖然每次的payload僅一點點的data，過多的header造成資源浪費，但在建立連線後，其中每次的資料傳輸header僅2-10bytes，相比HTTP header小</li>
+<li>WebSocket protocol 是HTML5一種新的協議。它實現了瀏覽器與伺服器全雙工通訊，能更好的節省伺服器資源和頻寬並達到實時通訊它建立在TCP之上，同 HTTP一樣通過TCP來傳輸資料。</li>
+<li>WebSocket同HTTP一樣也是應用層的協議，並且一開始的握手也需要藉助HTTP請求完成。</li>
+<li><a target="_blank" rel="noopener" href="https://www.educba.com/websocket-vs-rest/">WebSocket vs RESTful</a></li>
+</ul>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-10-20T13:42:07.000Z" itemprop="datePublished">2021-10-20</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebSocket/" rel="tag">WebSocket</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-Connection-Modbus"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/10/20/Connection-Modbus/">Modbus 連線機制</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <ul>
+<li>安全性問題: 明碼傳輸，可被側錄、沒有認證機制、未預期錯誤</li>
+<li>屬於client/server架構，無法主動產生<code>錯誤通報</code>，因此需要逐一詢問</li>
+<li>連線數量受限，只能處理247個位址，所以單一網域中僅能乘載240個裝置</li>
+<li>HEADER FORMAT: (10+N) bytes (N &lt;=253 bytes&gt;)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">TCP Header</th>
+<th align="left">Address</th>
+<th align="left">Function Code</th>
+<th align="left">Start register addr</th>
+<th align="left">data</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">6 bytes</td>
+<td align="left">1 bytes</td>
+<td align="left">1 bytes</td>
+<td align="left">2 bytes</td>
+<td align="left">N bytes</td>
+</tr>
+</tbody></table>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-10-20T13:36:48.172Z" itemprop="datePublished">2021-10-20</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modbus/" rel="tag">Modbus</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-Connection-SocketIO"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/10/20/Connection-SocketIO/">Socket.IO 連線機制</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p><a target="_blank" rel="noopener" href="https://upload-images.jianshu.io/upload_images/11224747-5410d14ab194cdbe.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/542/format/webp"><img src="https://upload-images.jianshu.io/upload_images/11224747-5410d14ab194cdbe.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/542/format/webp" alt="Socket"></a></p>
+<ul>
+<li>支援的傳輸方式(未指定時，自動調整)<ul>
+<li>xhr-polling</li>
+<li>xhr-multipart</li>
+<li>htmlfile</li>
+<li>websocket</li>
+<li>flashsocket</li>
+<li>jsonp-polling</li>
+</ul>
+</li>
+<li>Socket 通訊方式</li>
+<li>socket是”開啟—讀/寫—關閉”模式的實現，以使用TCP協議通訊的socket為例，其互動流程大概是下圖這樣的：<br><a target="_blank" rel="noopener" href="https://upload-images.jianshu.io/upload_images/11224747-ba8faac63058ef71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/554/format/webp"><img src="https://upload-images.jianshu.io/upload_images/11224747-ba8faac63058ef71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/554/format/webp" alt="Socket-Workflow"></a><br><a target="_blank" rel="noopener" href="https://www.educba.com/websocket-vs-socket-io/">WebSocket vs Socket.io</a></li>
+</ul>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-10-20T13:36:24.778Z" itemprop="datePublished">2021-10-20</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Socket-IO/" rel="tag">Socket.IO</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-Connection-MQTT"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2021/10/20/Connection-MQTT/">MQTT 連線機制</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <ul>
+<li><strong>窄bandwidth</strong>和<strong>低功耗</strong></li>
+<li>header僅有2 bytes</li>
+<li>MQTT 即是採用 Publish／Subscribe 模式，其中 Publisher 和 Subscriber 都是用戶端(Client)，Broker 是 伺服器端(Server) 負責轉發 Topic。</li>
+<li>情境:FMSLite要發送錯誤訊息給FMServer時<ul>
+<li>Publisher 為 FMSLite</li>
+<li>Subscriber 為 FMS</li>
+<li>根據FMSLite 發生不同層級的錯誤時傳送給FMS</li>
+</ul>
+</li>
+<li>情境:FMServer要發送派發任務給FMSLite<ul>
+<li>Publisher 為 FMS</li>
+<li>Subscriber 為 FMSLite</li>
+<li>FMS根據任務的不同派送給相對應的FMSLite，如建圖任務派發給專門的建圖車、單一通道的運送任務派給對應的FMSLite<br><a target="_blank" rel="noopener" href="https://miro.medium.com/max/1050/1*A9NQ99ToAUFS1OkKjHM1yg.png"><img src="https://miro.medium.com/max/1050/1*A9NQ99ToAUFS1OkKjHM1yg.png" alt="MQTT"></a></li>
+</ul>
+</li>
+</ul>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2021-10-20T13:36:17.103Z" itemprop="datePublished">2021-10-20</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
+        </div>
+    
+    
+        <div class="article-tag">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MQTT/" rel="tag">MQTT</a></li></ul>
+        </div>
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
 id="post-Python-Lesson01-basic"
 class="article article-type-post"
 >
@@ -733,430 +998,10 @@ return s                                        // 回傳狀態s
 
     
   
-    
-      <article
-id="post-GA-Day27"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2019/10/12/GA-Day27/">【Day27】GA with you - Memetic algorithm 模因演算法</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>今天要跟大家介紹的是<strong>模因演算法</strong><br>(在做基因演算法研究時發現的，當初發現的時候也真的是一頭霧水，到底是甚麼鬼東西XDDD)</p>
-<p>模因演算法(Memetic Algorithm, MA)是遺傳演算法的延伸<br>中文又叫做文化基因演算法、瀰集演算法<br>會被稱之為文化基因演算法又叫做瀰集的原因是，這個演算法是在闡述人與人之間傳遞訊息的過程中，將某些資訊會產生變化，僅留下重點部分(精華)的過程，而在Dawkins的The Selfish Gene書中認為Meme(瀰)是人之間交換訊息的傳遞單位，而瀰無所不在。<br>MA是根據文化的演化概念所發展出來了多點搜尋法，利用全域搜尋結合區域搜尋來求解。</p>
-<p>主要是透過局部搜尋的技術來減少提早收斂的可能性<br>MA也常稱之為 Baldwinian evolutionary algorithms (EAs)、Lamarckian EAs、cultural algorithms或genetic local search. </p>
-<h3 id="Pseudocode-虛擬碼"><a href="#Pseudocode-虛擬碼" class="headerlink" title="Pseudocode 虛擬碼"></a>Pseudocode 虛擬碼</h3><pre><code>begin
-    t :=0;
-    P(t) :=initPop();
-    P(t) :=localSearch(P(t));
-    evaluateFitness(P(t));
-    while (stopping criteria not met) do
-        P&#39;(t) :=selectForVariation(P(t));
-        P&#39;(t) :=recombine(P&#39;(t));
-        P&#39;(t) :=mutate(P&#39;(t));
-        P&#39;(t) :=localSearch(P&#39;(t));
-        evaluateFitness(P&#39;(t));
-        P(t+1) :=selectNewPop(P(t), P&#39;(t));
-        t :=t+1;
-   end  
-end
-</code></pre>
-<hr>
-<p>相關參考資料：<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Memetic_algorithm">Wikipedia-Memetic Algorithm</a></p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2019-10-12T14:29:56.000Z" itemprop="datePublished">2019-10-12</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-GA-Day26"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2019/10/11/GA-Day26/">【Day26】GA with you - Ant Colony Optimization 蟻群演算法</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>今天是連假的第二天<br>又是一個美好的週五<br>接下來兩天會跟大家介紹跟基因演算法(遺傳演算法)相關的演算法</p>
-<hr>
-<p>今天跟各位介紹的是<strong>蟻群演算法</strong></p>
-<h2 id="蟻群演算法"><a href="#蟻群演算法" class="headerlink" title="蟻群演算法"></a>蟻群演算法</h2><p>蟻群演算法（<strong>A</strong>nt <strong>C</strong>olony <strong>O</strong>ptimization, <strong>ACO</strong>），又叫『<strong>螞蟻演算法</strong>』</p>
-<ul>
-<li>一種用來在圖中尋找優化路徑的機率型演算法。</li>
-<li>由Marco Dorigo於1992年在他的博士論文中提出，靈感來自於螞蟻在尋找食物過程中發現路徑的行為。</li>
-<li>屬於啟發式演算法的一種</li>
-</ul>
-<p>蟻群演算法是一種類比進化演算法，初步的研究表明該演算法具有許多優良的性質。針對PID控制器參數最佳化設計問題，將蟻群演算法設計的結果與遺傳演算法設計的結果進行了比較，數值仿真結果表明，蟻群演算法具有一種新的類比進化最佳化方法的有效性和應用價值。</p>
-<p>螞蟻在路徑上前進時會根據前邊走過的螞蟻所留下的分泌物選擇其要走的路徑。其選擇一條路徑的概率與該路徑上分泌物的強度成正比。因此，由大量螞蟻組成的群體的集體行為實際上構成一種學習資訊的正反饋現象：某一條路徑走過的螞蟻越多，後面的螞蟻選擇該路徑的可能性就越大。螞蟻的個體間通過這種資訊的交流尋求通向食物的最短路徑。</p>
-<p>蟻群演算法就是根據這一特點，通過模仿螞蟻的行為，從而實現尋優。當程式最開始找到目標的時候，路徑幾乎不可能是最優的，甚至可能是包含了無數錯誤的選擇而極度冗長的。但是，程式可以通過螞蟻尋找食物的時候的資訊素原理，不斷地去修正原來的路線，使整個路線越來越短，最終找到最佳路線。</p>
-<h3 id="虛擬碼-Pseudo-code"><a href="#虛擬碼-Pseudo-code" class="headerlink" title="虛擬碼(Pseudo code)"></a>虛擬碼(Pseudo code)</h3><pre><code>Algorithm ACO_MetaHeuristic
-   while(not_termination)
-      generateSolutions()
-      daemonActions()
-      pheromoneUpdate()
-   end while
-end Algorithm
-</code></pre>
-<h3 id="變化型態"><a href="#變化型態" class="headerlink" title="變化型態"></a>變化型態</h3><ol>
-<li><p>精英螞蟻系統</p>
-</li>
-<li><p>最大最小螞蟻系統（MMAS）</p>
-</li>
-<li><p>蟻群系統</p>
-</li>
-<li><p>基於排序的螞蟻系統（ASrank）</p>
-</li>
-<li><p>連續正交蟻群（COAC）</p>
-</li>
-</ol>
-<hr>
-<p>相關資料：<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95">維基百科-蟻群演算法</a><br><a target="_blank" rel="noopener" href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/631655/">蟻群演算法、遺傳演算法、模擬退火演算法介紹 | 程式前沿</a><br><a target="_blank" rel="noopener" href="http://ccckmit.wikidot.com/so:antcolony">蟻群優化演算法 (Ant Colony Optimization) - 陳鍾誠的網站</a></p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2019-10-11T14:29:54.000Z" itemprop="datePublished">2019-10-11</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-GA-Day25"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2019/10/10/GA-Day25/">【Day25】GA with you - R 基因演算法應用於旅行銷售員問題 (3)</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>放假大家都有出去玩嗎?<br>今天到高雄看看可愛小動物看煙火…<br>娛樂的下場就是寫不完文章啦</p>
-<hr>
-<p>今天延續昨天的例子繼續</p>
-<p>有在一些小地方做了修正<br>(重複的地方還請大家多多見諒)</p>
-<h3 id="路徑成本"><a href="#路徑成本" class="headerlink" title="路徑成本"></a>路徑成本</h3><pre><code># fitness vector
-A&lt;-c(0,25,25,10,35)
-B&lt;-c(25,0,25,35,25)
-C&lt;-c(25,25,0,30,15)
-D&lt;-c(10,35,30,0,20)
-E&lt;-c(35,25,15,20,0)
-city&lt;-rbind(A,B,C,D,E)
-colnames(city)&lt;-c(&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;)
-city&lt;-as.matrix(city)
-</code></pre>
-<h3 id="適應函數"><a href="#適應函數" class="headerlink" title="適應函數"></a>適應函數</h3><pre><code>tourLength &lt;- function(tour, distMatrix) &#123;
-  tour &lt;- c(tour, tour[1])
-  route &lt;- embed(tour, 2)[,2:1]
-  sum(distMatrix[route])
-&#125;
-</code></pre>
-<h3 id="監控函數"><a href="#監控函數" class="headerlink" title="監控函數"></a>監控函數</h3><p>查看每一代演變的過程</p>
-<pre><code>#monitor
-monitor&lt;-function(obj)&#123;
-  len&lt;-tourLength(obj@population[1:5,])
-  pop&lt;-obj@population[1:5,]
-  print(cbind(pop, len))
-&#125;
-</code></pre>
-<h3 id="執行基因演算法"><a href="#執行基因演算法" class="headerlink" title="執行基因演算法"></a>執行基因演算法</h3><pre><code>GA.fit &lt;- ga(type = &quot;permutation&quot;, 
-             fitness = tspfitness, 
-             distMatrix = as.matrix(city), 
-             lower = 1, 
-             upper = 5,
-             popSize = 10, 
-             maxiter = 500, 
-             run = 100, 
-             pmutation = 0.2, 
-             monitor = NULL)
-</code></pre>
-<h3 id="繪製結果"><a href="#繪製結果" class="headerlink" title="繪製結果"></a>繪製結果</h3><p>這邊的程式碼會跟參考資料相同</p>
-<pre><code>getAdj &lt;- function(tour) &#123;
-  n &lt;- length(tour)
-  from &lt;- tour[1:(n - 1)]
-  to &lt;- tour[2:n]
-  m &lt;- n - 1
-  A &lt;- matrix(0, m, m)
-  A[cbind(from, to)] &lt;- 1
-  A &lt;- A + t(A)
-  return(A)
-&#125;
-</code></pre>
-<pre><code># 2-d coordinates
-mds &lt;- cmdscale(city)
-x &lt;- mds[, 1]
-y &lt;- -mds[, 2]
-n &lt;- length(x)
-</code></pre>
-<pre><code>B &lt;- 100
-fitnessMat &lt;- matrix(0, B, 2)
-A &lt;- matrix(0, n, n)
-for (b in seq(1, B)) &#123;
-  # run a GA algorithm
-  GA.rep &lt;- ga(type = &quot;permutation&quot;, 
-               fitness = tspfitness, 
-               distMatrix = as.matrix(city), 
-               lower = 1, 
-               upper = 5,
-               popSize = 10, 
-               maxiter = 50, 
-               run = 100, 
-               pmutation = 0.2, 
-               monitor = NULL)
-
-  tour &lt;- GA.rep@solution[1, ]
-  tour &lt;- c(tour, tour[1])
-  #fitnessMat[b, 1] &lt;- GA.rep@bestSol[GA.rep@iter]
-  #fitnessMat[b, 2] &lt;- GA.rep@mean[GA.rep@iter]
-  A &lt;- A + getAdj(tour)
-&#125;
-</code></pre>
-<pre><code>plot.tour &lt;- function(x, y, A) &#123;
-  n &lt;- nrow(A)
-  for (ii in seq(2, n)) &#123;
-    for (jj in seq(1, ii)) &#123;
-      w &lt;- A[ii, jj]
-      if (w &gt; 0) 
-        lines(x[c(ii, jj)], y[c(ii, jj)], lwd = w, col = &quot;lightgray&quot;)
-    &#125;
-  &#125;
-&#125;
-
-
-plot(x, y, type = &quot;n&quot;, asp = 1, xlab = &quot;&quot;, ylab = &quot;&quot;, main = &quot;Tour after GA converged&quot;)
-points(x, y, pch = 16, cex = 1.5, col = &quot;grey&quot;)
-abline(h = pretty(range(x), 10), v = pretty(range(y), 10), col = &quot;lightgrey&quot;)
-tour &lt;- GA.fit@solution[1, ]
-tour &lt;- c(tour, tour[1])
-n &lt;- length(tour)
-arrows(x[tour[-n]], y[tour[-n]], x[tour[-1]], y[tour[-1]], length = 0.15, angle = 45, 
-       col = &quot;steelblue&quot;, lwd = 2)
-text(x, y - 100, labels(city)[[1]], cex = 0.8)
-</code></pre>
-<p><img src="https://i.imgur.com/8v9ci4n.png" alt="plot"></p>
-<h3 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h3><hr>
-<p>今天的程式碼可能要晚點才能上傳了<br>電腦陷入了更新的循環中…<br>更新好會再補上link</p>
-<hr>
-<p>相關資料參考：<br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/GA/versions/3.2/topics/ga">R Documentation-GA</a><br><a target="_blank" rel="noopener" href="https://zsc.netlify.com/post/2015-11-09-ga/">GA包–遗传算法</a><br><a target="_blank" rel="noopener" href="https://rpubs.com/karthy1988/TSP_GA">RPubs - Optimized Delivery Route using Genetic Algorithm: Cost cutting for e-commerce</a><br><a target="_blank" rel="noopener" href="http://rpubs.com/somasdhavala/GAeg">RPubs - Genetic Algorithm on TSP</a></p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2019-10-10T14:29:52.000Z" itemprop="datePublished">2019-10-10</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-GA-Day24"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2019/10/09/GA-Day24/">【Day24】GA with you - R 基因演算法應用於旅行銷售員問題 (2)</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>昨天的文章已經有在更新過了<br>實在是太趕了xddd<br>這個題目可能會一點一點跟大家介紹<br>期盼在雙十連假講完(受不了自己拖拖拉拉)<br>要給自己信心(?)</p>
-<hr>
-<p>可以先把昨天的內容補上<br>(其實只有引入套件和設定path cost而已)</p>
-<h3 id="路徑成本"><a href="#路徑成本" class="headerlink" title="路徑成本"></a>路徑成本</h3><pre><code># fitness vector
-A&lt;-c(-1,25,25,10,35)
-B&lt;-c(25,-1,25,35,25)
-C&lt;-c(25,25,-1,30,15)
-D&lt;-c(10,35,30,-1,20)
-E&lt;-c(35,25,15,20,-1)
-city&lt;-rbind(A,B,C,D,E)
-colnames(city)&lt;-c(&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;)
-</code></pre>
-<p>路徑圖形<br><img src="https://i.imgur.com/StMMRNc.png" alt="path-cost"></p>
-<h3 id="適應函數"><a href="#適應函數" class="headerlink" title="適應函數"></a>適應函數</h3><p>那昨天定義完各條路徑的成本後，<br>我們來思考要怎麼去計算旅行一條路的成本<br>需要求解最小值<br>但是路徑的花費是正數<br>所以我們就用<code>1/X</code>這樣的方式取倒數<br>加起來就是變成<strong>最小值</strong></p>
-<ol>
-<li>計算旅程的長度<br><code>tourLength</code>用來求解整個旅程的長度<pre><code>tourLength &lt;- function(tour, distMatrix) &#123;
-tour &lt;- c(tour, tour[1])
-route &lt;- embed(tour, 2)[, 2:1]
-sum(route)
-&#125;
-</code></pre>
-</li>
-<li>計算成本<br>將剛剛<code>tourLength</code>的總和用倒數呈現<pre><code>tspfitness  &lt;- function(tour, ...) 1/tourLength(tour, ...)
-</code></pre>
-</li>
-</ol>
-<h3 id="執行GA"><a href="#執行GA" class="headerlink" title="執行GA"></a>執行GA</h3><p><code>執行迭代數(run):</code>100</p>
-<pre><code>GA.fit &lt;- ga(type = &quot;permutation&quot;, 
-             fitness = tspfitness, 
-             distMatrix = data,
-             lower  = 1, 
-             upper = 5,
-             popSize = 100,
-             maxiter = 20,
-             run = 10, 
-             pmutation = 0.05, 
-             monitor = NULL)
-</code></pre>
-<h3 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h3><p><code>GA.fit@solution</code>結果</p>
-<pre><code>&gt; GA.fit@solution
-     x1 x2 x3 x4 x5
-[1,]  4  3  1  5  2
-[2,]  5  3  2  4  1
-[3,]  4  5  1  3  2
-[4,]  5  3  1  4  2
-[5,]  2  5  1  4  3
-[6,]  1  3  2  4  5
-</code></pre>
-<p>或是使用</p>
-<pre><code>summary(GA.fit)
-</code></pre>
-<p>今天的程式碼<a target="_blank" rel="noopener" href="https://github.com/wang-chi/gawithyou/blob/master/Day24-TSP.R">Github</a><br>剛剛在客運上刻完這篇 差點沒發成功(暈倒)</p>
-<hr>
-<p>相關資料參考：<br><a target="_blank" rel="noopener" href="https://www.rdocumentation.org/packages/GA/versions/3.2/topics/ga">R Documentation-GA</a><br><a target="_blank" rel="noopener" href="https://zsc.netlify.com/post/2015-11-09-ga/">GA包–遗传算法</a><br><a target="_blank" rel="noopener" href="https://rpubs.com/karthy1988/TSP_GA">RPubs - Optimized Delivery Route using Genetic Algorithm: Cost cutting for e-commerce</a><br><a target="_blank" rel="noopener" href="http://rpubs.com/somasdhavala/GAeg">RPubs - Genetic Algorithm on TSP</a></p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2019-10-09T14:29:51.000Z" itemprop="datePublished">2019-10-09</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/GA-30Days/">GA_30Days</a>
-        </div>
-    
-    
-        <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li></ul>
-        </div>
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
 
   
     <nav class="pagination">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next</a>
     </nav>
   
 </div>
@@ -1177,7 +1022,7 @@ sum(route)
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python-Lesson/">Python Lesson</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/">Speech Note</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/Visit/">Visit</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GA-30Days/">GA_30Days</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python-Lesson/">Python Lesson</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/">Speech Note</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/PBL-Activity-Notebook-2017/">PBL_Activity_Notebook_2017</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Speech-Note/Visit/">Visit</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -1187,7 +1032,7 @@ sum(route)
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analyze/" rel="tag">Data Analyze</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/" rel="tag">Facebook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/" rel="tag">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Big-Data/" rel="tag">Big Data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Analyze/" rel="tag">Data Analyze</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/" rel="tag">Facebook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GA/" rel="tag">GA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT-Operation/" rel="tag">IT Operation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MQTT/" rel="tag">MQTT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Modbus/" rel="tag">Modbus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sketch/" rel="tag">Sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket-IO/" rel="tag">Socket.IO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebSocket/" rel="tag">WebSocket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
     </div>
   </div>
 
@@ -1200,23 +1045,23 @@ sum(route)
       <ul>
         
           <li>
+            <a href="/2021/10/20/Connection-WebSocket/">WebSocket 連線方式</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/20/Connection-Modbus/">Modbus 連線機制</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/20/Connection-SocketIO/">Socket.IO 連線機制</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/20/Connection-MQTT/">MQTT 連線機制</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/19/Python-Lesson01-basic/">Python Lesson 1 基本指令</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/19/Python-DataAnalyze/">Python 數據分析指令</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/25/2019-facebook-speech/">Facebook Speech</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/15/GA-Day30/">【Day30】GA with you - Final Day</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/14/GA-Day29/">【Day29】GA with you - Particle Swarm Optimization Algorithm 粒子群演算法</a>
           </li>
         
       </ul>
